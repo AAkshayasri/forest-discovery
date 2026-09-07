@@ -13,6 +13,8 @@ coverage/
 .netlify/
 *.tsbuildinfo
 .agents/
+wildatlasgit/
+wildatlasgit.zip
 
 # Environment variables & secrets (Never commit real keys or secrets)
 .env
