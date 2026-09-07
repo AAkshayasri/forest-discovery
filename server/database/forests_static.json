@@ -1,0 +1,5282 @@
+[
+  {
+    "id": 1,
+    "name": "Yellowstone National Park",
+    "country": "United States",
+    "state": "Wyoming",
+    "latitude": 44.428,
+    "longitude": -110.588,
+    "area": "8,983 km²",
+    "climate": "Subarctic",
+    "description": "Famed for its geothermal features and diverse wildlife, this park sits atop a volcanic hot spot featuring dramatic canyons and lush forests.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Yellowstone National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -110.738,
+              44.278
+            ],
+            [
+              -110.43799999999999,
+              44.278
+            ],
+            [
+              -110.43799999999999,
+              44.577999999999996
+            ],
+            [
+              -110.738,
+              44.577999999999996
+            ],
+            [
+              -110.738,
+              44.278
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 2,
+    "name": "Banff National Park",
+    "country": "Canada",
+    "state": "Alberta",
+    "latitude": 51.4968,
+    "longitude": -115.9281,
+    "area": "6,641 km²",
+    "climate": "Subalpine",
+    "description": "Canada's oldest national park features glacier-fed turquoise lakes, dense coniferous forests, and rugged Rocky Mountain peaks.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Banff National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -116.0781,
+              51.3468
+            ],
+            [
+              -115.7781,
+              51.3468
+            ],
+            [
+              -115.7781,
+              51.6468
+            ],
+            [
+              -116.0781,
+              51.6468
+            ],
+            [
+              -116.0781,
+              51.3468
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 3,
+    "name": "Serengeti National Park",
+    "country": "Tanzania",
+    "state": "Mara",
+    "latitude": -2.3333,
+    "longitude": 34.8333,
+    "area": "14,750 km²",
+    "climate": "Tropical Savanna",
+    "description": "Renowned for its massive annual migration of wildebeests and zebras, the park consists of vast grassland plains and acacia woodlands.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Serengeti National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              34.6833,
+              -2.4833
+            ],
+            [
+              34.9833,
+              -2.4833
+            ],
+            [
+              34.9833,
+              -2.1833
+            ],
+            [
+              34.6833,
+              -2.1833
+            ],
+            [
+              34.6833,
+              -2.4833
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 4,
+    "name": "Torres del Paine National Park",
+    "country": "Chile",
+    "state": "Magallanes",
+    "latitude": -51.2587,
+    "longitude": -72.9157,
+    "area": "2,422 km²",
+    "climate": "Subpolar Oceanic",
+    "description": "Characterized by soaring granite towers, azure glacial lakes, and sweeping pampas, this park protects vital southern Patagonian ecosystems.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Torres del Paine National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -73.0657,
+              -51.408699999999996
+            ],
+            [
+              -72.7657,
+              -51.408699999999996
+            ],
+            [
+              -72.7657,
+              -51.1087
+            ],
+            [
+              -73.0657,
+              -51.1087
+            ],
+            [
+              -73.0657,
+              -51.408699999999996
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 5,
+    "name": "Fiordland National Park",
+    "country": "New Zealand",
+    "state": "Southland",
+    "latitude": -45.4131,
+    "longitude": 167.7176,
+    "area": "12,519 km²",
+    "climate": "Temperate Maritime",
+    "description": "This dramatic landscape features deeply carved fiords, cascading waterfalls, and ancient temperate rainforests dominated by beech trees.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Fiordland National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              167.5676,
+              -45.5631
+            ],
+            [
+              167.8676,
+              -45.5631
+            ],
+            [
+              167.8676,
+              -45.2631
+            ],
+            [
+              167.5676,
+              -45.2631
+            ],
+            [
+              167.5676,
+              -45.5631
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 6,
+    "name": "Kruger National Park",
+    "country": "South Africa",
+    "state": "Limpopo",
+    "latitude": -24.0175,
+    "longitude": 31.48,
+    "area": "19,623 km²",
+    "climate": "Semi-Arid Savanna",
+    "description": "One of Africa's largest game reserves, it hosts an incredible diversity of wildlife including the Big Five across vast bushveld and riverine forests.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Kruger National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.330000000000002,
+              -24.167499999999997
+            ],
+            [
+              31.63,
+              -24.167499999999997
+            ],
+            [
+              31.63,
+              -23.8675
+            ],
+            [
+              31.330000000000002,
+              -23.8675
+            ],
+            [
+              31.330000000000002,
+              -24.167499999999997
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 7,
+    "name": "Plitvice Lakes National Park",
+    "country": "Croatia",
+    "state": "Lika-Senj",
+    "latitude": 44.8654,
+    "longitude": 15.582,
+    "area": "295 km²",
+    "climate": "Continental",
+    "description": "Famous for a string of 16 terraced lakes joined by waterfalls, which extend into a limestone canyon surrounded by dense beech and pine forests.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Plitvice Lakes National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.432,
+              44.7154
+            ],
+            [
+              15.732000000000001,
+              44.7154
+            ],
+            [
+              15.732000000000001,
+              45.0154
+            ],
+            [
+              15.432,
+              45.0154
+            ],
+            [
+              15.432,
+              44.7154
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 8,
+    "name": "Galapagos National Park",
+    "country": "Ecuador",
+    "state": "Galapagos",
+    "latitude": -0.8292,
+    "longitude": -90.9827,
+    "area": "7,970 km²",
+    "climate": "Tropical Oceanic",
+    "description": "An isolated volcanic archipelago renowned for its endemic species studied by Charles Darwin, featuring arid scrublands and coastal mangroves.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Galapagos National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -91.1327,
+              -0.9792000000000001
+            ],
+            [
+              -90.83269999999999,
+              -0.9792000000000001
+            ],
+            [
+              -90.83269999999999,
+              -0.6792
+            ],
+            [
+              -91.1327,
+              -0.6792
+            ],
+            [
+              -91.1327,
+              -0.9792000000000001
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 9,
+    "name": "Grand Canyon National Park",
+    "country": "United States",
+    "state": "Arizona",
+    "latitude": 36.1069,
+    "longitude": -112.1129,
+    "area": "4,926 km²",
+    "climate": "Arid",
+    "description": "Home to the immense Grand Canyon, with its bands of red rock revealing millions of years of geological history carved by the Colorado River.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Grand Canyon National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -112.2629,
+              35.956900000000005
+            ],
+            [
+              -111.96289999999999,
+              35.956900000000005
+            ],
+            [
+              -111.96289999999999,
+              36.2569
+            ],
+            [
+              -112.2629,
+              36.2569
+            ],
+            [
+              -112.2629,
+              35.956900000000005
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 10,
+    "name": "Jiuzhaigou Valley",
+    "country": "China",
+    "state": "Sichuan",
+    "latitude": 33.1592,
+    "longitude": 103.9189,
+    "area": "672 km²",
+    "climate": "Subalpine",
+    "description": "A nature reserve and national park known for its multi-tiered waterfalls and colorful lakes nestled within dense deciduous and coniferous forests.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Jiuzhaigou Valley"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.76889999999999,
+              33.0092
+            ],
+            [
+              104.0689,
+              33.0092
+            ],
+            [
+              104.0689,
+              33.3092
+            ],
+            [
+              103.76889999999999,
+              33.3092
+            ],
+            [
+              103.76889999999999,
+              33.0092
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 11,
+    "name": "Yosemite National Park",
+    "country": "United States",
+    "state": "California",
+    "latitude": 37.8651,
+    "longitude": -119.5383,
+    "area": "3,029 km²",
+    "climate": "Mediterranean",
+    "description": "Celebrated for its towering granite monoliths, ancient giant sequoias, and high waterfalls plunging into deeply glaciated valleys.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Yosemite National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -119.68830000000001,
+              37.7151
+            ],
+            [
+              -119.3883,
+              37.7151
+            ],
+            [
+              -119.3883,
+              38.0151
+            ],
+            [
+              -119.68830000000001,
+              38.0151
+            ],
+            [
+              -119.68830000000001,
+              37.7151
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 12,
+    "name": "Komodo National Park",
+    "country": "Indonesia",
+    "state": "East Nusa Tenggara",
+    "latitude": -8.545,
+    "longitude": 119.489,
+    "area": "1,733 km²",
+    "climate": "Tropical Monsoon",
+    "description": "Established to protect the endemic Komodo dragon, this rugged island park features dry savannahs and rich coral reef marine habitats.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Komodo National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              119.339,
+              -8.695
+            ],
+            [
+              119.63900000000001,
+              -8.695
+            ],
+            [
+              119.63900000000001,
+              -8.395
+            ],
+            [
+              119.339,
+              -8.395
+            ],
+            [
+              119.339,
+              -8.695
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 13,
+    "name": "Iguazu National Park",
+    "country": "Argentina",
+    "state": "Misiones",
+    "latitude": -25.6953,
+    "longitude": -54.4367,
+    "area": "677 km²",
+    "climate": "Subtropical",
+    "description": "Encompassing the majestic Iguazu Falls, this lush subtropical rainforest shelters hundreds of bird species and diverse mammalian fauna.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Iguazu National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -54.5867,
+              -25.845299999999998
+            ],
+            [
+              -54.2867,
+              -25.845299999999998
+            ],
+            [
+              -54.2867,
+              -25.5453
+            ],
+            [
+              -54.5867,
+              -25.5453
+            ],
+            [
+              -54.5867,
+              -25.845299999999998
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 14,
+    "name": "Mount Kilimanjaro National Park",
+    "country": "Tanzania",
+    "state": "Kilimanjaro",
+    "latitude": -3.0674,
+    "longitude": 37.3556,
+    "area": "1,688 km²",
+    "climate": "Alpine",
+    "description": "Encloses Africa's highest peak, transitioning from cultivated farmlands and dense montane rainforests to barren alpine desert and glacial ice.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Mount Kilimanjaro National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              37.205600000000004,
+              -3.2174
+            ],
+            [
+              37.5056,
+              -3.2174
+            ],
+            [
+              37.5056,
+              -2.9174
+            ],
+            [
+              37.205600000000004,
+              -2.9174
+            ],
+            [
+              37.205600000000004,
+              -3.2174
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 15,
+    "name": "Sarek National Park",
+    "country": "Sweden",
+    "state": "Norrbotten",
+    "latitude": 67.2731,
+    "longitude": 17.6592,
+    "area": "1,970 km²",
+    "climate": "Subarctic",
+    "description": "A remote wilderness in Swedish Lapland featuring jagged alpine peaks, sweeping glacial valleys, and rushing rivers untouched by roads.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Sarek National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              17.5092,
+              67.1231
+            ],
+            [
+              17.809199999999997,
+              67.1231
+            ],
+            [
+              17.809199999999997,
+              67.4231
+            ],
+            [
+              17.5092,
+              67.4231
+            ],
+            [
+              17.5092,
+              67.1231
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 16,
+    "name": "Ranthambore National Park",
+    "country": "India",
+    "state": "Rajasthan",
+    "latitude": 26.0173,
+    "longitude": 76.5026,
+    "area": "1,334 km²",
+    "climate": "Tropical Dry",
+    "description": "A major wildlife sanctuary known for its Bengal tigers, centered around ancient ruins and dry deciduous forests dotted with rocky hills.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Ranthambore National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.3526,
+              25.8673
+            ],
+            [
+              76.6526,
+              25.8673
+            ],
+            [
+              76.6526,
+              26.167299999999997
+            ],
+            [
+              76.3526,
+              26.167299999999997
+            ],
+            [
+              76.3526,
+              25.8673
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 17,
+    "name": "Uluru-Kata Tjuta National Park",
+    "country": "Australia",
+    "state": "Northern Territory",
+    "latitude": -25.3444,
+    "longitude": 131.0369,
+    "area": "1,326 km²",
+    "climate": "Desert",
+    "description": "Protects vast red center desert landscapes, featuring the iconic sandstone monolith of Uluru and the domes of Kata Tjuta.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Uluru-Kata Tjuta National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              130.8869,
+              -25.4944
+            ],
+            [
+              131.1869,
+              -25.4944
+            ],
+            [
+              131.1869,
+              -25.1944
+            ],
+            [
+              130.8869,
+              -25.1944
+            ],
+            [
+              130.8869,
+              -25.4944
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 18,
+    "name": "Vatnajökull National Park",
+    "country": "Iceland",
+    "state": "Austurland",
+    "latitude": 64.4,
+    "longitude": -16.8,
+    "area": "14,141 km²",
+    "climate": "Polar",
+    "description": "Dominated by Europe's largest glacier, the park showcases a dramatic interplay of ice caps, active volcanoes, and black sand outwash plains.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Vatnajökull National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -16.95,
+              64.25
+            ],
+            [
+              -16.650000000000002,
+              64.25
+            ],
+            [
+              -16.650000000000002,
+              64.55000000000001
+            ],
+            [
+              -16.95,
+              64.55000000000001
+            ],
+            [
+              -16.95,
+              64.25
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 19,
+    "name": "Jiuzhai Valley National Park",
+    "country": "China",
+    "state": "Sichuan",
+    "latitude": 33.25,
+    "longitude": 103.9,
+    "area": "672 km²",
+    "climate": "Temperate",
+    "description": "Renowned for its multi-tiered waterfalls and colorful lakes nestled in a lush mountain reserve.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Jiuzhai Valley National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.75,
+              33.1
+            ],
+            [
+              104.05000000000001,
+              33.1
+            ],
+            [
+              104.05000000000001,
+              33.4
+            ],
+            [
+              103.75,
+              33.4
+            ],
+            [
+              103.75,
+              33.1
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 20,
+    "name": "Chobe National Park",
+    "country": "Botswana",
+    "state": "North-West",
+    "latitude": -18.6826,
+    "longitude": 24.4719,
+    "area": "11,710 km²",
+    "climate": "Semi-Arid",
+    "description": "Botswana's first national park boasts one of the largest concentrations of game in Africa, particularly massive elephant herds along the Chobe River.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Chobe National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              24.321900000000003,
+              -18.8326
+            ],
+            [
+              24.6219,
+              -18.8326
+            ],
+            [
+              24.6219,
+              -18.532600000000002
+            ],
+            [
+              24.321900000000003,
+              -18.532600000000002
+            ],
+            [
+              24.321900000000003,
+              -18.8326
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 21,
+    "name": "Great Smoky Mountains National Park",
+    "country": "United States",
+    "state": "North Carolina",
+    "latitude": 35.6115,
+    "longitude": -83.4895,
+    "area": "2,114 km²",
+    "climate": "Humid Subtropical",
+    "description": "Renowned for its plant and animal life, ancient mountains, and remnants of Southern Appalachian mountain culture amidst lush old-growth forests.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Great Smoky Mountains National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -83.63950000000001,
+              35.4615
+            ],
+            [
+              -83.3395,
+              35.4615
+            ],
+            [
+              -83.3395,
+              35.7615
+            ],
+            [
+              -83.63950000000001,
+              35.7615
+            ],
+            [
+              -83.63950000000001,
+              35.4615
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 22,
+    "name": "Cinque Terre National Park",
+    "country": "Italy",
+    "state": "Liguria",
+    "latitude": 44.1288,
+    "longitude": 9.7115,
+    "area": "38 km²",
+    "climate": "Mediterranean",
+    "description": "A steep coastal landscape featuring terraced vineyards, olive groves, and five colorful cliffside fishing villages overlooking the Ligurian Sea.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Cinque Terre National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.561499999999999,
+              43.9788
+            ],
+            [
+              9.8615,
+              43.9788
+            ],
+            [
+              9.8615,
+              44.2788
+            ],
+            [
+              9.561499999999999,
+              44.2788
+            ],
+            [
+              9.561499999999999,
+              43.9788
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 23,
+    "name": "Glacier National Park",
+    "country": "United States",
+    "state": "Montana",
+    "latitude": 48.7596,
+    "longitude": -113.787,
+    "area": "4,101 km²",
+    "climate": "Subalpine",
+    "description": "A pristine wilderness of glacier-carved peaks and valleys, alpine meadows, and dense coniferous forests spanning the Continental Divide.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Glacier National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -113.93700000000001,
+              48.6096
+            ],
+            [
+              -113.637,
+              48.6096
+            ],
+            [
+              -113.637,
+              48.9096
+            ],
+            [
+              -113.93700000000001,
+              48.9096
+            ],
+            [
+              -113.93700000000001,
+              48.6096
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 24,
+    "name": "Aoraki/Mount Cook National Park",
+    "country": "New Zealand",
+    "state": "Canterbury",
+    "latitude": -43.595,
+    "longitude": 170.1418,
+    "area": "707 km²",
+    "climate": "Alpine",
+    "description": "An alpine park featuring New Zealand's highest peak, permanent ice fields, and massive glaciers within the rugged Southern Alps.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Aoraki/Mount Cook National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              169.99179999999998,
+              -43.745
+            ],
+            [
+              170.2918,
+              -43.745
+            ],
+            [
+              170.2918,
+              -43.445
+            ],
+            [
+              169.99179999999998,
+              -43.445
+            ],
+            [
+              169.99179999999998,
+              -43.745
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 25,
+    "name": "Everglades National Park",
+    "country": "United States",
+    "state": "Florida",
+    "latitude": 25.2866,
+    "longitude": -80.8987,
+    "area": "6,105 km²",
+    "climate": "Tropical",
+    "description": "A vast subtropical wilderness of slow-moving freshwater sloughs, sawgrass marshes, and mangrove forests teeming with wading birds and alligators.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Everglades National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -81.04870000000001,
+              25.1366
+            ],
+            [
+              -80.7487,
+              25.1366
+            ],
+            [
+              -80.7487,
+              25.4366
+            ],
+            [
+              -81.04870000000001,
+              25.4366
+            ],
+            [
+              -81.04870000000001,
+              25.1366
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 26,
+    "name": "Table Mountain National Park",
+    "country": "South Africa",
+    "state": "Western Cape",
+    "latitude": -33.9628,
+    "longitude": 18.4098,
+    "area": "221 km²",
+    "climate": "Mediterranean",
+    "description": "Encompassing the iconic flat-topped mountain overlooking Cape Town, protecting a remarkably rich and unique fynbos floral kingdom.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Table Mountain National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              18.259800000000002,
+              -34.1128
+            ],
+            [
+              18.5598,
+              -34.1128
+            ],
+            [
+              18.5598,
+              -33.8128
+            ],
+            [
+              18.259800000000002,
+              -33.8128
+            ],
+            [
+              18.259800000000002,
+              -34.1128
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 27,
+    "name": "Zion National Park",
+    "country": "United States",
+    "state": "Utah",
+    "latitude": 37.2982,
+    "longitude": -113.0263,
+    "area": "593 km²",
+    "climate": "Arid",
+    "description": "Characterized by towering cream, pink, and red sandstone cliffs carved by the Virgin River into a dramatic desert canyon landscape.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Zion National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -113.17630000000001,
+              37.1482
+            ],
+            [
+              -112.8763,
+              37.1482
+            ],
+            [
+              -112.8763,
+              37.4482
+            ],
+            [
+              -113.17630000000001,
+              37.4482
+            ],
+            [
+              -113.17630000000001,
+              37.1482
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 28,
+    "name": "Peneda-Gerês National Park",
+    "country": "Portugal",
+    "state": "Viana do Castelo",
+    "latitude": 41.8083,
+    "longitude": -8.1408,
+    "area": "703 km²",
+    "climate": "Mediterranean Oceanic",
+    "description": "Portugal's sole national park features rugged mountain terrain, ancient oak forests, free-roaming wild horses, and historic stone villages.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Peneda-Gerês National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -8.2908,
+              41.658300000000004
+            ],
+            [
+              -7.9908,
+              41.658300000000004
+            ],
+            [
+              -7.9908,
+              41.9583
+            ],
+            [
+              -8.2908,
+              41.9583
+            ],
+            [
+              -8.2908,
+              41.658300000000004
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 29,
+    "name": "Kashmir Great Lakes Nature Reserve",
+    "country": "India",
+    "state": "Jammu and Kashmir",
+    "latitude": 34.3725,
+    "longitude": 75.0594,
+    "area": "350 km²",
+    "climate": "Alpine",
+    "description": "A high-altitude trekking region featuring pristine glacial lakes nestled beneath snow-dusted Himalayan peaks and alpine meadows.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Kashmir Great Lakes Nature Reserve"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              74.90939999999999,
+              34.222500000000004
+            ],
+            [
+              75.2094,
+              34.222500000000004
+            ],
+            [
+              75.2094,
+              34.5225
+            ],
+            [
+              74.90939999999999,
+              34.5225
+            ],
+            [
+              74.90939999999999,
+              34.222500000000004
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 30,
+    "name": "Mount Fuji Shizuoka Forest",
+    "country": "Japan",
+    "state": "Shizuoka",
+    "latitude": 35.3606,
+    "longitude": 138.7274,
+    "area": "1,200 km²",
+    "climate": "Temperate",
+    "description": "Surrounding Japan's most famous volcanic peak, this reserve features dense forests, lava tubes, and serene highland lakes.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Mount Fuji Shizuoka Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              138.57739999999998,
+              35.2106
+            ],
+            [
+              138.8774,
+              35.2106
+            ],
+            [
+              138.8774,
+              35.5106
+            ],
+            [
+              138.57739999999998,
+              35.5106
+            ],
+            [
+              138.57739999999998,
+              35.2106
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 31,
+    "name": "Jiuzhaigou Nature Reserve",
+    "country": "China",
+    "state": "Sichuan",
+    "latitude": 33.15,
+    "longitude": 103.9,
+    "area": "672 km²",
+    "climate": "Subalpine",
+    "description": "A protected valley in the Min Mountains famous for its multi-level waterfalls and colorful alpine lakes.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Jiuzhaigou Nature Reserve"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.75,
+              33
+            ],
+            [
+              104.05000000000001,
+              33
+            ],
+            [
+              104.05000000000001,
+              33.3
+            ],
+            [
+              103.75,
+              33.3
+            ],
+            [
+              103.75,
+              33
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 32,
+    "name": "Redwood National and State Parks",
+    "country": "United States",
+    "state": "California",
+    "latitude": 41.2132,
+    "longitude": -124.0046,
+    "area": "560 km²",
+    "climate": "Temperate Oceanic",
+    "description": "Protects vast old-growth forests of coast redwoods, the tallest living trees on Earth, alongside rugged Pacific coastline.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Redwood National and State Parks"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -124.1546,
+              41.0632
+            ],
+            [
+              -123.85459999999999,
+              41.0632
+            ],
+            [
+              -123.85459999999999,
+              41.3632
+            ],
+            [
+              -124.1546,
+              41.3632
+            ],
+            [
+              -124.1546,
+              41.0632
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 33,
+    "name": "Hoh Rainforest (Olympic National Park)",
+    "country": "United States",
+    "state": "Washington",
+    "latitude": 47.8608,
+    "longitude": -123.9351,
+    "area": "3,734 km²",
+    "climate": "Temperate Rainforest",
+    "description": "One of the largest temperate rainforests in the U.S., featuring massive sitka spruce, western hemlock, and thick moss-draped canopies.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Hoh Rainforest (Olympic National Park)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -124.08510000000001,
+              47.7108
+            ],
+            [
+              -123.7851,
+              47.7108
+            ],
+            [
+              -123.7851,
+              48.010799999999996
+            ],
+            [
+              -124.08510000000001,
+              48.010799999999996
+            ],
+            [
+              -124.08510000000001,
+              47.7108
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 34,
+    "name": "Abisko National Park",
+    "country": "Sweden",
+    "state": "Norrbotten",
+    "latitude": 68.3556,
+    "longitude": 18.7758,
+    "area": "77 km²",
+    "climate": "Subarctic",
+    "description": "Located north of the Arctic Circle, this park offers subarctic birch forests, dramatic river canyons, and prime Northern Lights viewing.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Abisko National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              18.6258,
+              68.20559999999999
+            ],
+            [
+              18.9258,
+              68.20559999999999
+            ],
+            [
+              18.9258,
+              68.5056
+            ],
+            [
+              18.6258,
+              68.5056
+            ],
+            [
+              18.6258,
+              68.20559999999999
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 35,
+    "name": "Bwindi Impenetrable National Park",
+    "country": "Uganda",
+    "state": "Kabale",
+    "latitude": -1.0565,
+    "longitude": 29.6133,
+    "area": "321 km²",
+    "climate": "Tropical Rainforest",
+    "description": "An ancient, dense montane forest that serves as a crucial sanctuary for nearly half of the world's endangered mountain gorillas.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Bwindi Impenetrable National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              29.4633,
+              -1.2065
+            ],
+            [
+              29.763299999999997,
+              -1.2065
+            ],
+            [
+              29.763299999999997,
+              -0.9065
+            ],
+            [
+              29.4633,
+              -0.9065
+            ],
+            [
+              29.4633,
+              -1.2065
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 36,
+    "name": "Amboseli National Park",
+    "country": "Kenya",
+    "state": "Kajiado",
+    "latitude": -2.652,
+    "longitude": 37.2605,
+    "area": "392 km²",
+    "climate": "Semi-Arid",
+    "description": "Renowned for its large elephant herds and iconic views of Mount Kilimanjaro across sprawling acacia savannahs and seasonal swamps.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Amboseli National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              37.1105,
+              -2.802
+            ],
+            [
+              37.4105,
+              -2.802
+            ],
+            [
+              37.4105,
+              -2.5020000000000002
+            ],
+            [
+              37.1105,
+              -2.5020000000000002
+            ],
+            [
+              37.1105,
+              -2.802
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 37,
+    "name": "Daintree Rainforest",
+    "country": "Australia",
+    "state": "Queensland",
+    "latitude": -16.1697,
+    "longitude": 145.4195,
+    "area": "1,200 km²",
+    "climate": "Tropical",
+    "description": "An ancient tropical rainforest containing an immense diversity of flora and fauna, stretching right down to white sandy beaches.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Daintree Rainforest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              145.2695,
+              -16.319699999999997
+            ],
+            [
+              145.5695,
+              -16.319699999999997
+            ],
+            [
+              145.5695,
+              -16.0197
+            ],
+            [
+              145.2695,
+              -16.0197
+            ],
+            [
+              145.2695,
+              -16.319699999999997
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 38,
+    "name": "Los Glaciares National Park",
+    "country": "Argentina",
+    "state": "Santa Cruz",
+    "latitude": -49.8153,
+    "longitude": -73.0769,
+    "area": "7,269 km²",
+    "climate": "Subpolar Oceanic",
+    "description": "Home to numerous majestic glaciers including the advancing Perito Moreno, fed by the massive Southern Patagonian Ice Field.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Los Glaciares National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -73.2269,
+              -49.9653
+            ],
+            [
+              -72.92689999999999,
+              -49.9653
+            ],
+            [
+              -72.92689999999999,
+              -49.6653
+            ],
+            [
+              -73.2269,
+              -49.6653
+            ],
+            [
+              -73.2269,
+              -49.9653
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 39,
+    "name": "Tierra del Fuego National Park",
+    "country": "Argentina",
+    "state": "Tierra del Fuego",
+    "latitude": -54.757,
+    "longitude": -68.498,
+    "area": "630 km²",
+    "climate": "Subpolar Oceanic",
+    "description": "A subantarctic landscape featuring dramatic mountains, pristine glacial lakes, and peat bogs at the southernmost tip of South America.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Tierra del Fuego National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -68.64800000000001,
+              -54.907
+            ],
+            [
+              -68.348,
+              -54.907
+            ],
+            [
+              -68.348,
+              -54.607
+            ],
+            [
+              -68.64800000000001,
+              -54.607
+            ],
+            [
+              -68.64800000000001,
+              -54.907
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 40,
+    "name": "Canaima National Park",
+    "country": "Venezuela",
+    "state": "Bolívar",
+    "latitude": 5.3333,
+    "longitude": -62,
+    "area": "30,000 km²",
+    "climate": "Tropical",
+    "description": "A vast wilderness featuring massive table-top mountains called tepuis and Angel Falls, the world's highest uninterrupted waterfall.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Canaima National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -62.15,
+              5.1833
+            ],
+            [
+              -61.85,
+              5.1833
+            ],
+            [
+              -61.85,
+              5.483300000000001
+            ],
+            [
+              -62.15,
+              5.483300000000001
+            ],
+            [
+              -62.15,
+              5.1833
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 41,
+    "name": "Manas National Park",
+    "country": "India",
+    "state": "Assam",
+    "latitude": 26.6517,
+    "longitude": 91.0094,
+    "area": "950 km²",
+    "climate": "Subtropical",
+    "description": "A UNESCO World Heritage site situated in the foothills of the Himalayas, known for its rare and endangered endemic wildlife.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Manas National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              90.8594,
+              26.501700000000003
+            ],
+            [
+              91.1594,
+              26.501700000000003
+            ],
+            [
+              91.1594,
+              26.8017
+            ],
+            [
+              90.8594,
+              26.8017
+            ],
+            [
+              90.8594,
+              26.501700000000003
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 42,
+    "name": "Kaziranga National Park",
+    "country": "India",
+    "state": "Assam",
+    "latitude": 26.5775,
+    "longitude": 93.1711,
+    "area": "858 km²",
+    "climate": "Tropical Monsoon",
+    "description": "Hosts the world's largest population of the great Indian one-horned rhinoceros amidst tall elephant grass and marshlands.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Kaziranga National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              93.02109999999999,
+              26.427500000000002
+            ],
+            [
+              93.3211,
+              26.427500000000002
+            ],
+            [
+              93.3211,
+              26.7275
+            ],
+            [
+              93.02109999999999,
+              26.7275
+            ],
+            [
+              93.02109999999999,
+              26.427500000000002
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 43,
+    "name": "Sundarbans National Park",
+    "country": "India",
+    "state": "West Bengal",
+    "latitude": 21.9497,
+    "longitude": 88.8981,
+    "area": "1,330 km²",
+    "climate": "Tropical Mangrove",
+    "description": "A vast estuarine mangrove forest spread across the Ganges Delta, famous for its elusive Royal Bengal tigers and saltwater crocodiles.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Sundarbans National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              88.7481,
+              21.7997
+            ],
+            [
+              89.0481,
+              21.7997
+            ],
+            [
+              89.0481,
+              22.0997
+            ],
+            [
+              88.7481,
+              22.0997
+            ],
+            [
+              88.7481,
+              21.7997
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 44,
+    "name": "Jim Corbett National Park",
+    "country": "India",
+    "state": "Uttarakhand",
+    "latitude": 29.53,
+    "longitude": 78.7747,
+    "area": "1,318 km²",
+    "climate": "Subtropical",
+    "description": "India's oldest national park features riverine belts, hills, grass lands, and a large population of Bengal tigers.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Jim Corbett National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.62469999999999,
+              29.380000000000003
+            ],
+            [
+              78.9247,
+              29.380000000000003
+            ],
+            [
+              78.9247,
+              29.68
+            ],
+            [
+              78.62469999999999,
+              29.68
+            ],
+            [
+              78.62469999999999,
+              29.380000000000003
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 45,
+    "name": "Periyar National Park",
+    "country": "India",
+    "state": "Kerala",
+    "latitude": 9.464,
+    "longitude": 77.159,
+    "area": "925 km²",
+    "climate": "Tropical",
+    "description": "Set high in the Cardamom Hills, this picturesque reserve surrounds a central lake and is famous for its elephants and tigers.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Periyar National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.009,
+              9.314
+            ],
+            [
+              77.30900000000001,
+              9.314
+            ],
+            [
+              77.30900000000001,
+              9.614
+            ],
+            [
+              77.009,
+              9.614
+            ],
+            [
+              77.009,
+              9.314
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 46,
+    "name": "Bandhavgarh National Park",
+    "country": "India",
+    "state": "Madhya Pradesh",
+    "latitude": 23.684,
+    "longitude": 80.976,
+    "area": "1,536 km²",
+    "climate": "Tropical Dry",
+    "description": "Known for having one of the highest densities of Bengal tigers in India, set amidst steep ridges and sal forests.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Bandhavgarh National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.826,
+              23.534000000000002
+            ],
+            [
+              81.126,
+              23.534000000000002
+            ],
+            [
+              81.126,
+              23.834
+            ],
+            [
+              80.826,
+              23.834
+            ],
+            [
+              80.826,
+              23.534000000000002
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 47,
+    "name": "Gir National Park",
+    "country": "India",
+    "state": "Gujarat",
+    "latitude": 21.1245,
+    "longitude": 70.8242,
+    "area": "1,412 km²",
+    "climate": "Tropical Semi-Arid",
+    "description": "The sole home of the endangered Asiatic lion, featuring dry deciduous forests, scrub jungles, and grasslands.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Gir National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.6742,
+              20.974500000000003
+            ],
+            [
+              70.97420000000001,
+              20.974500000000003
+            ],
+            [
+              70.97420000000001,
+              21.2745
+            ],
+            [
+              70.6742,
+              21.2745
+            ],
+            [
+              70.6742,
+              20.974500000000003
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 48,
+    "name": "Valley of Flowers National Park",
+    "country": "India",
+    "state": "Uttarakhand",
+    "latitude": 30.728,
+    "longitude": 79.606,
+    "area": "87 km²",
+    "climate": "Alpine",
+    "description": "A high-altitude Himalayan valley renowned for its meadows of endemic alpine flowers and rich diverse fauna.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Valley of Flowers National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.45599999999999,
+              30.578000000000003
+            ],
+            [
+              79.756,
+              30.578000000000003
+            ],
+            [
+              79.756,
+              30.878
+            ],
+            [
+              79.45599999999999,
+              30.878
+            ],
+            [
+              79.45599999999999,
+              30.578000000000003
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 49,
+    "name": "Nanda Devi National Park",
+    "country": "India",
+    "state": "Uttarakhand",
+    "latitude": 30.4307,
+    "longitude": 79.9711,
+    "area": "630 km²",
+    "climate": "Alpine",
+    "description": "Surrounding India's second-highest mountain, this remote park is characterized by rugged glacial terrain and high-altitude flora.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Nanda Devi National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.8211,
+              30.280700000000003
+            ],
+            [
+              80.12110000000001,
+              30.280700000000003
+            ],
+            [
+              80.12110000000001,
+              30.5807
+            ],
+            [
+              79.8211,
+              30.5807
+            ],
+            [
+              79.8211,
+              30.280700000000003
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 50,
+    "name": "Silent Valley National Park",
+    "country": "India",
+    "state": "Kerala",
+    "latitude": 11.1345,
+    "longitude": 76.4358,
+    "area": "237 km²",
+    "climate": "Tropical Rainforest",
+    "description": "One of the last untouched tracts of tropical evergreen rainforest in southern India, sheltering rare lion-tailed macaques.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Silent Valley National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.2858,
+              10.984499999999999
+            ],
+            [
+              76.5858,
+              10.984499999999999
+            ],
+            [
+              76.5858,
+              11.2845
+            ],
+            [
+              76.2858,
+              11.2845
+            ],
+            [
+              76.2858,
+              10.984499999999999
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 51,
+    "name": "Great Himalayan National Park",
+    "country": "India",
+    "state": "Himachal Pradesh",
+    "latitude": 31.7333,
+    "longitude": 77.5667,
+    "area": "1,171 km²",
+    "climate": "Alpine",
+    "description": "A rugged mountain park featuring alpine pastures, high mountain peaks, and temperate forests harboring diverse Himalayan wildlife.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Great Himalayan National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.41669999999999,
+              31.5833
+            ],
+            [
+              77.7167,
+              31.5833
+            ],
+            [
+              77.7167,
+              31.8833
+            ],
+            [
+              77.41669999999999,
+              31.8833
+            ],
+            [
+              77.41669999999999,
+              31.5833
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 52,
+    "name": "Kanha National Park",
+    "country": "India",
+    "state": "Madhya Pradesh",
+    "latitude": 22.3345,
+    "longitude": 80.6125,
+    "area": "940 km²",
+    "climate": "Tropical",
+    "description": "The inspiration for Rudyard Kipling's Jungle Book, featuring lush sal and bamboo forests, grassy meadows, and swamp deer.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Kanha National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.46249999999999,
+              22.1845
+            ],
+            [
+              80.7625,
+              22.1845
+            ],
+            [
+              80.7625,
+              22.484499999999997
+            ],
+            [
+              80.46249999999999,
+              22.484499999999997
+            ],
+            [
+              80.46249999999999,
+              22.1845
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 53,
+    "name": "Pench National Park",
+    "country": "India",
+    "state": "Madhya Pradesh",
+    "latitude": 21.6667,
+    "longitude": 79.2833,
+    "area": "758 km²",
+    "climate": "Tropical",
+    "description": "Named after the river winding through it, this teak-heavy forest reserve is renowned for its vibrant tiger and leopard populations.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Pench National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.13329999999999,
+              21.5167
+            ],
+            [
+              79.4333,
+              21.5167
+            ],
+            [
+              79.4333,
+              21.816699999999997
+            ],
+            [
+              79.13329999999999,
+              21.816699999999997
+            ],
+            [
+              79.13329999999999,
+              21.5167
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 54,
+    "name": "Tadoba Andhari Tiger Reserve",
+    "country": "India",
+    "state": "Maharashtra",
+    "latitude": 20.2505,
+    "longitude": 79.3584,
+    "area": "1,727 km²",
+    "climate": "Tropical Dry",
+    "description": "Maharashtra's oldest and largest reserve, featuring dense teak forests, marshes, and a thriving population of Bengal tigers.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Tadoba Andhari Tiger Reserve"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.2084,
+              20.1005
+            ],
+            [
+              79.50840000000001,
+              20.1005
+            ],
+            [
+              79.50840000000001,
+              20.400499999999997
+            ],
+            [
+              79.2084,
+              20.400499999999997
+            ],
+            [
+              79.2084,
+              20.1005
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 55,
+    "name": "Nagarhole National Park",
+    "country": "India",
+    "state": "Karnataka",
+    "latitude": 12.0067,
+    "longitude": 76.1267,
+    "area": "643 km²",
+    "climate": "Tropical",
+    "description": "A premier wildlife park featuring rolling hills, streams, and forests that host significant populations of elephants, leopards, and tigers.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Nagarhole National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.9767,
+              11.8567
+            ],
+            [
+              76.2767,
+              11.8567
+            ],
+            [
+              76.2767,
+              12.1567
+            ],
+            [
+              75.9767,
+              12.1567
+            ],
+            [
+              75.9767,
+              11.8567
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 56,
+    "name": "Bandipur National Park",
+    "country": "India",
+    "state": "Karnataka",
+    "latitude": 11.7583,
+    "longitude": 76.625,
+    "area": "874 km²",
+    "climate": "Tropical",
+    "description": "Once a private hunting reserve, it is now a crucial forested sanctuary for Asian elephants and tigers in southern India.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Bandipur National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.475,
+              11.6083
+            ],
+            [
+              76.775,
+              11.6083
+            ],
+            [
+              76.775,
+              11.9083
+            ],
+            [
+              76.475,
+              11.9083
+            ],
+            [
+              76.475,
+              11.6083
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 57,
+    "name": "Eravikulam National Park",
+    "country": "India",
+    "state": "Kerala",
+    "latitude": 10.2115,
+    "longitude": 77.0626,
+    "area": "97 km²",
+    "climate": "Montane",
+    "description": "High-altitude rolling grasslands famous for being the natural habitat of the endangered Nilgiri tahr and blooming Neelakurinji flowers.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Eravikulam National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9126,
+              10.061499999999999
+            ],
+            [
+              77.21260000000001,
+              10.061499999999999
+            ],
+            [
+              77.21260000000001,
+              10.3615
+            ],
+            [
+              76.9126,
+              10.3615
+            ],
+            [
+              76.9126,
+              10.061499999999999
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 58,
+    "name": "Bannerghatta National Park",
+    "country": "India",
+    "state": "Karnataka",
+    "latitude": 12.8,
+    "longitude": 77.5833,
+    "area": "260 km²",
+    "climate": "Tropical",
+    "description": "A biological conservation area near Bangalore featuring scrub forests, wildlife rescue centers, and a large safari enclosure.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Bannerghatta National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.43329999999999,
+              12.65
+            ],
+            [
+              77.7333,
+              12.65
+            ],
+            [
+              77.7333,
+              12.950000000000001
+            ],
+            [
+              77.43329999999999,
+              12.950000000000001
+            ],
+            [
+              77.43329999999999,
+              12.65
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 59,
+    "name": "Dudhwa National Park",
+    "country": "India",
+    "state": "Uttar Pradesh",
+    "latitude": 28.4833,
+    "longitude": 80.6333,
+    "area": "490 km²",
+    "climate": "Subtropical",
+    "description": "Located on the Indo-Nepal border, this Terai ecosystem protects swamp deer, rhinos, and tigers among dense sal forests.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Dudhwa National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.4833,
+              28.3333
+            ],
+            [
+              80.78330000000001,
+              28.3333
+            ],
+            [
+              80.78330000000001,
+              28.6333
+            ],
+            [
+              80.4833,
+              28.6333
+            ],
+            [
+              80.4833,
+              28.3333
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 60,
+    "name": "Hemis National Park",
+    "country": "India",
+    "state": "Ladakh",
+    "latitude": 33.8167,
+    "longitude": 77.4167,
+    "area": "4,400 km²",
+    "climate": "Cold Desert",
+    "description": "A high-altitude protected area in the Himalayas renowned as the premier global stronghold for elusive snow leopards.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Hemis National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2667,
+              33.6667
+            ],
+            [
+              77.56670000000001,
+              33.6667
+            ],
+            [
+              77.56670000000001,
+              33.966699999999996
+            ],
+            [
+              77.2667,
+              33.966699999999996
+            ],
+            [
+              77.2667,
+              33.6667
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 61,
+    "name": "Khangchendzonga National Park",
+    "country": "India",
+    "state": "Sikkim",
+    "latitude": 27.7028,
+    "longitude": 88.1475,
+    "area": "1,784 km²",
+    "climate": "Alpine",
+    "description": "Encloses the majestic Mount Khangchendzonga, featuring deep valleys, steep cliffs, ancient glaciers, and rich high-altitude biodiversity.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Khangchendzonga National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              87.99749999999999,
+              27.5528
+            ],
+            [
+              88.2975,
+              27.5528
+            ],
+            [
+              88.2975,
+              27.8528
+            ],
+            [
+              87.99749999999999,
+              27.8528
+            ],
+            [
+              87.99749999999999,
+              27.5528
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 62,
+    "name": "Namdapha National Park",
+    "country": "India",
+    "state": "Arunachal Pradesh",
+    "latitude": 27.4833,
+    "longitude": 96.3833,
+    "area": "1,985 km²",
+    "climate": "Tropical and Subtropical",
+    "description": "A vast and rugged protected area in the eastern Himalayas containing habitats from tropical rainforests to alpine snow.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Namdapha National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              96.2333,
+              27.3333
+            ],
+            [
+              96.53330000000001,
+              27.3333
+            ],
+            [
+              96.53330000000001,
+              27.6333
+            ],
+            [
+              96.2333,
+              27.6333
+            ],
+            [
+              96.2333,
+              27.3333
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 63,
+    "name": "Keoladeo National Park",
+    "country": "India",
+    "state": "Rajasthan",
+    "latitude": 27.1597,
+    "longitude": 77.524,
+    "area": "29 km²",
+    "climate": "Semi-Arid",
+    "description": "A famous man-made wetland sanctuary that serves as a wintering ground for tens of thousands of migratory waterfowl and birds.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Keoladeo National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.374,
+              27.009700000000002
+            ],
+            [
+              77.674,
+              27.009700000000002
+            ],
+            [
+              77.674,
+              27.3097
+            ],
+            [
+              77.374,
+              27.3097
+            ],
+            [
+              77.374,
+              27.009700000000002
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 64,
+    "name": "Desert National Park",
+    "country": "India",
+    "state": "Rajasthan",
+    "latitude": 26.9157,
+    "longitude": 70.9167,
+    "area": "3,162 km²",
+    "climate": "Arid Desert",
+    "description": "An expanse of craggy rocks, ephemeral salt lakes, and shifting sand dunes representing the fragile Thar Desert ecosystem.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Desert National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.7667,
+              26.765700000000002
+            ],
+            [
+              71.06670000000001,
+              26.765700000000002
+            ],
+            [
+              71.06670000000001,
+              27.0657
+            ],
+            [
+              70.7667,
+              27.0657
+            ],
+            [
+              70.7667,
+              26.765700000000002
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 65,
+    "name": "Sultanpur National Park",
+    "country": "India",
+    "state": "Haryana",
+    "latitude": 28.465,
+    "longitude": 76.8833,
+    "area": "1 km²",
+    "climate": "Semi-Arid",
+    "description": "A prominent wetland bird sanctuary that attracts numerous migratory bird species from Europe, Siberia, and Central Asia.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Sultanpur National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.7333,
+              28.315
+            ],
+            [
+              77.03330000000001,
+              28.315
+            ],
+            [
+              77.03330000000001,
+              28.615
+            ],
+            [
+              76.7333,
+              28.615
+            ],
+            [
+              76.7333,
+              28.315
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 66,
+    "name": "Simlipal National Park",
+    "country": "India",
+    "state": "Odisha",
+    "latitude": 21.9333,
+    "longitude": 86.3333,
+    "area": "2,750 km²",
+    "climate": "Tropical",
+    "description": "A massive elephant and tiger reserve featuring lush green hills, rolling grasslands, and cascading waterfalls.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Simlipal National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              86.18329999999999,
+              21.7833
+            ],
+            [
+              86.4833,
+              21.7833
+            ],
+            [
+              86.4833,
+              22.083299999999998
+            ],
+            [
+              86.18329999999999,
+              22.083299999999998
+            ],
+            [
+              86.18329999999999,
+              21.7833
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 67,
+    "name": "Bhitarkanika National Park",
+    "country": "India",
+    "state": "Odisha",
+    "latitude": 20.65,
+    "longitude": 86.85,
+    "area": "145 km²",
+    "climate": "Tropical Mangrove",
+    "description": "A rich mangrove ecosystem intertwined with river deltas, known for its large population of saltwater crocodiles and diverse birdlife.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Bhitarkanika National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              86.69999999999999,
+              20.5
+            ],
+            [
+              87,
+              20.5
+            ],
+            [
+              87,
+              20.799999999999997
+            ],
+            [
+              86.69999999999999,
+              20.799999999999997
+            ],
+            [
+              86.69999999999999,
+              20.5
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 68,
+    "name": "Silent Valley Forest Reserve",
+    "country": "India",
+    "state": "Kerala",
+    "latitude": 11.15,
+    "longitude": 76.45,
+    "area": "89 km²",
+    "climate": "Tropical Rainforest",
+    "description": "An undisturbed evergreen forest tract in the Western Ghats protecting endangered primate and plant species.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Silent Valley Forest Reserve"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.3,
+              11
+            ],
+            [
+              76.60000000000001,
+              11
+            ],
+            [
+              76.60000000000001,
+              11.3
+            ],
+            [
+              76.3,
+              11.3
+            ],
+            [
+              76.3,
+              11
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 69,
+    "name": "Rajaji National Park",
+    "country": "India",
+    "state": "Uttarakhand",
+    "latitude": 30.0167,
+    "longitude": 78.2,
+    "area": "820 km²",
+    "climate": "Subtropical",
+    "description": "Spanning the Shivalik hills, this dense forest is an important elephant and tiger migration corridor along the Ganges.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Rajaji National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.05,
+              29.8667
+            ],
+            [
+              78.35000000000001,
+              29.8667
+            ],
+            [
+              78.35000000000001,
+              30.1667
+            ],
+            [
+              78.05,
+              30.1667
+            ],
+            [
+              78.05,
+              29.8667
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 70,
+    "name": "Panna National Park",
+    "country": "India",
+    "state": "Madhya Pradesh",
+    "latitude": 24.6833,
+    "longitude": 80,
+    "area": "542 km²",
+    "climate": "Tropical Dry",
+    "description": "Known for its successful tiger reintroduction program, featuring open grasslands, deep gorges, and the Ken River.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Panna National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.85,
+              24.5333
+            ],
+            [
+              80.15,
+              24.5333
+            ],
+            [
+              80.15,
+              24.833299999999998
+            ],
+            [
+              79.85,
+              24.833299999999998
+            ],
+            [
+              79.85,
+              24.5333
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 71,
+    "name": "Satpura National Park",
+    "country": "India",
+    "state": "Madhya Pradesh",
+    "latitude": 22.5,
+    "longitude": 78.3333,
+    "area": "524 km²",
+    "climate": "Tropical",
+    "description": "A rugged highland sanctuary featuring sandstone peaks, narrow gorges, dense forests, and rich biodiversity.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Satpura National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.18329999999999,
+              22.35
+            ],
+            [
+              78.4833,
+              22.35
+            ],
+            [
+              78.4833,
+              22.65
+            ],
+            [
+              78.18329999999999,
+              22.65
+            ],
+            [
+              78.18329999999999,
+              22.35
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 72,
+    "name": "Madhav National Park",
+    "country": "India",
+    "state": "Madhya Pradesh",
+    "latitude": 25.4333,
+    "longitude": 77.7167,
+    "area": "354 km²",
+    "climate": "Tropical Dry",
+    "description": "A forested plateau featuring lakes, dry deciduous woodlands, and an abundance of antelopes and leopards.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Madhav National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.5667,
+              25.2833
+            ],
+            [
+              77.86670000000001,
+              25.2833
+            ],
+            [
+              77.86670000000001,
+              25.583299999999998
+            ],
+            [
+              77.5667,
+              25.583299999999998
+            ],
+            [
+              77.5667,
+              25.2833
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 73,
+    "name": "Van Vihar National Park",
+    "country": "India",
+    "state": "Madhya Pradesh",
+    "latitude": 23.2333,
+    "longitude": 77.3833,
+    "area": "4 km²",
+    "climate": "Tropical",
+    "description": "An urban national park functioning as a rescue center for wild animals set against the backdrop of upper lake Bhopal.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Van Vihar National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2333,
+              23.0833
+            ],
+            [
+              77.53330000000001,
+              23.0833
+            ],
+            [
+              77.53330000000001,
+              23.3833
+            ],
+            [
+              77.2333,
+              23.3833
+            ],
+            [
+              77.2333,
+              23.0833
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 74,
+    "name": "Dachigam National Park",
+    "country": "India",
+    "state": "Jammu and Kashmir",
+    "latitude": 34.1167,
+    "longitude": 74.9333,
+    "area": "141 km²",
+    "climate": "Alpine",
+    "description": "Located in the Zabarwan Range, it is celebrated as the last stronghold of the critically endangered hangul deer.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Dachigam National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              74.7833,
+              33.9667
+            ],
+            [
+              75.08330000000001,
+              33.9667
+            ],
+            [
+              75.08330000000001,
+              34.2667
+            ],
+            [
+              74.7833,
+              34.2667
+            ],
+            [
+              74.7833,
+              33.9667
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 75,
+    "name": "Kishtwar National Park",
+    "country": "India",
+    "state": "Jammu and Kashmir",
+    "latitude": 33.3167,
+    "longitude": 75.7667,
+    "area": "400 km²",
+    "climate": "Alpine",
+    "description": "A mountainous high-altitude park featuring steep gorges, coniferous forests, and rare alpine fauna like the Himalayan musk deer.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Kishtwar National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.6167,
+              33.1667
+            ],
+            [
+              75.9167,
+              33.1667
+            ],
+            [
+              75.9167,
+              33.466699999999996
+            ],
+            [
+              75.6167,
+              33.466699999999996
+            ],
+            [
+              75.6167,
+              33.1667
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 76,
+    "name": "Salim Ali National Park",
+    "country": "India",
+    "state": "Jammu and Kashmir",
+    "latitude": 34.15,
+    "longitude": 74.8333,
+    "area": "9 km²",
+    "climate": "Alpine",
+    "description": "A small protected wetland and woodland area in Srinagar named after the renowned ornithologist Salim Ali.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Salim Ali National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              74.68329999999999,
+              34
+            ],
+            [
+              74.9833,
+              34
+            ],
+            [
+              74.9833,
+              34.3
+            ],
+            [
+              74.68329999999999,
+              34.3
+            ],
+            [
+              74.68329999999999,
+              34
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 77,
+    "name": "Pin Valley National Park",
+    "country": "India",
+    "state": "Himachal Pradesh",
+    "latitude": 32.1167,
+    "longitude": 77.85,
+    "area": "675 km²",
+    "climate": "Cold Desert",
+    "description": "A cold desert national park in Spiti Valley, notable for its stark landscapes and endangered snow leopards.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Pin Valley National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.69999999999999,
+              31.966700000000003
+            ],
+            [
+              78,
+              31.966700000000003
+            ],
+            [
+              78,
+              32.2667
+            ],
+            [
+              77.69999999999999,
+              32.2667
+            ],
+            [
+              77.69999999999999,
+              31.966700000000003
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 78,
+    "name": "Inderkilla National Park",
+    "country": "India",
+    "state": "Himachal Pradesh",
+    "latitude": 32.25,
+    "longitude": 77.25,
+    "area": "104 km²",
+    "climate": "Alpine",
+    "description": "A high-altitude forested park in Kullu protecting diverse Himalayan flora, fauna, and pristine ecosystems.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Inderkilla National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1,
+              32.1
+            ],
+            [
+              77.4,
+              32.1
+            ],
+            [
+              77.4,
+              32.4
+            ],
+            [
+              77.1,
+              32.4
+            ],
+            [
+              77.1,
+              32.1
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 79,
+    "name": "Kheerganga National Park",
+    "country": "India",
+    "state": "Himachal Pradesh",
+    "latitude": 32,
+    "longitude": 77.5,
+    "area": "710 km²",
+    "climate": "Alpine",
+    "description": "High mountain terrain offering lush alpine meadows, hot springs, and rich Himalayan wildlife.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Kheerganga National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.35,
+              31.85
+            ],
+            [
+              77.65,
+              31.85
+            ],
+            [
+              77.65,
+              32.15
+            ],
+            [
+              77.35,
+              32.15
+            ],
+            [
+              77.35,
+              31.85
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 80,
+    "name": "Simbalbara National Park",
+    "country": "India",
+    "state": "Himachal Pradesh",
+    "latitude": 30.4333,
+    "longitude": 77.6,
+    "area": "27 km²",
+    "climate": "Subtropical",
+    "description": "A lush sal forest valley sanctuary in the Himalayan foothills supporting goral, sambar, and barking deer.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Simbalbara National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.44999999999999,
+              30.2833
+            ],
+            [
+              77.75,
+              30.2833
+            ],
+            [
+              77.75,
+              30.583299999999998
+            ],
+            [
+              77.44999999999999,
+              30.583299999999998
+            ],
+            [
+              77.44999999999999,
+              30.2833
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 81,
+    "name": "Mukurthi National Park",
+    "country": "India",
+    "state": "Tamil Nadu",
+    "latitude": 11.3167,
+    "longitude": 76.5167,
+    "area": "78 km²",
+    "climate": "Montane",
+    "description": "A high-altitude shola-grassland ecosystem in the Nilgiri Hills established to protect the endangered Nilgiri tahr.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Mukurthi National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.3667,
+              11.1667
+            ],
+            [
+              76.6667,
+              11.1667
+            ],
+            [
+              76.6667,
+              11.466700000000001
+            ],
+            [
+              76.3667,
+              11.466700000000001
+            ],
+            [
+              76.3667,
+              11.1667
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 82,
+    "name": "Guindy National Park",
+    "country": "India",
+    "state": "Tamil Nadu",
+    "latitude": 13.0109,
+    "longitude": 80.2207,
+    "area": "2 km²",
+    "climate": "Tropical",
+    "description": "A small protected dry evergreen forest located entirely within the city of Chennai, sheltering spotted deer and jackals.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Guindy National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.07069999999999,
+              12.860899999999999
+            ],
+            [
+              80.3707,
+              12.860899999999999
+            ],
+            [
+              80.3707,
+              13.1609
+            ],
+            [
+              80.07069999999999,
+              13.1609
+            ],
+            [
+              80.07069999999999,
+              12.860899999999999
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 83,
+    "name": "Mudumalai National Park",
+    "country": "India",
+    "state": "Tamil Nadu",
+    "latitude": 11.5624,
+    "longitude": 76.562,
+    "area": "321 km²",
+    "climate": "Tropical",
+    "description": "A crucial wildlife corridor nestled at the tri-junction of Tamil Nadu, Kerala, and Karnataka, rich in elephants and tigers.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Mudumalai National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.41199999999999,
+              11.4124
+            ],
+            [
+              76.712,
+              11.4124
+            ],
+            [
+              76.712,
+              11.7124
+            ],
+            [
+              76.41199999999999,
+              11.7124
+            ],
+            [
+              76.41199999999999,
+              11.4124
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 84,
+    "name": "Anamalai Tiger Reserve",
+    "country": "India",
+    "state": "Tamil Nadu",
+    "latitude": 10.45,
+    "longitude": 77.08,
+    "area": "958 km²",
+    "climate": "Tropical",
+    "description": "A protected area in the southern Western Ghats featuring undulating hills, dense evergreen forests, and diverse wildlife.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Anamalai Tiger Reserve"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.92999999999999,
+              10.299999999999999
+            ],
+            [
+              77.23,
+              10.299999999999999
+            ],
+            [
+              77.23,
+              10.6
+            ],
+            [
+              76.92999999999999,
+              10.6
+            ],
+            [
+              76.92999999999999,
+              10.299999999999999
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 85,
+    "name": "Gulf of Mannar Marine National Park",
+    "country": "India",
+    "state": "Tamil Nadu",
+    "latitude": 9.25,
+    "longitude": 79.1333,
+    "area": "560 km²",
+    "climate": "Tropical Marine",
+    "description": "Comprises a group of small islands and coral reefs renowned for their rich marine biodiversity and dugongs.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Gulf of Mannar Marine National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.9833,
+              9.1
+            ],
+            [
+              79.28330000000001,
+              9.1
+            ],
+            [
+              79.28330000000001,
+              9.4
+            ],
+            [
+              78.9833,
+              9.4
+            ],
+            [
+              78.9833,
+              9.1
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 86,
+    "name": "Kudremukh National Park",
+    "country": "India",
+    "state": "Karnataka",
+    "latitude": 13.25,
+    "longitude": 75.25,
+    "area": "600 km²",
+    "climate": "Tropical Rainforest",
+    "description": "A mountain range and national park named after a unique horse-face peak, featuring dense evergreen forests and rolling grasslands.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Kudremukh National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.1,
+              13.1
+            ],
+            [
+              75.4,
+              13.1
+            ],
+            [
+              75.4,
+              13.4
+            ],
+            [
+              75.1,
+              13.4
+            ],
+            [
+              75.1,
+              13.1
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 87,
+    "name": "Anshi National Park",
+    "country": "India",
+    "state": "Karnataka",
+    "latitude": 15,
+    "longitude": 74.4167,
+    "area": "417 km²",
+    "climate": "Tropical",
+    "description": "A dense evergreen and semi-evergreen forest sanctuary in the Western Ghats providing habitat for black panthers and hornbills.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Anshi National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              74.2667,
+              14.85
+            ],
+            [
+              74.56670000000001,
+              14.85
+            ],
+            [
+              74.56670000000001,
+              15.15
+            ],
+            [
+              74.2667,
+              15.15
+            ],
+            [
+              74.2667,
+              14.85
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 88,
+    "name": "Bannerghatta National Sanctuary",
+    "country": "India",
+    "state": "Karnataka",
+    "latitude": 12.7833,
+    "longitude": 77.5833,
+    "area": "104 km²",
+    "climate": "Tropical",
+    "description": "A protected scrub forest area functioning as an extension of the main biological park.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Bannerghatta National Sanctuary"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.43329999999999,
+              12.6333
+            ],
+            [
+              77.7333,
+              12.6333
+            ],
+            [
+              77.7333,
+              12.933300000000001
+            ],
+            [
+              77.43329999999999,
+              12.933300000000001
+            ],
+            [
+              77.43329999999999,
+              12.6333
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 89,
+    "name": "Radhanagari Wildlife Sanctuary",
+    "country": "India",
+    "state": "Maharashtra",
+    "latitude": 16.4167,
+    "longitude": 73.9167,
+    "area": "351 km²",
+    "climate": "Tropical",
+    "description": "A lush forest reserve in the southern Sahyadri hills, famous for being home to Indian bison and diverse birdlife.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Radhanagari Wildlife Sanctuary"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7667,
+              16.2667
+            ],
+            [
+              74.06670000000001,
+              16.2667
+            ],
+            [
+              74.06670000000001,
+              16.566699999999997
+            ],
+            [
+              73.7667,
+              16.566699999999997
+            ],
+            [
+              73.7667,
+              16.2667
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 90,
+    "name": "Sanjay Gandhi National Park",
+    "country": "India",
+    "state": "Maharashtra",
+    "latitude": 19.2183,
+    "longitude": 72.909,
+    "area": "104 km²",
+    "climate": "Tropical",
+    "description": "A large protected forest area located on the northern edge of Mumbai, sheltering ancient rock-cut caves and leopards.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Sanjay Gandhi National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.759,
+              19.0683
+            ],
+            [
+              73.05900000000001,
+              19.0683
+            ],
+            [
+              73.05900000000001,
+              19.368299999999998
+            ],
+            [
+              72.759,
+              19.368299999999998
+            ],
+            [
+              72.759,
+              19.0683
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 91,
+    "name": "Tansa Wildlife Sanctuary",
+    "country": "India",
+    "state": "Maharashtra",
+    "latitude": 19.5,
+    "longitude": 73.3333,
+    "area": "304 km²",
+    "climate": "Tropical",
+    "description": "Surrounding the Tansa lake reservoir, this sanctuary consists of moist deciduous forests rich in avian fauna.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Tansa Wildlife Sanctuary"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.18329999999999,
+              19.35
+            ],
+            [
+              73.4833,
+              19.35
+            ],
+            [
+              73.4833,
+              19.65
+            ],
+            [
+              73.18329999999999,
+              19.65
+            ],
+            [
+              73.18329999999999,
+              19.35
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 92,
+    "name": "Kalsubai Harishchandragad Wildlife Sanctuary",
+    "country": "India",
+    "state": "Maharashtra",
+    "latitude": 19.6,
+    "longitude": 73.7167,
+    "area": "500 km²",
+    "climate": "Montane",
+    "description": "Encompassing the highest peaks in Maharashtra, this rugged sanctuary features dry deciduous forests and deep valleys.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Kalsubai Harishchandragad Wildlife Sanctuary"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.5667,
+              19.450000000000003
+            ],
+            [
+              73.86670000000001,
+              19.450000000000003
+            ],
+            [
+              73.86670000000001,
+              19.75
+            ],
+            [
+              73.5667,
+              19.75
+            ],
+            [
+              73.5667,
+              19.450000000000003
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 93,
+    "name": "Melghat Tiger Reserve",
+    "country": "India",
+    "state": "Maharashtra",
+    "latitude": 21.4167,
+    "longitude": 77.1667,
+    "area": "1,677 km²",
+    "climate": "Tropical Dry",
+    "description": "Situated on the southern spur of the Satpura hill range, this rugged dry deciduous forest is a vital tiger habitat.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Melghat Tiger Reserve"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0167,
+              21.2667
+            ],
+            [
+              77.31670000000001,
+              21.2667
+            ],
+            [
+              77.31670000000001,
+              21.566699999999997
+            ],
+            [
+              77.0167,
+              21.566699999999997
+            ],
+            [
+              77.0167,
+              21.2667
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 94,
+    "name": "Navegaon National Park",
+    "country": "India",
+    "state": "Maharashtra",
+    "latitude": 21.1167,
+    "longitude": 80.25,
+    "area": "133 km²",
+    "climate": "Tropical",
+    "description": "Centered around a large picturesque lake, this forest reserve is a haven for migratory waterbirds and resident fauna.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Navegaon National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.1,
+              20.966700000000003
+            ],
+            [
+              80.4,
+              20.966700000000003
+            ],
+            [
+              80.4,
+              21.2667
+            ],
+            [
+              80.1,
+              21.2667
+            ],
+            [
+              80.1,
+              20.966700000000003
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 95,
+    "name": "Pench National Park (Maharashtra)",
+    "country": "India",
+    "state": "Maharashtra",
+    "latitude": 21.65,
+    "longitude": 79.3,
+    "area": "257 km²",
+    "climate": "Tropical",
+    "description": "The Maharashtra portion of the Pench tiger reserve, featuring teak forests and rolling hills.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Pench National Park (Maharashtra)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              79.14999999999999,
+              21.5
+            ],
+            [
+              79.45,
+              21.5
+            ],
+            [
+              79.45,
+              21.799999999999997
+            ],
+            [
+              79.14999999999999,
+              21.799999999999997
+            ],
+            [
+              79.14999999999999,
+              21.5
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 96,
+    "name": "Sahyadri Tiger Reserve",
+    "country": "India",
+    "state": "Maharashtra",
+    "latitude": 17.3333,
+    "longitude": 73.7833,
+    "area": "741 km²",
+    "climate": "Tropical",
+    "description": "Spanning the crest of the Sahyadri mountain range, this reserve protects evergreen forests and plateau grasslands.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Sahyadri Tiger Reserve"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.63329999999999,
+              17.183300000000003
+            ],
+            [
+              73.9333,
+              17.183300000000003
+            ],
+            [
+              73.9333,
+              17.4833
+            ],
+            [
+              73.63329999999999,
+              17.4833
+            ],
+            [
+              73.63329999999999,
+              17.183300000000003
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 97,
+    "name": "Phansad Wildlife Sanctuary",
+    "country": "India",
+    "state": "Maharashtra",
+    "latitude": 18.4333,
+    "longitude": 72.9167,
+    "area": "53 km²",
+    "climate": "Tropical Coastal",
+    "description": "A coastal woodland sanctuary featuring rich semi-evergreen and moist deciduous forests along the Konkan coast.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Phansad Wildlife Sanctuary"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.7667,
+              18.2833
+            ],
+            [
+              73.06670000000001,
+              18.2833
+            ],
+            [
+              73.06670000000001,
+              18.583299999999998
+            ],
+            [
+              72.7667,
+              18.583299999999998
+            ],
+            [
+              72.7667,
+              18.2833
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 98,
+    "name": "Karnala Bird Sanctuary",
+    "country": "India",
+    "state": "Maharashtra",
+    "latitude": 18.8833,
+    "longitude": 73.1167,
+    "area": "12 km²",
+    "climate": "Tropical",
+    "description": "A compact forest sanctuary built around the historic Karnala fort, famous for its resident and migratory bird species.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Karnala Bird Sanctuary"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.96669999999999,
+              18.7333
+            ],
+            [
+              73.2667,
+              18.7333
+            ],
+            [
+              73.2667,
+              19.033299999999997
+            ],
+            [
+              72.96669999999999,
+              19.033299999999997
+            ],
+            [
+              72.96669999999999,
+              18.7333
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 99,
+    "name": "Bhimashankar Wildlife Sanctuary",
+    "country": "India",
+    "state": "Maharashtra",
+    "latitude": 19.0833,
+    "longitude": 73.5333,
+    "area": "131 km²",
+    "climate": "Montane",
+    "description": "A dense forest reserve in the Western Ghats known for protecting the endangered giant Indian squirrel.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Bhimashankar Wildlife Sanctuary"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.38329999999999,
+              18.933300000000003
+            ],
+            [
+              73.6833,
+              18.933300000000003
+            ],
+            [
+              73.6833,
+              19.2333
+            ],
+            [
+              73.38329999999999,
+              19.2333
+            ],
+            [
+              73.38329999999999,
+              18.933300000000003
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 100,
+    "name": "Gautam Buddha Wildlife Sanctuary",
+    "country": "India",
+    "state": "Bihar",
+    "latitude": 24.6667,
+    "longitude": 85.1667,
+    "area": "259 km²",
+    "climate": "Tropical",
+    "description": "A forested sanctuary situated in a hilly tract, known for supporting leopards, sloth bears, and various deer species.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Gautam Buddha Wildlife Sanctuary"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              85.0167,
+              24.5167
+            ],
+            [
+              85.31670000000001,
+              24.5167
+            ],
+            [
+              85.31670000000001,
+              24.816699999999997
+            ],
+            [
+              85.0167,
+              24.816699999999997
+            ],
+            [
+              85.0167,
+              24.5167
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 101,
+    "name": "Valmiki National Park",
+    "country": "India",
+    "state": "Bihar",
+    "latitude": 27.2833,
+    "longitude": 84.15,
+    "area": "898 km²",
+    "climate": "Subtropical",
+    "description": "Located at the northernmost corner of Bihar, this dense forest ecosystem is a continuation of the Himalayan Terai.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Valmiki National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              84,
+              27.133300000000002
+            ],
+            [
+              84.30000000000001,
+              27.133300000000002
+            ],
+            [
+              84.30000000000001,
+              27.4333
+            ],
+            [
+              84,
+              27.4333
+            ],
+            [
+              84,
+              27.133300000000002
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 102,
+    "name": "Buxa Tiger Reserve",
+    "country": "India",
+    "state": "West Bengal",
+    "latitude": 26.6667,
+    "longitude": 89.5833,
+    "area": "760 km²",
+    "climate": "Subtropical",
+    "description": "Located in the Buxa hills of the southern Himalayan foothills, this forest reserve harbors diverse mammalian species.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Buxa Tiger Reserve"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              89.43329999999999,
+              26.5167
+            ],
+            [
+              89.7333,
+              26.5167
+            ],
+            [
+              89.7333,
+              26.816699999999997
+            ],
+            [
+              89.43329999999999,
+              26.816699999999997
+            ],
+            [
+              89.43329999999999,
+              26.5167
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 103,
+    "name": "Gorumara National Park",
+    "country": "India",
+    "state": "West Bengal",
+    "latitude": 26.7667,
+    "longitude": 88.8,
+    "area": "79 km²",
+    "climate": "Subtropical",
+    "description": "A medium-sized park in the Dooars region famous for its grasslands and populations of Indian rhinoceros.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Gorumara National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              88.64999999999999,
+              26.6167
+            ],
+            [
+              88.95,
+              26.6167
+            ],
+            [
+              88.95,
+              26.9167
+            ],
+            [
+              88.64999999999999,
+              26.9167
+            ],
+            [
+              88.64999999999999,
+              26.6167
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 104,
+    "name": "Jaldapara National Park",
+    "country": "India",
+    "state": "West Bengal",
+    "latitude": 26.6833,
+    "longitude": 89.2833,
+    "area": "216 km²",
+    "climate": "Subtropical",
+    "description": "Situated on the banks of the Torsa River, this park features riverine forests and vast tall grass meadows.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Jaldapara National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              89.13329999999999,
+              26.5333
+            ],
+            [
+              89.4333,
+              26.5333
+            ],
+            [
+              89.4333,
+              26.833299999999998
+            ],
+            [
+              89.13329999999999,
+              26.833299999999998
+            ],
+            [
+              89.13329999999999,
+              26.5333
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 105,
+    "name": "Neora Valley National Park",
+    "country": "India",
+    "state": "West Bengal",
+    "latitude": 27.05,
+    "longitude": 88.75,
+    "area": "88 km²",
+    "climate": "Montane",
+    "description": "An unspoiled pristine wilderness in the Kalimpong hills, featuring dense bamboo groves and temperate rhododendron forests.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Neora Valley National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              88.6,
+              26.900000000000002
+            ],
+            [
+              88.9,
+              26.900000000000002
+            ],
+            [
+              88.9,
+              27.2
+            ],
+            [
+              88.6,
+              27.2
+            ],
+            [
+              88.6,
+              26.900000000000002
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 106,
+    "name": "Singalila National Park",
+    "country": "India",
+    "state": "West Bengal",
+    "latitude": 27.1333,
+    "longitude": 88,
+    "area": "78 km²",
+    "climate": "Alpine",
+    "description": "High-altitude ridge park along the Singalila ridge offering breathtaking views of the Himalayan giants and red pandas.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Singalila National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              87.85,
+              26.9833
+            ],
+            [
+              88.15,
+              26.9833
+            ],
+            [
+              88.15,
+              27.283299999999997
+            ],
+            [
+              87.85,
+              27.283299999999997
+            ],
+            [
+              87.85,
+              26.9833
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 107,
+    "name": "Betla National Park",
+    "country": "India",
+    "state": "Jharkhand",
+    "latitude": 23.8833,
+    "longitude": 84.1833,
+    "area": "226 km²",
+    "climate": "Tropical Dry",
+    "description": "A rich forested sanctuary featuring dense sal and bamboo woods, waterfalls, and historical fort ruins.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Betla National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              84.0333,
+              23.7333
+            ],
+            [
+              84.33330000000001,
+              23.7333
+            ],
+            [
+              84.33330000000001,
+              24.033299999999997
+            ],
+            [
+              84.0333,
+              24.033299999999997
+            ],
+            [
+              84.0333,
+              23.7333
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 108,
+    "name": "Hazaribagh National Park",
+    "country": "India",
+    "state": "Jharkhand",
+    "latitude": 23.9833,
+    "longitude": 85.35,
+    "area": "186 km²",
+    "climate": "Tropical Dry",
+    "description": "A picturesque hilly wildlife sanctuary set within low plateaus covered by tropical dry deciduous forests.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Hazaribagh National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              85.19999999999999,
+              23.8333
+            ],
+            [
+              85.5,
+              23.8333
+            ],
+            [
+              85.5,
+              24.1333
+            ],
+            [
+              85.19999999999999,
+              24.1333
+            ],
+            [
+              85.19999999999999,
+              23.8333
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 109,
+    "name": "Dalma Wildlife Sanctuary",
+    "country": "India",
+    "state": "Jharkhand",
+    "latitude": 22.9,
+    "longitude": 86.2,
+    "area": "195 km²",
+    "climate": "Tropical",
+    "description": "A hilly forest sanctuary encircling the Dalma hills, known for its significant wild elephant population.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Dalma Wildlife Sanctuary"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              86.05,
+              22.75
+            ],
+            [
+              86.35000000000001,
+              22.75
+            ],
+            [
+              86.35000000000001,
+              23.049999999999997
+            ],
+            [
+              86.05,
+              23.049999999999997
+            ],
+            [
+              86.05,
+              22.75
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 110,
+    "name": "Koderma Wildlife Sanctuary",
+    "country": "India",
+    "state": "Jharkhand",
+    "latitude": 24.4667,
+    "longitude": 85.5833,
+    "area": "177 km²",
+    "climate": "Tropical",
+    "description": "A forested tract in the Damodar valley known for its undulating topography and rich dry deciduous woods.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Koderma Wildlife Sanctuary"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              85.43329999999999,
+              24.3167
+            ],
+            [
+              85.7333,
+              24.3167
+            ],
+            [
+              85.7333,
+              24.616699999999998
+            ],
+            [
+              85.43329999999999,
+              24.616699999999998
+            ],
+            [
+              85.43329999999999,
+              24.3167
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 111,
+    "name": "Chandaka Elephant Sanctuary",
+    "country": "India",
+    "state": "Odisha",
+    "latitude": 20.35,
+    "longitude": 85.8,
+    "area": "193 km²",
+    "climate": "Tropical",
+    "description": "A protected forest area near Bhubaneswar serving as a safe haven for wild Asian elephants.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Chandaka Elephant Sanctuary"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              85.64999999999999,
+              20.200000000000003
+            ],
+            [
+              85.95,
+              20.200000000000003
+            ],
+            [
+              85.95,
+              20.5
+            ],
+            [
+              85.64999999999999,
+              20.5
+            ],
+            [
+              85.64999999999999,
+              20.200000000000003
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 112,
+    "name": "Nandankanan Zoological Park",
+    "country": "India",
+    "state": "Odisha",
+    "latitude": 20.39,
+    "longitude": 85.82,
+    "area": "4 km²",
+    "climate": "Tropical",
+    "description": "A premier zoo and botanical sanctuary built around a natural lake, famous for its white tigers and breeding programs.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Nandankanan Zoological Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              85.66999999999999,
+              20.240000000000002
+            ],
+            [
+              85.97,
+              20.240000000000002
+            ],
+            [
+              85.97,
+              20.54
+            ],
+            [
+              85.66999999999999,
+              20.54
+            ],
+            [
+              85.66999999999999,
+              20.240000000000002
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 113,
+    "name": "Satkosia Tiger Reserve",
+    "country": "India",
+    "state": "Odisha",
+    "latitude": 20.55,
+    "longitude": 84.8333,
+    "area": "963 km²",
+    "climate": "Tropical",
+    "description": "Centered around a magnificent gorge carved by the Mahanadi River through the Eastern Ghats.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Satkosia Tiger Reserve"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              84.68329999999999,
+              20.400000000000002
+            ],
+            [
+              84.9833,
+              20.400000000000002
+            ],
+            [
+              84.9833,
+              20.7
+            ],
+            [
+              84.68329999999999,
+              20.7
+            ],
+            [
+              84.68329999999999,
+              20.400000000000002
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 114,
+    "name": "Sunken Forest of Lake Kaindy",
+    "country": "Kazakhstan",
+    "state": "Almaty Region",
+    "latitude": 42.9844,
+    "longitude": 78.4725,
+    "area": "1 km²",
+    "climate": "Continental",
+    "description": "A mountain lake featuring the eerie, submerged trunks of dead Tien Shan spruce trees piercing the turquoise surface.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Sunken Forest of Lake Kaindy"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.32249999999999,
+              42.8344
+            ],
+            [
+              78.6225,
+              42.8344
+            ],
+            [
+              78.6225,
+              43.1344
+            ],
+            [
+              78.32249999999999,
+              43.1344
+            ],
+            [
+              78.32249999999999,
+              42.8344
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 115,
+    "name": "Charyn Canyon National Park",
+    "country": "Kazakhstan",
+    "state": "Almaty Region",
+    "latitude": 43.35,
+    "longitude": 79.0833,
+    "area": "1,250 km²",
+    "climate": "Arid Continental",
+    "description": "Features immense, wind-sculpted red sandstone cliffs and deep chasms reminiscent of the Grand Canyon.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Charyn Canyon National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.93329999999999,
+              43.2
+            ],
+            [
+              79.2333,
+              43.2
+            ],
+            [
+              79.2333,
+              43.5
+            ],
+            [
+              78.93329999999999,
+              43.5
+            ],
+            [
+              78.93329999999999,
+              43.2
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 116,
+    "name": "Kulsar Nature Reserve",
+    "country": "Kazakhstan",
+    "state": "Atyrau Region",
+    "latitude": 46.95,
+    "longitude": 54.0167,
+    "area": "2,000 km²",
+    "climate": "Desert",
+    "description": "A semi-desert and desert reserve in western Kazakhstan safeguarding arid steppe ecosystems and endemic fauna.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Kulsar Nature Reserve"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              53.8667,
+              46.800000000000004
+            ],
+            [
+              54.1667,
+              46.800000000000004
+            ],
+            [
+              54.1667,
+              47.1
+            ],
+            [
+              53.8667,
+              47.1
+            ],
+            [
+              53.8667,
+              46.800000000000004
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 117,
+    "name": "Aksu-Zhabagly Nature Reserve",
+    "country": "Kazakhstan",
+    "state": "Turkistan Region",
+    "latitude": 42.3667,
+    "longitude": 70.6167,
+    "area": "1,319 km²",
+    "climate": "Mountain Continental",
+    "description": "The oldest nature reserve in Central Asia, protecting western Tien Shan alpine meadows, glaciers, and snow leopards.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Aksu-Zhabagly Nature Reserve"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.46669999999999,
+              42.2167
+            ],
+            [
+              70.7667,
+              42.2167
+            ],
+            [
+              70.7667,
+              42.5167
+            ],
+            [
+              70.46669999999999,
+              42.5167
+            ],
+            [
+              70.46669999999999,
+              42.2167
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 118,
+    "name": "Korgalzhyn Nature Reserve",
+    "country": "Kazakhstan",
+    "state": "Akmola Region",
+    "latitude": 50.45,
+    "longitude": 69.8833,
+    "area": "5,432 km²",
+    "climate": "Continental",
+    "description": "A vast wetland and lake system in the Kazakh steppe providing a critical breeding ground for millions of waterbirds including flamingos.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Korgalzhyn Nature Reserve"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              69.7333,
+              50.300000000000004
+            ],
+            [
+              70.03330000000001,
+              50.300000000000004
+            ],
+            [
+              70.03330000000001,
+              50.6
+            ],
+            [
+              69.7333,
+              50.6
+            ],
+            [
+              69.7333,
+              50.300000000000004
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 119,
+    "name": "Altyn-Emel National Park",
+    "country": "Kazakhstan",
+    "state": "Almaty Region",
+    "latitude": 44.25,
+    "longitude": 78.5833,
+    "area": "3,071 km²",
+    "climate": "Arid Continental",
+    "description": "Encompasses desert plains, ancient burial mounds, and the famous 'Singing Barchan' sand dune.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Altyn-Emel National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.43329999999999,
+              44.1
+            ],
+            [
+              78.7333,
+              44.1
+            ],
+            [
+              78.7333,
+              44.4
+            ],
+            [
+              78.43329999999999,
+              44.4
+            ],
+            [
+              78.43329999999999,
+              44.1
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 120,
+    "name": "Burabay National Park",
+    "country": "Kazakhstan",
+    "state": "Akmola Region",
+    "latitude": 53.15,
+    "longitude": 70.2833,
+    "area": "1,299 km²",
+    "climate": "Continental",
+    "description": "Often called the 'Switzerland of Kazakhstan', this forested oasis features pine woods, granite rocks, and scenic lakes.",
+    "boundary": {
+      "type": "Feature",
+      "properties": {
+        "name": "Burabay National Park"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.13329999999999,
+              53
+            ],
+            [
+              70.4333,
+              53
+            ],
+            [
+              70.4333,
+              53.3
+            ],
+            [
+              70.13329999999999,
+              53.3
+            ],
+            [
+              70.13329999999999,
+              53
+            ]
+          ]
+        ]
+      }
+    }
+  }
+]

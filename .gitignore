@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Build outputs & caches
+dist/
+dist-ssr/
+build/
+coverage/
+.svelte-kit/
+.vercel/
+.netlify/
+*.tsbuildinfo
+.agents/
+
+# Environment variables & secrets (Never commit real keys or secrets)
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# Credentials & Database files
+*.db
+*.sqlite
+*.sqlite3
+auth.db
+*.pem
+*.key
+*.cert
+serviceAccountKey*.json
+firebase-adminsdk*.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
