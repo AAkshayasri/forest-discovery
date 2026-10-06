@@ -42,11 +42,23 @@ function initFirebaseAdmin() {
   let privateKey = process.env.FIREBASE_PRIVATE_KEY;
 
   if (privateKey) {
+    if ((privateKey.startsWith('"') && privateKey.endsWith('"')) || (privateKey.startsWith("'") && privateKey.endsWith("'"))) {
+      privateKey = privateKey.slice(1, -1);
+    }
     // Handle escaped newlines in environment variable strings
     privateKey = privateKey.replace(/\\n/g, '\n');
   }
 
-  if (projectId && clientEmail && privateKey && !projectId.includes('your_')) {
+  const hasValidCert =
+    projectId &&
+    clientEmail &&
+    privateKey &&
+    !projectId.includes('your_') &&
+    !clientEmail.includes('your_') &&
+    !privateKey.includes('your_') &&
+    privateKey.includes('-----BEGIN PRIVATE KEY-----');
+
+  if (hasValidCert) {
     try {
       admin.initializeApp({
         credential: admin.credential.cert({
@@ -55,7 +67,7 @@ function initFirebaseAdmin() {
           privateKey
         })
       });
-      console.log(`✅ Firebase Admin initialized for project: ${projectId}`);
+      console.log(`✅ Firebase Admin initialized with service credentials for project: ${projectId}`);
       isInitialized = true;
       return admin;
     } catch (err) {
@@ -63,12 +75,12 @@ function initFirebaseAdmin() {
     }
   }
 
-  // Fallback for development without service account (logs warning)
+  // Fallback for development without full service account key
   try {
     admin.initializeApp({
-      projectId: projectId || 'wildatlas-dev'
+      projectId: projectId || 'wildatlas-555e7'
     });
-    console.warn('⚠️ Firebase Admin initialized in default/project mode (without private key). ID token verification will require full service credentials in production.');
+    console.log(`ℹ️ Firebase Admin initialized in development project mode (${projectId || 'wildatlas-555e7'}).`);
     isInitialized = true;
     return admin;
   } catch (err) {

@@ -1172,7 +1172,26 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).json({ error: err.message || "An unexpected error occurred." });
 });
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log("✓ Server Running on port " + PORT);
   console.log("✓ AI Provider: Gemini");
 });
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`❌ Port ${PORT} is already in use by another process.`);
+    console.error(`👉 Run the cleanup command or terminate the process on port ${PORT}.`);
+    process.exit(1);
+  } else {
+    console.error('❌ Server startup error:', err);
+  }
+});
+
+const gracefulShutdown = () => {
+  server.close(() => {
+    process.exit(0);
+  });
+};
+
+process.on('SIGINT', gracefulShutdown);
+process.on('SIGTERM', gracefulShutdown);
