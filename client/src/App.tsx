@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { NotificationProvider } from './context/NotificationContext';
 import { FavoritesProvider } from './context/FavoritesContext';
@@ -16,8 +16,6 @@ import Settings from './pages/Settings';
 import ErrorPage from './pages/ErrorPage';
 import SpeciesIdentifier from './pages/SpeciesIdentifier';
 import Sightings from './pages/Sightings';
-import DataCredits from './pages/DataCredits';
-import BenchmarkPage from './pages/BenchmarkPage';
 import FloatingChat from './components/layout/FloatingChat';
 import { ProtectedRoute, AdminRoute } from './components/auth/ProtectedRoute';
 
@@ -43,18 +41,8 @@ const MainLayout: React.FC = () => {
           {/* Default landing page */}
           <Route path="/" element={<Landing />} />
 
-          {/* Map & Forest Explorer routes */}
+          {/* Map & Forest Explorer route */}
           <Route path="/map" element={<MapExplorer />} />
-          <Route path="/wildlife" element={<Navigate to="/map" replace />} />
-          <Route path="/species" element={<Navigate to="/map" replace />} />
-
-          {/* Research, Reproducibility & Citation routes */}
-          <Route path="/credits" element={<DataCredits />} />
-          <Route path="/data-credits" element={<DataCredits />} />
-          <Route path="/benchmarks" element={<BenchmarkPage />} />
-
-          {/* Preserve old landing page */}
-          <Route path="/landing" element={<Landing />} />
 
           {/* Login / Register portal */}
           <Route path="/auth" element={<Auth />} />

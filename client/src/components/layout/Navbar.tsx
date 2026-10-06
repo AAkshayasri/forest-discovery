@@ -4,7 +4,7 @@ import { useAuth } from '../../context/AuthContext';
 import { useToast } from '../../hooks/useToast';
 import { 
   MessageSquare, LogOut, Scan, User, 
-  Settings as SettingsIcon, LayoutDashboard, ScanEye, Shield, Trees, Database, Zap
+  Settings as SettingsIcon, LayoutDashboard, ScanEye, Shield, Trees
 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -87,24 +87,6 @@ export const Navbar: React.FC = () => {
               <ScanEye className="w-4 h-4" />
               Sightings
             </Link>
-            <Link
-              to="/credits"
-              className={`flex items-center gap-1.5 transition-colors ${
-                isActive('/credits') ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-primary'
-              }`}
-            >
-              <Database className="w-4 h-4" />
-              Credits
-            </Link>
-            <Link
-              to="/benchmarks"
-              className={`flex items-center gap-1.5 transition-colors ${
-                isActive('/benchmarks') ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-primary'
-              }`}
-            >
-              <Zap className="w-4 h-4" />
-              Benchmarks
-            </Link>
             {user.role === 'admin' && (
               <Link
                 to="/admin"
@@ -127,24 +109,6 @@ export const Navbar: React.FC = () => {
             >
               <Trees className="w-4 h-4" />
               Forest Explorer
-            </Link>
-            <Link
-              to="/credits"
-              className={`flex items-center gap-1.5 transition-colors ${
-                isActive('/credits') ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-primary'
-              }`}
-            >
-              <Database className="w-4 h-4" />
-              Data & Credits
-            </Link>
-            <Link
-              to="/benchmarks"
-              className={`flex items-center gap-1.5 transition-colors ${
-                isActive('/benchmarks') ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-primary'
-              }`}
-            >
-              <Zap className="w-4 h-4" />
-              Benchmarks
             </Link>
           </div>
         )}
