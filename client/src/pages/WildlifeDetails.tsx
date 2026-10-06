@@ -10,22 +10,24 @@ import {
   Shield, Activity, Dna
 } from 'lucide-react';
 import { Badge } from '../components/common/Badge';
+import { SpeciesImage } from '../components/common/SpeciesImage';
 import { validateAndFormatField } from '../utils/clientValidator';
 
 interface Wildlife {
-  id: number;
-  forestId: number;
+  id: number | string;
+  forestId?: number | string | null;
   name: string;
   scientificName: string;
-  type: 'animal' | 'bird' | 'reptile';
-  imageUrl: string;
-  habitat: string;
-  diet: string;
-  behaviour: string;
-  lifespan: string;
-  conservationStatus: string;
-  interestingFacts: string[];
-  distribution: string;
+  type: string;
+  speciesGroup?: string;
+  imageUrl?: string;
+  habitat?: string;
+  diet?: string;
+  behaviour?: string;
+  lifespan?: string;
+  conservationStatus?: string;
+  interestingFacts?: string[];
+  distribution?: string;
   
   // Taxonomic classification
   kingdom?: string;
@@ -50,7 +52,7 @@ interface Wildlife {
 }
 
 interface WildlifeDetailsProps {
-  wildlifeId: number;
+  wildlifeId: number | string;
   onClose: () => void;
 }
 
@@ -125,8 +127,8 @@ export const WildlifeDetails: React.FC<WildlifeDetailsProps> = ({ wildlifeId, on
         id: animal.id,
         name: animal.name,
         scientificName: animal.scientificName,
-        imageUrl: animal.imageUrl,
-        conservationStatus: animal.conservationStatus
+        imageUrl: animal.imageUrl || 'https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=800&q=80',
+        conservationStatus: animal.conservationStatus || 'Least Concern'
       });
       showToast(`${animal.name} added to favorites!`, 'success');
     }
@@ -178,18 +180,19 @@ export const WildlifeDetails: React.FC<WildlifeDetailsProps> = ({ wildlifeId, on
           <div className="flex-1 overflow-y-auto flex flex-col">
 
             {/* Header Banner Image */}
-            <div className="h-64 sm:h-72 w-full relative shrink-0">
-              <img
+            <div className="h-64 sm:h-72 w-full relative shrink-0 overflow-hidden">
+              <SpeciesImage
                 src={animal.imageUrl}
                 alt={animal.name}
+                speciesGroup={animal.speciesGroup || animal.type}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
 
               {/* Floating Conservation Badge */}
-              <div className="absolute bottom-6 left-6 flex items-center gap-2">
-                <Badge type={animal.conservationStatus.toLowerCase().includes('endangered') ? 'error' : 'warning'}>
-                  {animal.conservationStatus}
+              <div className="absolute bottom-6 left-6 flex items-center gap-2 z-10">
+                <Badge type={(animal.conservationStatus || '').toLowerCase().includes('endangered') ? 'error' : 'warning'}>
+                  {animal.conservationStatus || 'Least Concern'}
                 </Badge>
                 <span className="px-3 py-1 rounded-full bg-surface-container-low/80 backdrop-blur-md border border-outline-variant/45 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest font-label-sm">
                   {animal.type}

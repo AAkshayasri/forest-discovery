@@ -3,8 +3,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useToast } from '../../hooks/useToast';
 import { 
-  Compass, MessageSquare, LogOut, Scan, User, 
-  Settings as SettingsIcon, LayoutDashboard, ScanEye, Shield, Building2
+  MessageSquare, LogOut, Scan, User, 
+  Settings as SettingsIcon, LayoutDashboard, ScanEye, Shield, Trees, Database, Zap
 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -54,11 +54,11 @@ export const Navbar: React.FC = () => {
             <Link
               to="/map"
               className={`flex items-center gap-1.5 transition-colors ${
-                isActive('/map') && !location.search.includes('filter=zoos') ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-primary'
+                isActive('/map') ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-primary'
               }`}
             >
-              <Compass className="w-4 h-4" />
-              Explorer
+              <Trees className="w-4 h-4" />
+              Forest Explorer
             </Link>
             <Link
               to="/identify"
@@ -67,16 +67,7 @@ export const Navbar: React.FC = () => {
               }`}
             >
               <Scan className="w-4 h-4" />
-              Wildlife
-            </Link>
-            <Link
-              to="/map?filter=zoos"
-              className={`flex items-center gap-1.5 transition-colors ${
-                location.search.includes('filter=zoos') ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-primary'
-              }`}
-            >
-              <Building2 className="w-4 h-4" />
-              Zoos
+              Identification
             </Link>
             <Link
               to="/chat"
@@ -96,6 +87,24 @@ export const Navbar: React.FC = () => {
               <ScanEye className="w-4 h-4" />
               Sightings
             </Link>
+            <Link
+              to="/credits"
+              className={`flex items-center gap-1.5 transition-colors ${
+                isActive('/credits') ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-primary'
+              }`}
+            >
+              <Database className="w-4 h-4" />
+              Credits
+            </Link>
+            <Link
+              to="/benchmarks"
+              className={`flex items-center gap-1.5 transition-colors ${
+                isActive('/benchmarks') ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-primary'
+              }`}
+            >
+              <Zap className="w-4 h-4" />
+              Benchmarks
+            </Link>
             {user.role === 'admin' && (
               <Link
                 to="/admin"
@@ -109,12 +118,48 @@ export const Navbar: React.FC = () => {
             )}
           </div>
         ) : (
-          <div className="hidden md:block" />
+          <div className="hidden md:flex items-center gap-6 font-label-md">
+            <Link
+              to="/map"
+              className={`flex items-center gap-1.5 transition-colors ${
+                isActive('/map') ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-primary'
+              }`}
+            >
+              <Trees className="w-4 h-4" />
+              Forest Explorer
+            </Link>
+            <Link
+              to="/credits"
+              className={`flex items-center gap-1.5 transition-colors ${
+                isActive('/credits') ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-primary'
+              }`}
+            >
+              <Database className="w-4 h-4" />
+              Data & Credits
+            </Link>
+            <Link
+              to="/benchmarks"
+              className={`flex items-center gap-1.5 transition-colors ${
+                isActive('/benchmarks') ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-primary'
+              }`}
+            >
+              <Zap className="w-4 h-4" />
+              Benchmarks
+            </Link>
+          </div>
         )}
 
         <div className="flex items-center gap-4">
           {user ? (
             <div className="flex items-center gap-3">
+              <span className="hidden lg:flex flex-col text-right">
+                <span className="text-xs font-bold text-on-surface leading-tight truncate max-w-[140px]">
+                  {user.name}
+                </span>
+                <span className={`text-[9px] font-mono font-bold leading-tight ${user.emailVerified ? 'text-primary' : 'text-warning'}`}>
+                  {user.emailVerified ? '✓ Verified' : '⚠ Unverified'}
+                </span>
+              </span>
               <Link
                 to="/profile"
                 className={`w-9 h-9 rounded-lg flex items-center justify-center border transition-all ${
@@ -171,11 +216,11 @@ export const Navbar: React.FC = () => {
           <Link
             to="/map"
             className={`flex flex-col items-center justify-center p-1.5 rounded-lg transition-all active:scale-90 ${
-              isActive('/map') && !location.search.includes('filter=zoos') ? 'text-primary' : 'text-on-surface-variant'
+              isActive('/map') ? 'text-primary' : 'text-on-surface-variant'
             }`}
           >
-            <Compass className="w-5 h-5" />
-            <span className="text-[9px] font-bold mt-1 font-label-sm">Explorer</span>
+            <Trees className="w-5 h-5" />
+            <span className="text-[9px] font-bold mt-1 font-label-sm">Forests</span>
           </Link>
           <Link
             to="/identify"
@@ -184,7 +229,7 @@ export const Navbar: React.FC = () => {
             }`}
           >
             <Scan className="w-5 h-5" />
-            <span className="text-[9px] font-bold mt-1 font-label-sm">Wildlife</span>
+            <span className="text-[9px] font-bold mt-1 font-label-sm">Identify</span>
           </Link>
           <Link
             to="/chat"
@@ -193,7 +238,7 @@ export const Navbar: React.FC = () => {
             }`}
           >
             <MessageSquare className="w-5 h-5" />
-            <span className="text-[9px] font-bold mt-1 font-label-sm">AI Guide</span>
+            <span className="text-[9px] font-bold mt-1 font-label-sm">AI</span>
           </Link>
           <Link
             to="/sightings"
@@ -204,7 +249,7 @@ export const Navbar: React.FC = () => {
             <ScanEye className="w-5 h-5" />
             <span className="text-[9px] font-bold mt-1 font-label-sm">Sightings</span>
           </Link>
-          {user.role === 'admin' ? (
+          {user.role === 'admin' && (
             <Link
               to="/admin"
               className={`flex flex-col items-center justify-center p-1.5 rounded-lg transition-all active:scale-90 ${
@@ -214,16 +259,6 @@ export const Navbar: React.FC = () => {
               <Shield className="w-5 h-5" />
               <span className="text-[9px] font-bold mt-1 font-label-sm">Admin</span>
             </Link>
-          ) : (
-            <Link
-              to="/profile"
-              className={`flex flex-col items-center justify-center p-1.5 rounded-lg transition-all active:scale-90 ${
-                isActive('/profile') ? 'text-primary' : 'text-on-surface-variant'
-              }`}
-            >
-              <User className="w-5 h-5" />
-              <span className="text-[9px] font-bold mt-1 font-label-sm">Profile</span>
-            </Link>
           )}
         </nav>
       )}
@@ -232,3 +267,4 @@ export const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+

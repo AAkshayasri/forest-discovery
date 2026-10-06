@@ -339,9 +339,9 @@ export const Dashboard: React.FC = () => {
                     <Eye className="w-3.5 h-3.5 text-secondary" /> Wildlife
                   </Button>
                 </Link>
-                <Link to="/map?filter=zoos">
+                <Link to="/map">
                   <Button variant="ghost" className="w-full justify-start gap-2 rounded-lg font-label-sm text-xs bg-surface-container hover:bg-surface-container-high">
-                    <Trees className="w-3.5 h-3.5 text-tertiary" /> Zoos
+                    <Trees className="w-3.5 h-3.5 text-tertiary" /> Forest Reserves
                   </Button>
                 </Link>
                 <Link to="/chat">

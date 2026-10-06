@@ -1,11 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { NotificationProvider } from './context/NotificationContext';
 import { FavoritesProvider } from './context/FavoritesContext';
 import Navbar from './components/layout/Navbar';
 import Landing from './pages/Landing';
 import Auth from './pages/Auth';
+import VerifyEmail from './pages/VerifyEmail';
 import Dashboard from './pages/Dashboard';
 import MapExplorer from './pages/MapExplorer';
 import AIChatPage from './pages/AIChatPage';
@@ -15,58 +16,21 @@ import Settings from './pages/Settings';
 import ErrorPage from './pages/ErrorPage';
 import SpeciesIdentifier from './pages/SpeciesIdentifier';
 import Sightings from './pages/Sightings';
+import DataCredits from './pages/DataCredits';
+import BenchmarkPage from './pages/BenchmarkPage';
 import FloatingChat from './components/layout/FloatingChat';
-import { Loader2 } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
-
-// Route protection for authenticated users
-const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { user, loading } = useAuth();
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-3 font-body-md select-none">
-        <Loader2 className="w-8 h-8 animate-spin text-primary" />
-        <span className="text-on-surface-variant text-xs font-semibold uppercase tracking-wider font-label-sm">Syncing explorer coordinates...</span>
-      </div>
-    );
-  }
-
-  if (!user) {
-    return <Navigate to="/auth" replace />;
-  }
-
-  return <>{children}</>;
-};
-
-// Route protection for administrative users
-const AdminRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { user, loading } = useAuth();
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-3 font-body-md select-none">
-        <Loader2 className="w-8 h-8 animate-spin text-primary" />
-        <span className="text-on-surface-variant text-xs font-semibold uppercase tracking-wider font-label-sm">Authenticating admin...</span>
-      </div>
-    );
-  }
-
-  if (!user || user.role !== 'admin') {
-    return <Navigate to="/dashboard" replace />;
-  }
-
-  return <>{children}</>;
-};
+import { ProtectedRoute, AdminRoute } from './components/auth/ProtectedRoute';
 
 const MainLayout: React.FC = () => {
   const { user } = useAuth();
   const location = useLocation();
 
-  // Show floating chat on authenticated routes except login (/auth), profile (/profile) and settings (/settings)
+  // Show floating chat on authenticated routes except login (/auth), verify (/verify-email), profile (/profile) and settings (/settings)
   const showFloatingChat =
     user &&
+    user.emailVerified &&
     location.pathname !== '/auth' &&
+    location.pathname !== '/verify-email' &&
     location.pathname !== '/profile' &&
     location.pathname !== '/settings' &&
     location.pathname !== '/'; // hide on landing page
@@ -79,14 +43,24 @@ const MainLayout: React.FC = () => {
           {/* Default landing page */}
           <Route path="/" element={<Landing />} />
 
-          {/* Map Explorer route */}
+          {/* Map & Forest Explorer routes */}
           <Route path="/map" element={<MapExplorer />} />
+          <Route path="/wildlife" element={<Navigate to="/map" replace />} />
+          <Route path="/species" element={<Navigate to="/map" replace />} />
+
+          {/* Research, Reproducibility & Citation routes */}
+          <Route path="/credits" element={<DataCredits />} />
+          <Route path="/data-credits" element={<DataCredits />} />
+          <Route path="/benchmarks" element={<BenchmarkPage />} />
 
           {/* Preserve old landing page */}
           <Route path="/landing" element={<Landing />} />
 
           {/* Login / Register portal */}
           <Route path="/auth" element={<Auth />} />
+
+          {/* Dedicated Email Verification Gate */}
+          <Route path="/verify-email" element={<VerifyEmail />} />
 
           {/* Protected unified dashboard */}
           <Route

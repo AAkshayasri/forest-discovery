@@ -1,0 +1,1701 @@
+{
+  "metadata": {
+    "generatedAt": "2026-10-02T17:26:13.074Z",
+    "executionDurationMs": 1007,
+    "databaseSource": "watlas.db (SQLite)",
+    "crs": "WGS 84 (EPSG:4326)"
+  },
+  "summaryMetrics": {
+    "totalForestRecords": 268,
+    "validForestRecords": 268,
+    "invalidForestCoordinates": 0,
+    "missingForestFields": 0,
+    "duplicateForests": 0,
+    "totalZooRecords": 52,
+    "validZooRecords": 52,
+    "invalidZooCoordinates": 0,
+    "missingZooFields": 0,
+    "duplicateZoos": 0,
+    "totalMasterSpecies": 7616,
+    "totalForestSpeciesLinks": 21682,
+    "totalZooSpeciesLinks": 1560,
+    "coordinateIntegrityRate": "100.00%",
+    "overallStatus": "PASS"
+  },
+  "continentBreakdown": {
+    "Asia": {
+      "forestCount": 42,
+      "zooCount": 10,
+      "totalCount": 52
+    },
+    "Africa": {
+      "forestCount": 53,
+      "zooCount": 8,
+      "totalCount": 61
+    },
+    "North America": {
+      "forestCount": 51,
+      "zooCount": 10,
+      "totalCount": 61
+    },
+    "South America": {
+      "forestCount": 37,
+      "zooCount": 8,
+      "totalCount": 45
+    },
+    "Europe": {
+      "forestCount": 48,
+      "zooCount": 10,
+      "totalCount": 58
+    },
+    "Oceania": {
+      "forestCount": 37,
+      "zooCount": 6,
+      "totalCount": 43
+    }
+  },
+  "countryBreakdown": {
+    "Asia > India / Bangladesh": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > India": {
+      "forestCount": 6,
+      "zooCount": 2,
+      "totalCount": 8
+    },
+    "Asia > Bangladesh": {
+      "forestCount": 1,
+      "zooCount": 1,
+      "totalCount": 2
+    },
+    "Asia > Nepal": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Sri Lanka": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Indonesia/Malaysia/Brunei": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Malaysia": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "Asia > Brunei": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Indonesia": {
+      "forestCount": 4,
+      "zooCount": 1,
+      "totalCount": 5
+    },
+    "Asia > Thailand": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Asia > Cambodia": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Laos": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Vietnam": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Asia > Philippines": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Asia > Russia": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Asia > China": {
+      "forestCount": 5,
+      "zooCount": 3,
+      "totalCount": 8
+    },
+    "Asia > Mongolia": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Japan": {
+      "forestCount": 2,
+      "zooCount": 1,
+      "totalCount": 3
+    },
+    "Asia > South Korea": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Iran / Azerbaijan": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Georgia / Armenia": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Kyrgyzstan": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Oman": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > DR Congo": {
+      "forestCount": 4,
+      "zooCount": 0,
+      "totalCount": 4
+    },
+    "Africa > Cameroon": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Africa > Congo": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Africa > Equatorial Guinea": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Gabon": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "Africa > Central African Republic": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Cote d'Ivoire": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Liberia": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Sierra Leone": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Ghana": {
+      "forestCount": 2,
+      "zooCount": 1,
+      "totalCount": 3
+    },
+    "Africa > Nigeria": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Africa > Kenya": {
+      "forestCount": 4,
+      "zooCount": 1,
+      "totalCount": 5
+    },
+    "Africa > Uganda": {
+      "forestCount": 4,
+      "zooCount": 0,
+      "totalCount": 4
+    },
+    "Africa > Ethiopia": {
+      "forestCount": 2,
+      "zooCount": 1,
+      "totalCount": 3
+    },
+    "Africa > Rwanda": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Burundi": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Tanzania": {
+      "forestCount": 4,
+      "zooCount": 0,
+      "totalCount": 4
+    },
+    "Africa > South Africa": {
+      "forestCount": 2,
+      "zooCount": 2,
+      "totalCount": 4
+    },
+    "Africa > Zambia": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Mozambique": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Zimbabwe/Mozambique": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Malawi": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Botswana": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Namibia": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Madagascar": {
+      "forestCount": 5,
+      "zooCount": 1,
+      "totalCount": 6
+    },
+    "Africa > Morocco": {
+      "forestCount": 2,
+      "zooCount": 1,
+      "totalCount": 3
+    },
+    "Africa > Tunisia": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Algeria": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > Canada": {
+      "forestCount": 9,
+      "zooCount": 2,
+      "totalCount": 11
+    },
+    "North America > USA": {
+      "forestCount": 25,
+      "zooCount": 7,
+      "totalCount": 32
+    },
+    "North America > Mexico": {
+      "forestCount": 5,
+      "zooCount": 1,
+      "totalCount": 6
+    },
+    "North America > Guatemala": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "North America > Honduras": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > Nicaragua": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "North America > Costa Rica": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "North America > Costa Rica/Panama": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > Panama": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > Jamaica": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > Dominican Republic": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > Haiti": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "South America > Brazil": {
+      "forestCount": 9,
+      "zooCount": 2,
+      "totalCount": 11
+    },
+    "South America > Peru": {
+      "forestCount": 3,
+      "zooCount": 1,
+      "totalCount": 4
+    },
+    "South America > Ecuador": {
+      "forestCount": 3,
+      "zooCount": 1,
+      "totalCount": 4
+    },
+    "South America > Colombia": {
+      "forestCount": 4,
+      "zooCount": 1,
+      "totalCount": 5
+    },
+    "South America > Bolivia": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "South America > Venezuela": {
+      "forestCount": 2,
+      "zooCount": 1,
+      "totalCount": 3
+    },
+    "South America > Suriname": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "South America > French Guiana": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "South America > Guyana": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "South America > Brazil/Argentina": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "South America > Chile": {
+      "forestCount": 3,
+      "zooCount": 1,
+      "totalCount": 4
+    },
+    "South America > Argentina": {
+      "forestCount": 3,
+      "zooCount": 1,
+      "totalCount": 4
+    },
+    "South America > Argentina/Chile": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "South America > Bolivia/Argentina": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "South America > Paraguay/Argentina": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Sweden": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "Europe > Norway": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "Europe > Finland": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "Europe > Denmark": {
+      "forestCount": 1,
+      "zooCount": 1,
+      "totalCount": 2
+    },
+    "Europe > Germany": {
+      "forestCount": 4,
+      "zooCount": 1,
+      "totalCount": 5
+    },
+    "Europe > Belgium/Luxembourg/France": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > France": {
+      "forestCount": 4,
+      "zooCount": 0,
+      "totalCount": 4
+    },
+    "Europe > Poland/Belarus": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Poland": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Netherlands": {
+      "forestCount": 1,
+      "zooCount": 1,
+      "totalCount": 2
+    },
+    "Europe > United Kingdom": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Europe > Ireland": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Czech Republic": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Romania/Ukraine/Slovakia": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Romania": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Hungary": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Poland/Slovakia": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Ukraine": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Belarus": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Europe > Russia": {
+      "forestCount": 2,
+      "zooCount": 1,
+      "totalCount": 3
+    },
+    "Europe > Italy": {
+      "forestCount": 4,
+      "zooCount": 1,
+      "totalCount": 5
+    },
+    "Europe > Spain": {
+      "forestCount": 4,
+      "zooCount": 1,
+      "totalCount": 5
+    },
+    "Europe > Portugal": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Bosnia and Herzegovina": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Greece": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Bulgaria": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Bulgaria/Greece": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Oceania > Australia": {
+      "forestCount": 30,
+      "zooCount": 4,
+      "totalCount": 34
+    },
+    "Oceania > New Zealand": {
+      "forestCount": 3,
+      "zooCount": 2,
+      "totalCount": 5
+    },
+    "Oceania > Papua New Guinea": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Oceania > New Caledonia": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Oceania > Solomon Islands": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Oceania > Vanuatu": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > UK": {
+      "forestCount": 0,
+      "zooCount": 2,
+      "totalCount": 2
+    },
+    "Europe > Austria": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Europe > Switzerland": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Africa > Egypt": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Asia > Singapore": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Asia > Iran": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    }
+  },
+  "stateBreakdown": {
+    "Asia > India / Bangladesh > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > India > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > India > Kerala": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > India > Karnataka": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > India > Gujarat": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > India > Uttarakhand": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > India > Arunachal": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Bangladesh > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Nepal > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Sri Lanka > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Indonesia/Malaysia/Brunei > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Malaysia > Sabah": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Malaysia > Sarawak": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Malaysia > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Brunei > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Indonesia > Sumatra": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "Asia > Indonesia > Papua": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Thailand > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Asia > Cambodia > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Laos > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Vietnam > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Asia > Philippines > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Asia > Russia > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Asia > China > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Asia > China > Hubei": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > China > Hunan": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > China > Yunnan": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Mongolia > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Japan > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Asia > South Korea > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Iran / Azerbaijan > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Georgia / Armenia > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Kyrgyzstan > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Asia > Oman > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > DR Congo > General Region": {
+      "forestCount": 4,
+      "zooCount": 0,
+      "totalCount": 4
+    },
+    "Africa > Cameroon > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Africa > Congo > Rep.": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Africa > Equatorial Guinea > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Gabon > General Region": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "Africa > Central African Republic > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Cote d'Ivoire > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Liberia > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Sierra Leone > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Ghana > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Africa > Nigeria > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Africa > Kenya > General Region": {
+      "forestCount": 4,
+      "zooCount": 0,
+      "totalCount": 4
+    },
+    "Africa > Uganda > General Region": {
+      "forestCount": 4,
+      "zooCount": 0,
+      "totalCount": 4
+    },
+    "Africa > Ethiopia > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Africa > Rwanda > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Burundi > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Tanzania > Zanzibar": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Tanzania > General Region": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "Africa > South Africa > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Africa > Zambia > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Mozambique > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Zimbabwe/Mozambique > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Malawi > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Botswana > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Namibia > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Madagascar > General Region": {
+      "forestCount": 5,
+      "zooCount": 0,
+      "totalCount": 5
+    },
+    "Africa > Morocco > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Africa > Tunisia > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Africa > Algeria > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > Canada > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "North America > Canada > BC": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "North America > Canada > Ontario": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > Canada > Maritimes": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > Canada > NWT": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > Canada > Yukon": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > USA > WA": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "North America > USA > Alaska": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "North America > USA > California": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "North America > USA > Oregon": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "North America > USA > Colorado": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > USA > Arizona": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "North America > USA > South Dakota": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > USA > Montana/Idaho": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > USA > TN/NC": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > USA > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > USA > Virginia": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > USA > New York": {
+      "forestCount": 1,
+      "zooCount": 1,
+      "totalCount": 2
+    },
+    "North America > USA > New Hampshire": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > USA > Vermont": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > USA > Arkansas": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > USA > Texas": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > USA > South Carolina": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > USA > Florida": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > Mexico > Chiapas": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > Mexico > Yucatan": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > Mexico > General Region": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "North America > Guatemala > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "North America > Honduras > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > Nicaragua > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "North America > Costa Rica > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "North America > Costa Rica/Panama > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > Panama > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > USA > Puerto Rico": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > Jamaica > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > Dominican Republic > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > Haiti > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "South America > Brazil > General Region": {
+      "forestCount": 4,
+      "zooCount": 0,
+      "totalCount": 4
+    },
+    "South America > Brazil > Para": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "South America > Brazil > Amazonas": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "South America > Brazil > Mato Grosso": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "South America > Peru > General Region": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "South America > Ecuador > General Region": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "South America > Colombia > General Region": {
+      "forestCount": 4,
+      "zooCount": 0,
+      "totalCount": 4
+    },
+    "South America > Bolivia > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "South America > Venezuela > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "South America > Suriname > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "South America > French Guiana > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "South America > Guyana > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "South America > Brazil > Sao Paulo/Parana": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "South America > Brazil/Argentina > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "South America > Brazil > Rio de Janeiro": {
+      "forestCount": 1,
+      "zooCount": 1,
+      "totalCount": 2
+    },
+    "South America > Chile > General Region": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "South America > Argentina > General Region": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "South America > Argentina/Chile > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "South America > Bolivia/Argentina > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "South America > Paraguay/Argentina > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Sweden > General Region": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "Europe > Norway > General Region": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "Europe > Finland > General Region": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "Europe > Denmark > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Germany > General Region": {
+      "forestCount": 4,
+      "zooCount": 0,
+      "totalCount": 4
+    },
+    "Europe > Belgium/Luxembourg/France > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > France > General Region": {
+      "forestCount": 4,
+      "zooCount": 0,
+      "totalCount": 4
+    },
+    "Europe > Poland/Belarus > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Poland > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Netherlands > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > United Kingdom > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > United Kingdom > Scotland": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Ireland > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Czech Republic > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Romania/Ukraine/Slovakia > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Romania > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Hungary > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Poland/Slovakia > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Ukraine > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Belarus > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Europe > Russia > General Region": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Europe > Italy > General Region": {
+      "forestCount": 4,
+      "zooCount": 0,
+      "totalCount": 4
+    },
+    "Europe > Spain > General Region": {
+      "forestCount": 4,
+      "zooCount": 0,
+      "totalCount": 4
+    },
+    "Europe > Portugal > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Bosnia and Herzegovina > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Greece > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Bulgaria > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Europe > Bulgaria/Greece > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Oceania > Australia > Queensland": {
+      "forestCount": 6,
+      "zooCount": 0,
+      "totalCount": 6
+    },
+    "Oceania > Australia > NSW/QLD": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Oceania > Australia > Northern Territory": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Oceania > Australia > NSW": {
+      "forestCount": 5,
+      "zooCount": 0,
+      "totalCount": 5
+    },
+    "Oceania > Australia > Victoria": {
+      "forestCount": 5,
+      "zooCount": 0,
+      "totalCount": 5
+    },
+    "Oceania > Australia > Tasmania": {
+      "forestCount": 6,
+      "zooCount": 0,
+      "totalCount": 6
+    },
+    "Oceania > Australia > Western Australia": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "Oceania > Australia > South Australia": {
+      "forestCount": 2,
+      "zooCount": 0,
+      "totalCount": 2
+    },
+    "Oceania > New Zealand > General Region": {
+      "forestCount": 3,
+      "zooCount": 0,
+      "totalCount": 3
+    },
+    "Oceania > Papua New Guinea > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Oceania > New Caledonia > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Oceania > Solomon Islands > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "Oceania > Vanuatu > General Region": {
+      "forestCount": 1,
+      "zooCount": 0,
+      "totalCount": 1
+    },
+    "North America > USA > San Diego": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "North America > USA > Washington D.C.": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "North America > USA > Chicago": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "North America > Canada > Toronto": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "North America > Mexico > Mexico City": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "North America > USA > Omaha": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "North America > USA > Columbus": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "North America > USA > Atlanta": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "North America > Canada > Calgary": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "South America > Argentina > Buenos Aires": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "South America > Brazil > São Paulo": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "South America > Chile > Santiago": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "South America > Colombia > Cali": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "South America > Peru > Lima": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "South America > Ecuador > Quito": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "South America > Venezuela > Caracas": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Europe > UK > London": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Europe > Germany > Berlin": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Europe > Austria > Vienna": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Europe > Russia > Moscow": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Europe > Spain > Madrid": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Europe > Netherlands > Amsterdam": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Europe > Switzerland > Zurich": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Europe > Denmark > Copenhagen": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Europe > Italy > Rome": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Europe > UK > Chester": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Africa > Egypt > Cairo": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Africa > South Africa > Johannesburg": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Africa > South Africa > Pretoria": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Africa > Kenya > Nairobi": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Africa > Ethiopia > Addis Ababa": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Africa > Morocco > Casablanca": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Africa > Ghana > Kumasi": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Africa > Madagascar > Antananarivo": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Asia > China > Beijing": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Asia > China > Chengdu": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Asia > Singapore > Singapore": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Asia > Japan > Tokyo": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Asia > China > Guangzhou": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Asia > India > Hyderabad": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Asia > India > Chennai": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Asia > Bangladesh > Dhaka": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Asia > Indonesia > Bogor": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Asia > Iran > Tehran": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Oceania > Australia > Sydney": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Oceania > Australia > Melbourne": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Oceania > New Zealand > Auckland": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Oceania > New Zealand > Wellington": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Oceania > Australia > Perth": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    },
+    "Oceania > Australia > Adelaide": {
+      "forestCount": 0,
+      "zooCount": 1,
+      "totalCount": 1
+    }
+  }
+}

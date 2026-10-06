@@ -12,7 +12,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
     console.error("Failed to connect to authentication database:", err.message);
   } else {
-    console.log("Connected to authentication database successfully.");
+    console.log("Connected to authentication operational database successfully.");
   }
 });
 
@@ -44,31 +44,18 @@ const dbAll = (sql, params = []) => {
   });
 };
 
-// Initialize schema
+// Initialize schema (Pure Firebase UID mapping - ZERO password storage)
 const initDb = async () => {
   const usersTableSql = `
     CREATE TABLE IF NOT EXISTS users (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      uid TEXT PRIMARY KEY,
       name TEXT NOT NULL,
       email TEXT NOT NULL UNIQUE,
-      password_hash TEXT NOT NULL,
       avatar TEXT,
       role TEXT NOT NULL DEFAULT 'user',
       created_at TEXT NOT NULL DEFAULT (datetime('now')),
       updated_at TEXT NOT NULL DEFAULT (datetime('now')),
-      refresh_token_hash TEXT,
       last_login TEXT
-    );
-  `;
-
-  const zoosTableSql = `
-    CREATE TABLE IF NOT EXISTS zoos (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT NOT NULL UNIQUE,
-      country TEXT NOT NULL,
-      latitude REAL NOT NULL,
-      longitude REAL NOT NULL,
-      notable_species TEXT NOT NULL
     );
   `;
 
@@ -87,34 +74,85 @@ const initDb = async () => {
     );
   `;
 
+  const aiChatsTableSql = `
+    CREATE TABLE IF NOT EXISTS ai_chats (
+      id TEXT PRIMARY KEY,
+      userId TEXT NOT NULL,
+      prompt TEXT NOT NULL,
+      answer TEXT NOT NULL,
+      timestamp TEXT NOT NULL,
+      title TEXT
+    );
+  `;
+
+  const gbifOccurrencesTableSql = `
+    CREATE TABLE IF NOT EXISTS gbif_occurrences (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      gbif_id TEXT UNIQUE NOT NULL,
+      category TEXT NOT NULL,
+      scientific_name TEXT NOT NULL,
+      common_name TEXT,
+      kingdom TEXT,
+      phylum TEXT,
+      class TEXT NOT NULL,
+      order_name TEXT,
+      family TEXT,
+      genus TEXT,
+      species TEXT,
+      latitude REAL NOT NULL,
+      longitude REAL NOT NULL,
+      country TEXT,
+      country_code TEXT,
+      state_province TEXT,
+      locality TEXT,
+      event_date TEXT,
+      basis_of_record TEXT,
+      dataset_name TEXT,
+      institution_code TEXT,
+      collection_code TEXT,
+      gbif_url TEXT,
+      image_url TEXT,
+      source TEXT NOT NULL DEFAULT 'GBIF',
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+  `;
+
   try {
-    await dbRun(usersTableSql);
-    await dbRun(zoosTableSql);
-    await dbRun(sightingsTableSql);
-
-    // Clean up obsolete user_badges table if it exists
-    await dbRun("DROP TABLE IF EXISTS user_badges");
-
-    console.log("All SQLite tables verified / initialized successfully.");
-
-    // Seed zoos if empty
-    const zooCount = await dbGet("SELECT COUNT(*) as count FROM zoos");
-    if (zooCount.count === 0) {
-      const initialZoos = [
-        { name: "San Diego Zoo", country: "United States", latitude: 32.7353, longitude: -117.1490, notable: "Giant Panda, Cheetah, Koala" },
-        { name: "Singapore Zoo", country: "Singapore", latitude: 1.4043, longitude: 103.7930, notable: "White Tiger, Orangutan, Komodo Dragon" },
-        { name: "Taronga Zoo", country: "Australia", latitude: -33.8435, longitude: 151.2413, notable: "Koala, Platypus, Kangaroo" },
-        { name: "Kruger National Park Conservation Center", country: "South Africa", latitude: -23.9884, longitude: 31.5547, notable: "Lion, African Elephant, Leopard" },
-        { name: "Chengdu Research Base", country: "China", latitude: 30.7380, longitude: 104.1441, notable: "Giant Panda, Red Panda" }
-      ];
-      for (const z of initialZoos) {
-        await dbRun(
-          "INSERT INTO zoos (name, country, latitude, longitude, notable_species) VALUES (?, ?, ?, ?, ?)",
-          [z.name, z.country, z.latitude, z.longitude, z.notable]
-        );
+    // Check if users table exists and whether it has uid column
+    const userColumns = await dbAll("PRAGMA table_info(users)").catch(() => []);
+    if (userColumns.length > 0) {
+      const hasUid = userColumns.some(c => c.name === 'uid');
+      if (!hasUid) {
+        console.log("Migrating users table to pure Firebase UID schema...");
+        await dbRun("ALTER TABLE users RENAME TO users_old");
+        await dbRun(usersTableSql);
+        // Attempt to copy any legacy records safely
+        await dbRun(`
+          INSERT OR IGNORE INTO users (uid, name, email, avatar, role, created_at, updated_at, last_login)
+          SELECT CAST(id AS TEXT) as uid, name, email, avatar, COALESCE(role, 'user'), COALESCE(created_at, datetime('now')), COALESCE(updated_at, datetime('now')), last_login FROM users_old
+        `).catch(() => {});
+        await dbRun("DROP TABLE IF EXISTS users_old").catch(() => {});
+        console.log("✓ Users table migrated to Firebase UID schema successfully.");
       }
-      console.log("Seeded 5 global zoos successfully.");
+    } else {
+      await dbRun(usersTableSql);
     }
+
+    await dbRun(sightingsTableSql);
+    await dbRun(aiChatsTableSql);
+    await dbRun(gbifOccurrencesTableSql);
+
+    // Indexes for fast spatial, taxonomic, and user queries
+    await dbRun("CREATE INDEX IF NOT EXISTS idx_sightings_user ON sightings(userId)");
+    await dbRun("CREATE INDEX IF NOT EXISTS idx_chats_user ON ai_chats(userId)");
+    await dbRun("CREATE UNIQUE INDEX IF NOT EXISTS idx_gbif_key ON gbif_occurrences(gbif_id)");
+    await dbRun("CREATE INDEX IF NOT EXISTS idx_gbif_scientific_name ON gbif_occurrences(scientific_name)");
+    await dbRun("CREATE INDEX IF NOT EXISTS idx_gbif_class ON gbif_occurrences(class)");
+    await dbRun("CREATE INDEX IF NOT EXISTS idx_gbif_category ON gbif_occurrences(category)");
+    await dbRun("CREATE INDEX IF NOT EXISTS idx_gbif_country ON gbif_occurrences(country)");
+    await dbRun("CREATE INDEX IF NOT EXISTS idx_gbif_lat_lng ON gbif_occurrences(latitude, longitude)");
+
+    console.log("All operational SQLite tables verified / initialized successfully.");
   } catch (error) {
     console.error("Failed to initialize database tables:", error.message);
   }
@@ -128,86 +166,69 @@ export const authDbService = {
     return await dbGet("SELECT * FROM users WHERE email = ?", [email.toLowerCase().trim()]);
   },
 
-  getUserById: async (id) => {
-    return await dbGet("SELECT * FROM users WHERE id = ?", [id]);
+  getUserByUid: async (uid) => {
+    return await dbGet("SELECT * FROM users WHERE uid = ?", [uid]);
   },
 
-  createUser: async ({ name, email, passwordHash, role = 'user', avatar = null }) => {
+  // Backwards-compatible alias
+  getUserById: async (uid) => {
+    return await dbGet("SELECT * FROM users WHERE uid = ?", [uid.toString()]);
+  },
+
+  syncUser: async ({ uid, name, email, role = 'user', avatar = null }) => {
     const emailNorm = email.toLowerCase().trim();
-    const result = await dbRun(
-      "INSERT INTO users (name, email, password_hash, role, avatar) VALUES (?, ?, ?, ?, ?)",
-      [name, emailNorm, passwordHash, role, avatar]
-    );
-    return await dbGet("SELECT * FROM users WHERE id = ?", [result.lastID]);
-  },
-
-  updateUserRefreshToken: async (id, refreshTokenHash) => {
     await dbRun(
-      "UPDATE users SET refresh_token_hash = ?, updated_at = datetime('now') WHERE id = ?",
-      [refreshTokenHash, id]
+      `INSERT INTO users (uid, name, email, role, avatar, updated_at) 
+       VALUES (?, ?, ?, ?, ?, datetime('now'))
+       ON CONFLICT(uid) DO UPDATE SET 
+         name = excluded.name,
+         email = excluded.email,
+         avatar = COALESCE(excluded.avatar, users.avatar),
+         role = excluded.role,
+         updated_at = datetime('now')`,
+      [uid, name, emailNorm, role, avatar]
     );
+    return await dbGet("SELECT * FROM users WHERE uid = ?", [uid]);
   },
 
-  updateUserProfile: async (id, { name, avatar }) => {
+  updateUserProfile: async (uid, { name, avatar }) => {
     await dbRun(
-      "UPDATE users SET name = ?, avatar = ?, updated_at = datetime('now') WHERE id = ?",
-      [name, avatar, id]
+      "UPDATE users SET name = ?, avatar = ?, updated_at = datetime('now') WHERE uid = ?",
+      [name, avatar, uid.toString()]
     );
-    return await dbGet("SELECT * FROM users WHERE id = ?", [id]);
+    return await dbGet("SELECT * FROM users WHERE uid = ?", [uid.toString()]);
   },
 
-  updateUserPassword: async (id, passwordHash) => {
+  updateLastLogin: async (uid) => {
     await dbRun(
-      "UPDATE users SET password_hash = ?, updated_at = datetime('now') WHERE id = ?",
-      [passwordHash, id]
+      "UPDATE users SET last_login = datetime('now') WHERE uid = ?",
+      [uid.toString()]
     );
   },
 
-  updateLastLogin: async (id) => {
-    await dbRun(
-      "UPDATE users SET last_login = datetime('now') WHERE id = ?",
-      [id]
-    );
-  },
-
-  deleteUser: async (id) => {
-    await dbRun("DELETE FROM users WHERE id = ?", [id]);
+  deleteUser: async (uid) => {
+    await dbRun("DELETE FROM users WHERE uid = ?", [uid.toString()]);
+    await dbRun("DELETE FROM sightings WHERE userId = ?", [uid.toString()]);
+    await dbRun("DELETE FROM ai_chats WHERE userId = ?", [uid.toString()]);
   },
 
   getAllUsers: async () => {
-    return await dbAll("SELECT id, name, email, role, avatar, created_at, last_login FROM users");
+    return await dbAll("SELECT uid, name, email, role, avatar, created_at, last_login FROM users");
   },
 
-  // Zoos CRUD
-  getZoos: async () => {
-    return await dbAll("SELECT * FROM zoos");
-  },
-
-  addZoo: async ({ name, country, latitude, longitude, notable_species }) => {
-    const result = await dbRun(
-      "INSERT INTO zoos (name, country, latitude, longitude, notable_species) VALUES (?, ?, ?, ?, ?)",
-      [name, country, Number(latitude), Number(longitude), notable_species]
-    );
-    return await dbGet("SELECT * FROM zoos WHERE id = ?", [result.lastID]);
-  },
-
-  deleteZoo: async (id) => {
-    await dbRun("DELETE FROM zoos WHERE id = ?", [id]);
-  },
-
-  // Sightings CRUD
+  // Sightings CRUD scoped strictly by Firebase UID
   getSightings: async () => {
     return await dbAll("SELECT * FROM sightings ORDER BY timestamp DESC");
   },
 
   getUserSightings: async (userId) => {
-    return await dbAll("SELECT * FROM sightings WHERE userId = ? ORDER BY timestamp DESC", [userId]);
+    return await dbAll("SELECT * FROM sightings WHERE userId = ? ORDER BY timestamp DESC", [userId.toString()]);
   },
 
   addSighting: async ({ userId, commonName, scientificName, latitude, longitude, imageBase64, notes }) => {
     const result = await dbRun(
       "INSERT INTO sightings (userId, commonName, scientificName, latitude, longitude, timestamp, imageBase64, notes, status) VALUES (?, ?, ?, ?, ?, datetime('now'), ?, ?, 'pending')",
-      [userId, commonName, scientificName, Number(latitude), Number(longitude), imageBase64, notes]
+      [userId.toString(), commonName, scientificName, Number(latitude), Number(longitude), imageBase64, notes]
     );
     return await dbGet("SELECT * FROM sightings WHERE id = ?", [result.lastID]);
   },
@@ -250,7 +271,7 @@ export const authDbService = {
 
   getRecentUsers: async (limit = 5) => {
     return await dbAll(
-      "SELECT id, name, email, role, created_at, last_login FROM users ORDER BY created_at DESC LIMIT ?",
+      "SELECT uid, name, email, role, created_at, last_login FROM users ORDER BY created_at DESC LIMIT ?",
       [limit]
     );
   },
@@ -265,3 +286,4 @@ export const authDbService = {
   }
 };
 
+export default authDbService;

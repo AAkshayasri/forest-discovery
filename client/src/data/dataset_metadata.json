@@ -1,0 +1,115 @@
+{
+  "system": {
+    "name": "WildAtlas - Global Forest & Wildlife Explorer",
+    "version": "1.0.0",
+    "paperTitle": "Reproducible Geospatial Road Routing and Biodiversity Exploration via OpenStreetMap and OSRM",
+    "publicationTarget": "IEEE Transactions on Geoscience and Remote Sensing / IEEE Software",
+    "lastUpdated": "2026-10-02",
+    "tileProviderAccessDate": "2026-10-02"
+  },
+  "libraries": [
+    {
+      "name": "Leaflet.js",
+      "version": "1.9.4",
+      "license": "BSD-2-Clause",
+      "licenseUrl": "https://github.com/Leaflet/Leaflet/blob/main/LICENSE",
+      "role": "Core interactive mapping engine and viewport renderer"
+    },
+    {
+      "name": "MapLibre GL JS",
+      "version": "5.1.0",
+      "license": "BSD-3-Clause",
+      "licenseUrl": "https://github.com/maplibre/maplibre-gl-js/blob/main/LICENSE.txt",
+      "role": "Hardware-accelerated WebGL vector tile rendering pipeline"
+    },
+    {
+      "name": "@maplibre/maplibre-gl-leaflet",
+      "version": "0.1.4",
+      "license": "ISC",
+      "licenseUrl": "https://github.com/maplibre/maplibre-gl-leaflet/blob/main/LICENSE",
+      "role": "Integration bridge embedding MapLibre GL canvas inside Leaflet tilePane"
+    },
+    {
+      "name": "Leaflet.markercluster",
+      "version": "1.5.3",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/Leaflet/Leaflet.markercluster/blob/master/MIT-LICENSE.txt",
+      "role": "Hierarchical geospatial marker clustering and spiderfier"
+    },
+    {
+      "name": "OSRM (Open Source Routing Machine)",
+      "version": "5.27.1 / MLD Algorithm",
+      "license": "BSD-2-Clause",
+      "licenseUrl": "https://github.com/Project-OSRM/osrm-backend/blob/master/LICENSE.TXT",
+      "role": "High-performance Multi-Level Dijkstra (MLD) road network routing"
+    }
+  ],
+  "basemaps": [
+    {
+      "id": "openfreemap-bright",
+      "name": "OpenFreeMap Bright (High-Contrast Vector Road Basemap)",
+      "url": "https://tiles.openfreemap.org/styles/bright",
+      "attribution": "OpenFreeMap © OpenMapTiles Data from OpenStreetMap contributors",
+      "license": "ODbL / Open Database License",
+      "licenseUrl": "https://openfreemap.org",
+      "accessDate": "2026-10-02",
+      "isPrimary": true,
+      "description": "High-contrast vector tile service optimized for clear road hierarchy, highway shields, and place labels with zero API key constraints."
+    },
+    {
+      "id": "osm-standard",
+      "name": "OpenStreetMap Standard (Raster Fallback)",
+      "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+      "attribution": "© OpenStreetMap contributors",
+      "license": "ODbL 1.0",
+      "licenseUrl": "https://www.openstreetmap.org/copyright",
+      "accessDate": "2026-10-02",
+      "isFallback": true,
+      "description": "Public raster tile failover used for development and emergency fallback. Production deployments should utilize self-hosted tiles."
+    }
+  ],
+  "datasets": [
+    {
+      "id": "forests",
+      "name": "Global Protected Forest Reserves Dataset",
+      "source": "Global Forest Watch, Protected Planet (WDPA), and OpenStreetMap",
+      "license": "ODbL 1.0 / CC-BY 4.0",
+      "totalRecords": 268,
+      "validRecords": 268,
+      "skippedRecords": 0,
+      "lastUpdated": "2026-10-01",
+      "coordinateSystem": "WGS 84 (EPSG:4326)",
+      "description": "Curated geospatial coordinates, bounds, biomes, and conservation statuses for 268 primary forest reserves across 6 continents."
+    },
+    {
+      "id": "zoos",
+      "name": "Global Zoological Parks and Conservation Centers",
+      "source": "World Association of Zoos and Aquariums (WAZA), Wikidata & OpenStreetMap",
+      "license": "CC-BY-SA 4.0 / ODbL",
+      "totalRecords": 250,
+      "validRecords": 250,
+      "skippedRecords": 0,
+      "lastUpdated": "2026-10-01",
+      "coordinateSystem": "WGS 84 (EPSG:4326)",
+      "description": "Geolocated botanical and zoological conservation institutions indexed with road entrances and verified taxa collections."
+    },
+    {
+      "id": "species",
+      "name": "Master Species & Verified Taxa Occurrences",
+      "source": "GBIF (Global Biodiversity Information Facility) & IUCN Red List of Threatened Species",
+      "license": "CC-BY 4.0 / Open Access",
+      "totalRecords": 2860,
+      "validRecords": 2860,
+      "skippedRecords": 0,
+      "lastUpdated": "2026-10-01",
+      "description": "Taxonomic catalog with kingdom, phylum, class, order, family, conservation status, and verified habitat associations."
+    }
+  ],
+  "reproducibility": {
+    "osrmBackend": "osrm-backend:v5.27.1",
+    "osmExtract": "geofabrik-extract-latest.osm.pbf",
+    "algorithm": "Multi-Level Dijkstra (MLD)",
+    "profile": "car.lua",
+    "dockerComposeVersion": "3.8"
+  }
+}

@@ -1,5 +1,17 @@
 @import "tailwindcss";
 @import "leaflet/dist/leaflet.css";
+@import "leaflet.markercluster/dist/MarkerCluster.css";
+@import "leaflet.markercluster/dist/MarkerCluster.Default.css";
+@import "maplibre-gl/dist/maplibre-gl.css";
+
+/* Neutral basemap placeholder background to prevent white flash while loading */
+.leaflet-container {
+  background-color: #e8e8e8 !important;
+}
+
+#map-container {
+  background-color: #e8e8e8 !important;
+}
 
 /* Custom theme overrides and utilities matching Stitch */
 @theme {
@@ -157,3 +169,68 @@ html, body, #root {
 ::-webkit-scrollbar-thumb:hover {
   background: #a5d0b9;
 }
+
+/* Custom MarkerCluster Dark Theme */
+.marker-cluster {
+  background-clip: padding-box;
+  border-radius: 9999px;
+}
+
+.marker-cluster-small {
+  background-color: rgba(16, 185, 129, 0.35) !important;
+  border: 1.5px solid rgba(16, 185, 129, 0.7) !important;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.4) !important;
+}
+
+.marker-cluster-small div {
+  background-color: rgba(20, 48, 38, 0.95) !important;
+  color: #a5d0b9 !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  border-radius: 9999px !important;
+}
+
+.marker-cluster-medium {
+  background-color: rgba(56, 189, 248, 0.35) !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.7) !important;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4) !important;
+}
+
+.marker-cluster-medium div {
+  background-color: rgba(12, 45, 72, 0.95) !important;
+  color: #38bdf8 !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  border-radius: 9999px !important;
+}
+
+.marker-cluster-large {
+  background-color: rgba(245, 158, 11, 0.35) !important;
+  border: 1.5px solid rgba(245, 158, 11, 0.7) !important;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.4) !important;
+}
+
+.marker-cluster-large div {
+  background-color: rgba(70, 35, 10, 0.95) !important;
+  color: #fde68a !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  border-radius: 9999px !important;
+}
+
+.leaflet-custom-tooltip {
+  background: rgba(19, 27, 36, 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 12px !important;
+  color: #e5e2e1 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+}
+
+.leaflet-custom-tooltip::before {
+  border-top-color: rgba(19, 27, 36, 0.95) !important;
+}
+

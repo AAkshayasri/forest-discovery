@@ -8,6 +8,7 @@ import {
   Search as SearchIcon, MapPin, ArrowRight, Sparkles, 
   Trees, Scan, MessageSquare, Camera, Award, Globe2 
 } from 'lucide-react';
+import { SpeciesImage } from '../components/common/SpeciesImage';
 
 interface Forest {
   id: number;
@@ -314,12 +315,13 @@ export const Landing: React.FC = () => {
               className="group rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 hover:border-primary/45 transition-all shadow-lg cursor-pointer flex flex-col justify-between"
             >
               <div className="h-48 overflow-hidden relative">
-                <img 
+                <SpeciesImage 
                   src={animal.imageUrl} 
                   alt={animal.name}
+                  speciesGroup="Mammal"
                   className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" 
                 />
-                <div className="absolute top-3 left-3">
+                <div className="absolute top-3 left-3 z-10">
                   <span className="px-2 py-0.5 rounded bg-error-container/20 text-error border border-error/30 text-[8px] font-bold uppercase tracking-wider font-label-sm">
                     {animal.conservationStatus}
                   </span>

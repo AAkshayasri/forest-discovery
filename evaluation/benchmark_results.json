@@ -1,0 +1,98 @@
+[
+  {
+    "category": "Ingestion & Hierarchy",
+    "metric": "Dataset Parse & Spatial Indexing",
+    "pointCount": 268,
+    "timeMs": "0.00",
+    "status": "PASS",
+    "details": "Processed 268 entities with strict coordinate boundary checks"
+  },
+  {
+    "category": "Spatial Indexing",
+    "metric": "Linear Viewport Query (1,000 pts, Unclustered)",
+    "pointCount": 1000,
+    "timeMs": "0.05",
+    "status": "PASS",
+    "details": "Matched 0 points in viewport bounding box"
+  },
+  {
+    "category": "Spatial Indexing",
+    "metric": "Clustered Marker Partition (1,000 pts, QuadGrid)",
+    "pointCount": 1000,
+    "timeMs": "0.27",
+    "status": "PASS",
+    "details": "Partitioned into 410 spatial cluster buckets"
+  },
+  {
+    "category": "Spatial Indexing",
+    "metric": "Linear Viewport Query (10,000 pts, Unclustered)",
+    "pointCount": 10000,
+    "timeMs": "0.97",
+    "status": "PASS",
+    "details": "Matched 0 points in viewport bounding box"
+  },
+  {
+    "category": "Spatial Indexing",
+    "metric": "Clustered Marker Partition (10,000 pts, QuadGrid)",
+    "pointCount": 10000,
+    "timeMs": "2.34",
+    "status": "PASS",
+    "details": "Partitioned into 419 spatial cluster buckets"
+  },
+  {
+    "category": "Spatial Indexing",
+    "metric": "Linear Viewport Query (50,000 pts, Unclustered)",
+    "pointCount": 50000,
+    "timeMs": "1.85",
+    "status": "PASS",
+    "details": "Matched 0 points in viewport bounding box"
+  },
+  {
+    "category": "Spatial Indexing",
+    "metric": "Clustered Marker Partition (50,000 pts, QuadGrid)",
+    "pointCount": 50000,
+    "timeMs": "11.62",
+    "status": "PASS",
+    "details": "Partitioned into 451 spatial cluster buckets"
+  },
+  {
+    "category": "OSRM Road Routing",
+    "metric": "Route: London (UK) -> Oxford (UK)",
+    "pointCount": 2,
+    "timeMs": "3665.40",
+    "status": "PASS",
+    "details": "Distance: 96.2 km, Duration: 91 min, Waypoints: 1587"
+  },
+  {
+    "category": "OSRM Road Routing",
+    "metric": "Route: Paris (FR) -> Lyon (FR)",
+    "pointCount": 2,
+    "timeMs": "661.10",
+    "status": "PASS",
+    "details": "Distance: 465.9 km, Duration: 298 min, Waypoints: 8613"
+  },
+  {
+    "category": "OSRM Road Routing",
+    "metric": "Route: Berlin (DE) -> Munich (DE)",
+    "pointCount": 2,
+    "timeMs": "316.84",
+    "status": "PASS",
+    "details": "Distance: 585.2 km, Duration: 351 min, Waypoints: 6585"
+  },
+  {
+    "category": "OSRM Road Routing",
+    "metric": "Route: Delhi (IN) -> Jim Corbett NP (IN)",
+    "pointCount": 2,
+    "timeMs": "319.59",
+    "status": "PASS",
+    "details": "Distance: 293.2 km, Duration: 281 min, Waypoints: 3178"
+  },
+  {
+    "category": "OSRM Road Routing",
+    "metric": "Route: New York (US) -> Adirondack Park (US)",
+    "pointCount": 2,
+    "timeMs": "328.90",
+    "status": "PASS",
+    "details": "Distance: 429.4 km, Duration: 342 min, Waypoints: 6261"
+  }
+]

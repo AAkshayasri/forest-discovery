@@ -82,8 +82,8 @@ export const Sightings: React.FC = () => {
       zoomControl: false
     });
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; OpenStreetMap'
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+      attribution: '&copy; Esri, OpenStreetMap contributors'
     }).addTo(map);
 
     L.control.zoom({ position: 'bottomright' }).addTo(map);

@@ -1,203 +1,49 @@
-import jwt from 'jsonwebtoken';
-import bcrypt from 'bcryptjs';
 import crypto from 'crypto';
-import dotenv from 'dotenv';
-import { authDbService } from './authDbService.js';
 import sqlite3 from 'sqlite3';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
-dotenv.config();
+import { firestore } from './firebaseAdmin.js';
+import { authDbService } from './authDbService.js';
+import { verifyFirebaseToken, requireVerifiedEmail, requireAdmin } from '../middleware/authMiddleware.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const dbPath = path.resolve(__dirname, '../database/auth.db');
 
-const JWT_SECRET = process.env.JWT_SECRET || 'wildatlas-super-secret-access-key-2026';
-const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET || 'wildatlas-super-secret-refresh-key-2026';
-
-// Let's create a chats table in the SQLite database to store chat logs in a production-grade way
 const db = new sqlite3.Database(dbPath);
-db.run(`
-  CREATE TABLE IF NOT EXISTS ai_chats (
-    id TEXT PRIMARY KEY,
-    userId TEXT NOT NULL,
-    prompt TEXT NOT NULL,
-    answer TEXT NOT NULL,
-    timestamp TEXT NOT NULL,
-    title TEXT
-  )
-`);
-// Safely ensure title column exists for existing databases
-db.run("ALTER TABLE ai_chats ADD COLUMN title TEXT", () => {});
-
-
-const hashToken = (token) => {
-  return crypto.createHash('sha256').update(token).digest('hex');
-};
 
 export const authService = {
-  getMode: () => "production",
+  getMode: () => "firebase-production",
 
-  // JWT Helper methods
-  generateAccessToken: (user) => {
-    return jwt.sign(
-      { userId: user.id, email: user.email, name: user.name, role: user.role },
-      JWT_SECRET,
-      { expiresIn: '15m' }
-    );
-  },
+  // Export middlewares for Express routing
+  verifyToken: verifyFirebaseToken,
+  requireVerifiedEmail,
+  requireAdmin,
 
-  generateRefreshToken: (user) => {
-    return jwt.sign(
-      { userId: user.id, email: user.email },
-      JWT_REFRESH_SECRET,
-      { expiresIn: '30d' }
-    );
-  },
-
-  // Middleware to verify access tokens
-  verifyToken: async (req, res, next) => {
-    const authHeader = req.headers.authorization;
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
-      return res.status(401).json({ error: "Unauthorized. No token provided." });
-    }
-
-    const token = authHeader.split('Bearer ')[1];
+  // Retrieves user profile from Cloud Firestore (primary source of truth)
+  getUserProfile: async (uid) => {
     try {
-      const decoded = jwt.verify(token, JWT_SECRET);
-      const user = await authDbService.getUserById(decoded.userId);
-      if (!user) {
-        return res.status(401).json({ error: "Unauthorized. User not found." });
+      const doc = await firestore.collection('users').doc(uid.toString()).get();
+      if (doc.exists) {
+        return doc.data();
       }
-      
-      // Set req.user to match expected user model on the frontend/backend
-      req.user = {
-        uid: user.id.toString(),
-        id: user.id,
-        email: user.email,
-        name: user.name,
-        role: user.role
-      };
-      return next();
-    } catch (error) {
-      if (error.name === 'TokenExpiredError') {
-        return res.status(401).json({ error: "TokenExpired", message: "Access token expired." });
-      }
-      console.error("Token verification failed:", error.message);
-      return res.status(401).json({ error: "Unauthorized. Invalid token." });
+    } catch (err) {
+      console.warn(`[AuthService] Firestore lookup fallback for ${uid}:`, err.message);
     }
+    const localUser = await authDbService.getUserByUid(uid);
+    return localUser || null;
   },
 
-  // Registration logic
-  register: async (name, email, password, role = 'user') => {
-    // Password validation: Reject empty, invalid UTF-8, or too long (e.g. > 128 characters for bcrypt)
-    if (!password || password.trim() === '') {
-      throw new Error("Password cannot be empty.");
-    }
-    if (password.length > 72) {
-      throw new Error("Password exceeds storage limits (72 characters maximum).");
-    }
-    // Check UTF-8 validity
-    try {
-      Buffer.from(password, 'utf-8');
-    } catch (e) {
-      throw new Error("Invalid password encoding.");
-    }
-
-    const existingUser = await authDbService.getUserByEmail(email);
-    if (existingUser) {
-      throw new Error("Email already registered.");
-    }
-
-    // Hash password using bcryptjs
-    const salt = await bcrypt.genSalt(12);
-    const passwordHash = await bcrypt.hash(password, salt);
-
-    const newUser = await authDbService.createUser({
-      name,
-      email,
-      passwordHash,
-      role
-    });
-
-    return newUser;
+  // Backwards-compatible alias
+  getUserMetadata: async (userId) => {
+    return await authService.getUserProfile(userId);
   },
 
-  // Login logic
-  login: async (email, password) => {
-    if (!email || !password) {
-      throw new Error("Email and password are required.");
-    }
-
-    const user = await authDbService.getUserByEmail(email);
-    if (!user) {
-      throw new Error("Invalid email or password.");
-    }
-
-    const isMatch = await bcrypt.compare(password, user.password_hash);
-    if (!isMatch) {
-      throw new Error("Invalid email or password.");
-    }
-
-    // Update last login
-    await authDbService.updateLastLogin(user.id);
-
-    // Generate tokens
-    const accessToken = authService.generateAccessToken(user);
-    const refreshToken = authService.generateRefreshToken(user);
-
-    // Securely hash and store the refresh token
-    const refreshTokenHash = hashToken(refreshToken);
-    await authDbService.updateUserRefreshToken(user.id, refreshTokenHash);
-
-    return {
-      user: {
-        uid: user.id.toString(),
-        id: user.id,
-        email: user.email,
-        name: user.name,
-        role: user.role,
-        avatar: user.avatar
-      },
-      accessToken,
-      refreshToken
-    };
+  registerUserMetadata: async (userId, email, name, role = "user") => {
+    return await authDbService.syncUser({ uid: userId, email, name, role });
   },
 
-  // Refresh token logic
-  refresh: async (refreshToken) => {
-    if (!refreshToken) {
-      throw new Error("Refresh token is required.");
-    }
-
-    try {
-      const decoded = jwt.verify(refreshToken, JWT_REFRESH_SECRET);
-      const user = await authDbService.getUserById(decoded.userId);
-      if (!user) {
-        throw new Error("User not found.");
-      }
-
-      // Match refresh token hash
-      const clientHash = hashToken(refreshToken);
-      if (user.refresh_token_hash !== clientHash) {
-        throw new Error("Invalid refresh token.");
-      }
-
-      // Generate new access token
-      const accessToken = authService.generateAccessToken(user);
-      return { accessToken };
-    } catch (error) {
-      throw new Error("Session expired or invalid refresh token.");
-    }
-  },
-
-  // Logout logic
-  logout: async (userId) => {
-    await authDbService.updateUserRefreshToken(userId, null);
-  },
-
-  // Chat log storage (SQLite production-ready)
+  // Chat log storage keyed by Firebase UID
   saveChat: async (userId, prompt, answer, title = null) => {
     const id = crypto.randomUUID();
     const timestamp = new Date().toISOString();
@@ -274,27 +120,15 @@ export const authService = {
     });
   },
 
-  // Compatibility helpers
-  getUserMetadata: async (userId) => {
-    const user = await authDbService.getUserById(Number(userId));
-    if (!user) return null;
-    return {
-      uid: user.id.toString(),
-      id: user.id,
-      email: user.email,
-      name: user.name,
-      role: user.role,
-      avatar: user.avatar
-    };
-  },
-
-  registerUserMetadata: async (userId, email, name, role = "user") => {
-    // Used during initial setup or syncs if needed
-    const user = await authDbService.getUserById(Number(userId));
-    return user;
-  },
-
   getAllUsers: async () => {
+    try {
+      const snapshot = await firestore.collection('users').get();
+      if (!snapshot.empty) {
+        return snapshot.docs.map(doc => doc.data());
+      }
+    } catch (err) {
+      console.warn('[AuthService] Firestore getAllUsers fallback:', err.message);
+    }
     return await authDbService.getAllUsers();
   },
 
@@ -338,10 +172,9 @@ export const authService = {
 
       const activities = [];
 
-      // Map Users
       for (const u of recentUsers) {
         activities.push({
-          id: `user-${u.id}`,
+          id: `user-${u.uid}`,
           type: 'user_registration',
           title: `New User Registered: ${u.name}`,
           detail: `Role: ${u.role}`,
@@ -349,7 +182,6 @@ export const authService = {
         });
       }
 
-      // Map Sightings
       for (const s of recentSightings.slice(0, 5)) {
         activities.push({
           id: `sighting-${s.id}`,
@@ -360,7 +192,6 @@ export const authService = {
         });
       }
 
-      // Map Chats
       for (const c of recentChats) {
         activities.push({
           id: `chat-${c.id}`,
@@ -371,7 +202,6 @@ export const authService = {
         });
       }
 
-      // Sort combined activities descending by timestamp
       activities.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
       return activities.slice(0, limit);
     } catch (error) {
@@ -381,3 +211,4 @@ export const authService = {
   }
 };
 
+export default authService;

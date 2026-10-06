@@ -1,0 +1,269 @@
+forest_id,forest_name,country,state_province,city,continent,latitude,longitude,area,climate,source,created_at
+F000001,Sundarbans mangroves,India / Bangladesh,,,Asia,21.95,89.18,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.694Z
+F000002,Western Ghats moist forests,India,,,Asia,11,76.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000003,Silent Valley,India,Kerala,,Asia,11.08,76.44,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000004,Nagarhole-Bandipur,India,Karnataka,,Asia,11.9,76.35,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000005,Gir Forest,India,Gujarat,,Asia,21.12,70.8,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000006,Corbett / Terai Arc,India,Uttarakhand,,Asia,29.53,78.95,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000007,Namdapha,India,Arunachal,,Asia,27.5,96.4,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000008,Chittagong Hill Tracts,Bangladesh,,,Asia,22.6,92.2,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000009,Chitwan lowland sal forest,Nepal,,,Asia,27.5,84.33,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000010,Sinharaja,Sri Lanka,,,Asia,6.4,80.45,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000011,Borneo lowland rainforest,Indonesia/Malaysia/Brunei,,,Asia,1,114,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000012,Danum Valley,Malaysia,Sabah,,Asia,5,117.7,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000013,Gunung Mulu,Malaysia,Sarawak,,Asia,4.05,114.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000014,Taman Negara,Malaysia,,,Asia,4.6,102.4,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000015,Ulu Temburong,Brunei,,,Asia,4.55,115.15,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000016,Leuser Ecosystem,Indonesia,Sumatra,,Asia,3.7,97.35,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000017,Kerinci Seblat,Indonesia,Sumatra,,Asia,-2,101.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000018,Bukit Barisan Selatan,Indonesia,Sumatra,,Asia,-5.2,104.3,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000019,Lorentz,Indonesia,Papua,,Asia,-4.5,137.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000020,Khao Yai,Thailand,,,Asia,14.44,101.37,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000021,Kaeng Krachan,Thailand,,,Asia,12.8,99.4,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000022,Cardamom Mountains,Cambodia,,,Asia,12,103.2,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000023,Nam Ha,Laos,,,Asia,20.95,101.3,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000024,Cat Tien,Vietnam,,,Asia,11.42,107.43,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000025,Cuc Phuong,Vietnam,,,Asia,20.3,105.65,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000026,Palawan / Puerto Princesa,Philippines,,,Asia,10.2,118.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000027,Sierra Madre (Luzon),Philippines,,,Asia,16.5,122,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000028,Siberian taiga (central),Russia,,,Asia,62,100,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000029,Sikhote-Alin / Ussuri,Russia,,,Asia,45.5,136.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000030,Greater Khingan (Da Hinggan),China,,,Asia,50.5,122.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000031,Changbai Mountain,China,,,Asia,42,128.1,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000032,Shennongjia,China,Hubei,,Asia,31.5,110.4,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000033,Zhangjiajie,China,Hunan,,Asia,29.32,110.43,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000034,Xishuangbanna tropical forest,China,Yunnan,,Asia,21.95,101.2,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000035,Khan Khentii taiga,Mongolia,,,Asia,48.8,108.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000036,Shirakami-Sanchi beech forest,Japan,,,Asia,40.5,140.1,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000037,Yakushima cedar forest,Japan,,,Asia,30.35,130.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000038,Gotjawal forest Jeju,South Korea,,,Asia,33.37,126.53,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000039,Hyrcanian (Caspian) forests,Iran / Azerbaijan,,,Asia,36.8,52,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000040,Caucasus mixed forests,Georgia / Armenia,,,Asia,42.5,44,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000041,Tian Shan walnut-fruit forests,Kyrgyzstan,,,Asia,41.35,72.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000042,Dhofar cloud forests,Oman,,,Asia,17.1,54.2,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000043,Congo Basin rainforest (core),DR Congo,,,Africa,-0.5,22,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000044,Salonga,DR Congo,,,Africa,-1.9,20.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000045,Virunga forests,DR Congo,,,Africa,-0.9,29.3,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000046,Ituri Forest,DR Congo,,,Africa,1.5,28.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000047,Dja Faunal Reserve,Cameroon,,,Africa,3,13,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000048,Campo-Ma'an,Cameroon,,,Africa,2.35,10.1,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000049,Odzala-Kokoua,Congo,Rep.,,Africa,0.75,14.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000050,Nouabale-Ndoki,Congo,Rep.,,Africa,2.5,16.4,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000051,Monte Alen,Equatorial Guinea,,,Africa,1.6,10.3,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000052,Minkebe,Gabon,,,Africa,1.9,12.8,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000053,Lope-Okanda,Gabon,,,Africa,-0.2,11.6,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.695Z
+F000054,Ivindo,Gabon,,,Africa,0.15,12.6,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000055,Dzanga-Sangha,Central African Republic,,,Africa,2.9,16.35,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000056,Tai National Park,Cote d'Ivoire,,,Africa,5.85,-7.35,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000057,Sapo National Park,Liberia,,,Africa,5.8,-8.85,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000058,Gola Rainforest,Sierra Leone,,,Africa,7.7,-10.8,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000059,Kakum National Park,Ghana,,,Africa,6.4,-1.38,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000060,Omo Forest Reserve,Nigeria,,,Africa,6.9,4.35,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000061,Cross River forests,Nigeria,,,Africa,6.1,8.7,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000062,Bia National Park,Ghana,,,Africa,6.55,-3.1,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000063,Kakamega Forest,Kenya,,,Africa,0.28,34.87,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000064,Aberdare Forest,Kenya,,,Africa,-0.4,36.7,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000065,Mau Forest Complex,Kenya,,,Africa,-0.3,35.7,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000066,Mount Kenya forest belt,Kenya,,,Africa,-0.15,37.3,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000067,Bwindi Impenetrable Forest,Uganda,,,Africa,-1.05,29.65,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000068,Kibale Forest,Uganda,,,Africa,0.5,30.35,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000069,Budongo Forest,Uganda,,,Africa,1.75,31.55,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000070,Mabira Forest,Uganda,,,Africa,0.45,32.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000071,Harenna Forest (Bale Mountains),Ethiopia,,,Africa,6.8,39.75,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000072,Kafa Biosphere Reserve,Ethiopia,,,Africa,7.3,36.2,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000073,Nyungwe Forest,Rwanda,,,Africa,-2.5,29.2,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000074,Kibira National Park,Burundi,,,Africa,-2.75,29.35,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000075,Jozani Forest,Tanzania,Zanzibar,,Africa,-6.25,39.4,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000076,Udzungwa Mountains,Tanzania,,,Africa,-7.85,36.85,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000077,Eastern Arc forests (general),Tanzania,,,Africa,-7,37,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000078,Knysna-Tsitsikamma forest,South Africa,,,Africa,-34,23.1,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000079,Kruger woodland/mopane belt,South Africa,,,Africa,-24,31.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000080,Miombo woodlands (central belt),Zambia,,,Africa,-13.5,27.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000081,Gorongosa forests,Mozambique,,,Africa,-18.68,34.35,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000082,Chimanimani forest,Zimbabwe/Mozambique,,,Africa,-19.75,33.1,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000083,Kasungu / Miombo,Malawi,,,Africa,-12.98,33.1,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000084,Mkomazi-Miombo transition,Tanzania,,,Africa,-4.2,38,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000085,Okavango riparian forest,Botswana,,,Africa,-19.3,22.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000086,Namib escarpment woodland,Namibia,,,Africa,-22,16.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000087,Andasibe-Mantadia (eastern rainforest),Madagascar,,,Africa,-18.93,48.42,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000088,Masoala rainforest,Madagascar,,,Africa,-15.65,50.1,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000089,Ankarafantsika (dry forest),Madagascar,,,Africa,-16.3,46.8,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000090,Ranomafana rainforest,Madagascar,,,Africa,-21.25,47.42,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000091,Spiny forest (south),Madagascar,,,Africa,-23.5,44.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000092,Rif cedar/oak forests,Morocco,,,Africa,35,-5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000093,Atlas Mountains cedar forests,Morocco,,,Africa,33.3,-5.1,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000094,Kroumirie forests,Tunisia,,,Africa,36.85,8.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000095,Kabylie forests,Algeria,,,Africa,36.7,4.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000096,Canadian Boreal Forest (core),Canada,,,North America,55,-100,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000097,Great Bear Rainforest,Canada,BC,,North America,52.5,-128,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000098,Clayoquot Sound,Canada,BC,,North America,49.2,-125.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000099,Boreal Shield (Ontario/Quebec),Canada,,,North America,50,-80,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000100,Algonquin Provincial Park forest,Canada,Ontario,,North America,45.83,-78.35,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000101,Acadian forest region,Canada,Maritimes,,North America,46,-66,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000102,Mackenzie boreal forest,Canada,NWT,,North America,62,-122,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000103,Yukon boreal/taiga,Canada,Yukon,,North America,63,-135,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000104,Vancouver Island temperate rainforest,Canada,BC,,North America,49.65,-125.45,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000105,Olympic National Forest,USA,WA,,North America,47.8,-123.6,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000106,Hoh Rainforest,USA,WA,,North America,47.86,-123.93,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000107,Tongass National Forest,USA,Alaska,,North America,57,-133.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000108,Chugach National Forest,USA,Alaska,,North America,60.8,-147.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000109,Redwood National and State Parks,USA,California,,North America,41.3,-124,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000110,Mount Hood National Forest,USA,Oregon,,North America,45.37,-121.7,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000111,Willamette National Forest,USA,Oregon,,North America,44.1,-122.2,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000112,Sierra Nevada forests (Sequoia/Kings Canyon),USA,California,,North America,36.6,-118.75,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000113,Yosemite forest belt,USA,California,,North America,37.85,-119.55,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000114,Rocky Mountain National Forest belt,USA,Colorado,,North America,40.35,-105.65,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000115,White Mountains (Arizona),USA,Arizona,,North America,34,-109.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000116,Kaibab National Forest,USA,Arizona,,North America,36.4,-112.1,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000117,Black Hills National Forest,USA,South Dakota,,North America,44,-103.6,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000118,Bitterroot National Forest,USA,Montana/Idaho,,North America,45.9,-114.1,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000119,Great Smoky Mountains forest,USA,TN/NC,,North America,35.61,-83.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000120,Appalachian forest (general),USA,,,North America,38,-80.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000121,Shenandoah National Forest,USA,Virginia,,North America,38.53,-78.35,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000122,Adirondack Park forest,USA,New York,,North America,44,-74.2,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000123,White Mountain National Forest,USA,New Hampshire,,North America,44.1,-71.4,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000124,Green Mountain National Forest,USA,Vermont,,North America,43.4,-72.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000125,Ozark National Forest,USA,Arkansas,,North America,35.8,-93.2,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000126,Big Thicket forest,USA,Texas,,North America,30.42,-94.35,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000127,Congaree forest,USA,South Carolina,,North America,33.8,-80.8,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000128,Everglades / South Florida forest-wetland,USA,Florida,,North America,25.85,-80.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000129,Lacandon Jungle,Mexico,Chiapas,,North America,16.8,-90.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000130,Calakmul Biosphere Reserve,Mexico,Yucatan,,North America,18.3,-89.8,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000131,Sierra Madre Occidental pine-oak forest,Mexico,,,North America,26,-106.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000132,Sierra Madre del Sur,Mexico,,,North America,17.3,-100,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000133,Monarch Butterfly Biosphere Reserve,Mexico,,,North America,19.6,-100.25,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000134,Maya Biosphere Reserve,Guatemala,,,North America,17.25,-89.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000135,Sierra de las Minas,Guatemala,,,North America,15.15,-89.75,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000136,Rio PlÃ¡tano Biosphere Reserve,Honduras,,,North America,15.6,-85.1,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000137,Bosawas Biosphere Reserve,Nicaragua,,,North America,13.85,-84.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000138,Indio Maiz Biological Reserve,Nicaragua,,,North America,10.95,-84.15,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000139,Corcovado National Park,Costa Rica,,,North America,8.53,-83.58,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000140,Monteverde Cloud Forest,Costa Rica,,,North America,10.3,-84.8,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000141,La Amistad International Park,Costa Rica/Panama,,,North America,9.3,-83,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000142,Darien Forest,Panama,,,North America,8,-77.7,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000143,El Yunque National Forest,USA,Puerto Rico,,North America,18.28,-65.78,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000144,Blue and John Crow Mountains forest,Jamaica,,,North America,18.05,-76.55,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000145,Sierra de Bahoruco,Dominican Republic,,,North America,18.15,-71.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000146,Massif de la Hotte,Haiti,,,North America,18.35,-74.05,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000147,Amazon Rainforest (core),Brazil,,,South America,-3.5,-62,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000148,Tapajos National Forest,Brazil,Para,,South America,-4.3,-55,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000149,Jau National Park,Brazil,Amazonas,,South America,-1.9,-61.6,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000150,Xingu Indigenous Park forest,Brazil,Mato Grosso,,South America,-10.5,-53,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000151,Amazonas (Peruvian Amazon),Peru,,,South America,-5,-75,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000152,Manu National Park,Peru,,,South America,-12.2,-71.4,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000153,Tambopata National Reserve,Peru,,,South America,-12.85,-69.3,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000154,Yasuni National Park,Ecuador,,,South America,-0.95,-76,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000155,Sangay National Park,Ecuador,,,South America,-2.05,-78.35,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000156,Chiribiquete National Park,Colombia,,,South America,0.3,-72.3,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000157,Amacayacu National Park,Colombia,,,South America,-3.75,-70.25,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000158,Madidi National Park,Bolivia,,,South America,-14,-68.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000159,Noel Kempff Mercado National Park,Bolivia,,,South America,-13.9,-60.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000160,Amazonas state forest,Venezuela,,,South America,3.5,-66,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000161,Canaima National Park,Venezuela,,,South America,5.9,-61.8,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000162,Central Suriname Nature Reserve,Suriname,,,South America,3.9,-56.1,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000163,Guiana Amazonian Park,French Guiana,,,South America,3.5,-53.2,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000164,Iwokrama Forest,Guyana,,,South America,4.6,-58.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000165,Atlantic Forest (Mata Atlantica core),Brazil,,,South America,-20,-43.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000166,Serra do Mar,Brazil,Sao Paulo/Parana,,South America,-24,-47,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000167,Iguacu National Park forest,Brazil/Argentina,,,South America,-25.6,-54.45,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000168,Serra dos Orgaos,Brazil,Rio de Janeiro,,South America,-22.45,-43.03,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000169,Pantanal fringe forest,Brazil,,,South America,-17.5,-57,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000170,Valdivian Temperate Rainforest,Chile,,,South America,-40,-72.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000171,Alerce Andino National Park,Chile,,,South America,-41.5,-72.4,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000172,Chiloe National Park,Chile,,,South America,-42.6,-74.1,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000173,Nahuel Huapi forest,Argentina,,,South America,-41.1,-71.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000174,Los Alerces National Park,Argentina,,,South America,-42.85,-71.65,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000175,Tierra del Fuego forest,Argentina/Chile,,,South America,-54.5,-68.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000176,Yungas cloud forest,Bolivia/Argentina,,,South America,-22,-64.8,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000177,Calilegua National Park,Argentina,,,South America,-23.7,-64.85,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000178,Podocarpus National Park,Ecuador,,,South America,-4.1,-79.1,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000179,Sierra Nevada de Santa Marta forest,Colombia,,,South America,10.83,-73.65,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000180,Darien Gap forest (Colombian side),Colombia,,,South America,7.8,-77.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000181,Kanuku Mountains,Guyana,,,South America,3.1,-59.3,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000182,Gran Chaco dry forest,Paraguay/Argentina,,,South America,-23,-60.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000183,Cerrado woodland (transition),Brazil,,,South America,-15,-47.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000184,Scandinavian boreal forest (general),Sweden,,,Europe,63,16,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000185,Tyresta National Park,Sweden,,,Europe,59.13,18.33,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000186,Fulufjallet forest,Sweden,,,Europe,61.57,12.7,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000187,Femundsmarka forest,Norway,,,Europe,62.2,12.1,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000188,Trillemarka-Rollagsfjell,Norway,,,Europe,60.05,9.3,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000189,Nordland boreal forest,Norway,,,Europe,66.5,14.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000190,Nuuksio National Park,Finland,,,Europe,60.3,24.55,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000191,Karelian old-growth forest,Finland,,,Europe,63.5,30.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000192,Urho Kekkonen National Park,Finland,,,Europe,68.1,27.7,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000193,Sjaelso forest,Denmark,,,Europe,55.9,12.45,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000194,Black Forest (Schwarzwald),Germany,,,Europe,48.2,8.15,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000195,Bavarian Forest,Germany,,,Europe,49.05,13.3,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000196,Thuringian Forest,Germany,,,Europe,50.65,10.75,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000197,Teutoburg Forest,Germany,,,Europe,51.95,8.4,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000198,Ardennes Forest,Belgium/Luxembourg/France,,,Europe,50.1,5.6,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000199,Foret de Fontainebleau,France,,,Europe,48.4,2.7,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000200,Foret de Chambord/Sologne,France,,,Europe,47.6,1.7,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000201,Vosges Forest,France,,,Europe,48.2,7.05,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000202,Landes Forest,France,,,Europe,44.3,-0.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000203,Bialowieza Forest,Poland/Belarus,,,Europe,52.7,23.85,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000204,Bory Tucholskie,Poland,,,Europe,53.7,17.75,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000205,Veluwe forest,Netherlands,,,Europe,52.15,5.75,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000206,New Forest,United Kingdom,,,Europe,50.85,-1.6,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000207,Caledonian Forest,United Kingdom,Scotland,,Europe,57.1,-4.7,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000208,Killarney National Park forest,Ireland,,,Europe,51.95,-9.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000209,Bohemian Forest (Sumava),Czech Republic,,,Europe,49.1,13.55,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000210,Carpathian primeval beech forests,Romania/Ukraine/Slovakia,,,Europe,47.5,24.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000211,Retezat National Park forest,Romania,,,Europe,45.37,22.85,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000212,Bukk National Park forest,Hungary,,,Europe,48.1,20.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000213,Tatra National Park forest,Poland/Slovakia,,,Europe,49.2,20,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000214,Carpathian Biosphere Reserve,Ukraine,,,Europe,48.3,24,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000215,Belovezhskaya Pushcha,Belarus,,,Europe,52.6,23.8,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000216,Berezinsky Biosphere Reserve,Belarus,,,Europe,54.75,28.3,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000217,Russian taiga (European part),Russia,,,Europe,62,45,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000218,Kologriv Forest,Russia,,,Europe,58.85,44.35,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000219,Sila National Park forest,Italy,,,Europe,39.3,16.55,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000220,Aspromonte forest,Italy,,,Europe,38.15,15.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000221,Abruzzo Lazio and Molise NP forest,Italy,,,Europe,41.75,13.95,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000222,Cansiglio Forest,Italy,,,Europe,46.05,12.4,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000223,Irati Forest,Spain,,,Europe,42.95,-1.05,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.696Z
+F000224,Picos de Europa forest,Spain,,,Europe,43.2,-4.85,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000225,Muniellos Forest,Spain,,,Europe,43.05,-6.75,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000226,Sierra de las Nieves forest,Spain,,,Europe,36.7,-4.95,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000227,Peneda-Geres National Park forest,Portugal,,,Europe,41.75,-8.2,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000228,Perucica primeval forest,Bosnia and Herzegovina,,,Europe,43.3,18.6,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000229,Pindus Mountains forest,Greece,,,Europe,39.7,21.2,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000230,Rila National Park forest,Bulgaria,,,Europe,42.15,23.55,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000231,Rodopi Mountains forest,Bulgaria/Greece,,,Europe,41.5,24.8,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000232,Daintree Rainforest,Australia,Queensland,,Oceania,-16.25,145.42,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000233,Wet Tropics of Queensland,Australia,Queensland,,Oceania,-17,145.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000234,Atherton Tablelands rainforest,Australia,Queensland,,Oceania,-17.27,145.48,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000235,Eungella National Park forest,Australia,Queensland,,Oceania,-21.13,148.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000236,Lamington National Park,Australia,Queensland,,Oceania,-28.23,153.13,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000237,Gondwana Rainforests,Australia,NSW/QLD,,Oceania,-28.5,153.2,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000238,Iron Range National Park,Australia,Queensland,,Oceania,-12.72,143.3,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000239,Litchfield National Park forest,Australia,Northern Territory,,Oceania,-13.18,130.79,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000240,Kakadu forest/woodland,Australia,Northern Territory,,Oceania,-12.85,132.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000241,Blue Mountains forest,Australia,NSW,,Oceania,-33.7,150.3,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000242,Royal National Park forest,Australia,NSW,,Oceania,-34.12,151.07,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000243,Border Ranges National Park,Australia,NSW,,Oceania,-28.35,153.05,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000244,Barrington Tops forest,Australia,NSW,,Oceania,-31.9,151.45,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000245,South East Forests National Park,Australia,NSW,,Oceania,-37.05,149.35,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000246,Dandenong Ranges forest,Australia,Victoria,,Oceania,-37.85,145.35,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000247,Otway Ranges forest,Australia,Victoria,,Oceania,-38.65,143.55,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000248,Yarra Ranges forest,Australia,Victoria,,Oceania,-37.65,145.75,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000249,Wombat State Forest,Australia,Victoria,,Oceania,-37.4,144.15,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000250,Errinundra National Park,Australia,Victoria,,Oceania,-37.3,148.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000251,Tasmanian Wilderness (TWWHA),Australia,Tasmania,,Oceania,-42.2,146.2,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000252,Tarkine (Takayna) Forest,Australia,Tasmania,,Oceania,-41.3,145.1,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000253,Franklin-Gordon Wild Rivers forest,Australia,Tasmania,,Oceania,-42.35,145.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000254,Mount Field National Park forest,Australia,Tasmania,,Oceania,-42.68,146.68,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000255,Hartz Mountains forest,Australia,Tasmania,,Oceania,-43.13,146.75,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000256,Styx Valley (tall eucalypt),Australia,Tasmania,,Oceania,-42.75,146.55,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000257,Karri Forest (Boranup/Pemberton),Australia,Western Australia,,Oceania,-34.35,115.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000258,Walpole-Nornalup NP (Tingle forest),Australia,Western Australia,,Oceania,-34.98,116.75,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000259,Porongurup National Park forest,Australia,Western Australia,,Oceania,-34.68,117.9,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000260,Mount Lofty Ranges forest,Australia,South Australia,,Oceania,-34.95,138.75,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000261,Kangaroo Island forest remnants,Australia,South Australia,,Oceania,-35.8,137.25,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000262,Waipoua Forest (kauri),New Zealand,,,Oceania,-35.63,173.55,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000263,Fiordland forest,New Zealand,,,Oceania,-45.4,167.7,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000264,Te Urewera forest,New Zealand,,,Oceania,-38.65,177.15,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000265,Papua New Guinea lowland rainforest,Papua New Guinea,,,Oceania,-6.5,145,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000266,New Caledonia rainforest,New Caledonia,,,Oceania,-21.3,165.5,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000267,Solomon Islands rainforest,Solomon Islands,,,Oceania,-9,160,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z
+F000268,Vanuatu rainforest,Vanuatu,,,Oceania,-16.5,168,Protected Wilderness Area,Temperate / Tropical Ecosystem,global_forests.csv,2026-10-01T14:25:51.697Z

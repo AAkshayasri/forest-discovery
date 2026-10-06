@@ -1,52 +1,96 @@
 import './loadEnv.js';
 import express from 'express';
 import cors from 'cors';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
 import { dbService } from './services/dbService.js';
 import { geminiService } from './services/geminiService.js';
 import { authService } from './services/authService.js';
-import { zooService } from './services/zooService.js';
-import { routingService } from './services/routingService.js';
 import { authDbService } from './services/authDbService.js';
+import { gbifService } from './services/gbifService.js';
+import { validateDatasetCoordinates } from './services/coordinateValidator.js';
+import { firebaseAuth, firestore } from './services/firebaseAdmin.js';
+import { verifyFirebaseToken, requireVerifiedEmail, requireAdmin } from './middleware/authMiddleware.js';
+import { validateEmailComprehensive } from './services/emailValidator.js';
+import { initUserCleanupJob } from './services/userCleanupCron.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({ origin: '*' }));
+// Initialize daily background maintenance cron job
+initUserCleanupJob();
+
+// 1. Security Headers (Helmet)
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: "cross-origin" }
+}));
+
+// 2. CORS restricted to known client origins
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:3000',
+  'http://127.0.0.1:5173',
+  'http://127.0.0.1:3000',
+  process.env.CLIENT_ORIGIN
+].filter(Boolean);
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(null, true);
+    }
+  },
+  credentials: true
+}));
+
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
-// Logger middleware
-app.use((req, res, next) => {
-  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
-  next();
+// 3. Rate limiting for sensitive & auth endpoints
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 120, // max 120 requests per IP
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: "Too many requests from this IP, please try again later." }
 });
-
-// Admin role check middleware
-const requireAdmin = (req, res, next) => {
-  if (req.user && req.user.role === 'admin') {
-    return next();
-  }
-  return res.status(403).json({ error: "Forbidden. Admin role required." });
-};
 
 // ----------------------------------------------------
 // Public Routes
 // ----------------------------------------------------
 
 // Server status
-app.get('/api/status', (req, res) => {
-  res.json({
-    status: "healthy",
-    timestamp: new Date().toISOString(),
-    modes: {
-      database: dbService.getMode(),
-      authentication: authService.getMode(),
-      ai: geminiService.getMode()
-    }
-  });
+// Server status & validation stats
+app.get('/api/status', async (req, res) => {
+  try {
+    const stats = await dbService.getStats();
+    res.json({
+      status: "healthy",
+      timestamp: new Date().toISOString(),
+      modes: {
+        database: dbService.getMode(),
+        authentication: authService.getMode(),
+        ai: geminiService.getMode(),
+        runtimeSourceOfTruth: "SQLite (watlas.db)"
+      },
+      stats
+    });
+  } catch (err) {
+    res.json({
+      status: "healthy",
+      timestamp: new Date().toISOString(),
+      modes: {
+        database: dbService.getMode(),
+        authentication: authService.getMode(),
+        ai: geminiService.getMode()
+      }
+    });
+  }
 });
 
-// Search forests
+// Search forests in SQLite
 app.get('/api/forests/search', async (req, res) => {
   try {
     const query = req.query.q || '';
@@ -54,28 +98,23 @@ app.get('/api/forests/search', async (req, res) => {
     res.json(results);
   } catch (error) {
     console.error("Forest search failed:", error);
-    res.status(503).json({
-      success: false,
-      message: "Service is temporarily unavailable."
-    });
+    res.status(500).json({ error: error.message });
   }
 });
 
-// Get all forests
+// Get all forests from SQLite (supports ?continent=)
 app.get('/api/forests', async (req, res) => {
   try {
-    const forests = await dbService.getForests();
+    const { continent } = req.query;
+    const forests = await dbService.getForests({ continent });
     res.json(forests);
   } catch (error) {
     console.error("Get forests failed:", error);
-    res.status(503).json({
-      success: false,
-      message: "Service is temporarily unavailable."
-    });
+    res.status(500).json({ error: error.message });
   }
 });
 
-// Get forest details by ID
+// Get forest details by ID from SQLite
 app.get('/api/forests/:id', async (req, res) => {
   try {
     const forest = await dbService.getForestById(req.params.id);
@@ -83,34 +122,316 @@ app.get('/api/forests/:id', async (req, res) => {
     res.json(forest);
   } catch (error) {
     console.error("Get forest details failed:", error);
-    res.status(503).json({
-      success: false,
-      message: "Service is temporarily unavailable."
-    });
+    res.status(500).json({ error: error.message });
   }
 });
 
-// Get wildlife inside a forest
+// Get species/wildlife inside a forest from SQLite (supports ?group=Bird, ?group=Mammal, etc.)
+app.get('/api/forests/:id/species', async (req, res) => {
+  try {
+    const { group } = req.query;
+    const species = await dbService.getWildlifeByForestId(req.params.id, group);
+    res.json(species);
+  } catch (error) {
+    console.error("Get forest species failed:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Backwards-compatible alias for frontend
 app.get('/api/forests/:id/wildlife', async (req, res) => {
   try {
-    const wildlife = await dbService.getWildlifeByForestId(req.params.id);
+    const { group } = req.query;
+    const wildlife = await dbService.getWildlifeByForestId(req.params.id, group);
     res.json(wildlife);
   } catch (error) {
     console.error("Get forest wildlife failed:", error);
-    res.status(503).json({
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// ----------------------------------------------------
+// OSRM REAL ROAD ROUTING (Pure Road Network - No Straight Lines)
+// ----------------------------------------------------
+
+function formatDistance(meters) {
+  if (meters < 1000) {
+    return `${Math.round(meters)} m`;
+  }
+  return `${(meters / 1000).toFixed(1)} km`;
+}
+
+function formatDuration(seconds) {
+  const mins = Math.round(seconds / 60);
+  if (mins < 60) {
+    return `${mins} min`;
+  }
+  const hrs = Math.floor(mins / 60);
+  const remainingMins = mins % 60;
+  return remainingMins > 0 ? `${hrs} hr ${remainingMins} min` : `${hrs} hr`;
+}
+
+function generateStepInstruction(step) {
+  const maneuver = step.maneuver || {};
+  const type = maneuver.type;
+  const modifier = maneuver.modifier;
+  const name = step.name || 'road';
+
+  if (type === 'depart') {
+    return `Depart onto ${name}`;
+  }
+  if (type === 'arrive') {
+    return `Arrive at your destination`;
+  }
+  if (type === 'turn') {
+    if (modifier) {
+      return `Turn ${modifier} onto ${name}`;
+    }
+    return `Turn onto ${name}`;
+  }
+  if (type === 'new name') {
+    return `Continue onto ${name}`;
+  }
+  if (type === 'merge') {
+    return `Merge ${modifier ? modifier + ' ' : ''}onto ${name}`;
+  }
+  if (type === 'on ramp') {
+    return `Take ramp ${modifier ? modifier + ' ' : ''}onto ${name}`;
+  }
+  if (type === 'off ramp') {
+    return `Take exit ${modifier ? modifier + ' ' : ''}onto ${name}`;
+  }
+  if (type === 'fork') {
+    return `Keep ${modifier || 'straight'} at the fork onto ${name}`;
+  }
+  if (type === 'roundabout' || type === 'rotary') {
+    const exit = maneuver.exit ? `take exit ${maneuver.exit}` : 'exit';
+    return `At the roundabout, ${exit} onto ${name}`;
+  }
+  if (modifier) {
+    return `Keep ${modifier} onto ${name}`;
+  }
+  return `Continue on ${name}`;
+}
+
+app.get('/api/routes', async (req, res) => {
+  try {
+    const { startLat, startLng, endLat, endLng, profile = 'driving' } = req.query;
+
+    if (!startLat || !startLng || !endLat || !endLng) {
+      return res.status(400).json({
+        success: false,
+        error: "Missing required parameters: startLat, startLng, endLat, endLng."
+      });
+    }
+
+    const sLat = parseFloat(startLat);
+    const sLng = parseFloat(startLng);
+    const eLat = parseFloat(endLat);
+    const eLng = parseFloat(endLng);
+
+    if (isNaN(sLat) || isNaN(sLng) || isNaN(eLat) || isNaN(eLng)) {
+      return res.status(400).json({
+        success: false,
+        error: "Invalid coordinates format. Latitude and longitude must be valid numbers."
+      });
+    }
+
+    // Call OSRM routing API with full geometries and turn-by-turn steps
+    const osrmBase = (process.env.OSRM_BASE_URL || 'https://router.project-osrm.org').replace(/\/$/, '');
+    const osrmUrl = `${osrmBase}/route/v1/${encodeURIComponent(profile)}/${sLng},${sLat};${eLng},${eLat}?overview=full&geometries=geojson&steps=true`;
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 12000);
+
+    const osrmRes = await fetch(osrmUrl, {
+      headers: {
+        'User-Agent': 'WildAtlas-Navigation/1.0',
+        'Accept': 'application/json'
+      },
+      signal: controller.signal
+    }).catch(err => {
+      clearTimeout(timeoutId);
+      throw new Error(`OSRM network request failed: ${err.message}`);
+    });
+    clearTimeout(timeoutId);
+
+    if (!osrmRes.ok) {
+      return res.status(404).json({
+        success: false,
+        error: "No road-accessible route found.",
+        details: `OSRM server responded with HTTP status ${osrmRes.status}`
+      });
+    }
+
+    const osrmData = await osrmRes.json();
+
+    if (osrmData.code !== 'Ok' || !osrmData.routes || osrmData.routes.length === 0) {
+      return res.status(404).json({
+        success: false,
+        error: "No road-accessible route found.",
+        code: osrmData.code || 'NoRoute'
+      });
+    }
+
+    const route = osrmData.routes[0];
+    const rawDistance = route.distance; // meters
+    const rawDuration = route.duration; // seconds
+
+    const steps = (route.legs && route.legs[0]?.steps) ? route.legs[0].steps.map((step, idx) => ({
+      stepIndex: idx + 1,
+      instruction: generateStepInstruction(step),
+      distance: step.distance,
+      distanceFormatted: formatDistance(step.distance),
+      duration: step.duration,
+      durationFormatted: formatDuration(step.duration),
+      name: step.name || 'Unnamed road',
+      maneuver: step.maneuver,
+      location: step.maneuver?.location ? [step.maneuver.location[1], step.maneuver.location[0]] : null
+    })) : [];
+
+    res.json({
+      success: true,
+      distance: rawDistance,
+      distanceFormatted: formatDistance(rawDistance),
+      duration: rawDuration,
+      durationFormatted: formatDuration(rawDuration),
+      geometry: route.geometry, // GeoJSON LineString
+      steps,
+      waypoints: osrmData.waypoints
+    });
+  } catch (error) {
+    console.error("Routing error:", error);
+    res.status(500).json({
       success: false,
-      message: "Service is temporarily unavailable."
+      error: "No road-accessible route found."
     });
   }
 });
 
-// Get all global zoos/conservation centers
+// ----------------------------------------------------
+// ZOOS ENDPOINTS (Local SQLite)
+// ----------------------------------------------------
+
+// Get all zoos (supports ?continent=)
 app.get('/api/zoos', async (req, res) => {
   try {
-    const zoos = await zooService.getAllZoos();
+    const { continent } = req.query;
+    const zoos = await dbService.getZoos({ continent });
     res.json(zoos);
   } catch (error) {
     console.error("Get zoos failed:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Search zoos
+app.get('/api/zoos/search', async (req, res) => {
+  try {
+    const query = req.query.q || '';
+    const results = await dbService.searchZoos(query);
+    res.json(results);
+  } catch (error) {
+    console.error("Zoo search failed:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Get zoo details by ID
+app.get('/api/zoos/:id', async (req, res) => {
+  try {
+    const zoo = await dbService.getZooById(req.params.id);
+    if (!zoo) return res.status(404).json({ error: "Zoo not found." });
+    res.json(zoo);
+  } catch (error) {
+    console.error("Get zoo details failed:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Get species/wildlife in zoo (supports ?group=)
+app.get('/api/zoos/:id/species', async (req, res) => {
+  try {
+    const { group } = req.query;
+    const species = await dbService.getWildlifeByZooId(req.params.id, group);
+    res.json(species);
+  } catch (error) {
+    console.error("Get zoo species failed:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/zoos/:id/wildlife', async (req, res) => {
+  try {
+    const { group } = req.query;
+    const wildlife = await dbService.getWildlifeByZooId(req.params.id, group);
+    res.json(wildlife);
+  } catch (error) {
+    console.error("Get zoo wildlife failed:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// ----------------------------------------------------
+// GLOBAL SEARCH (Forests, Zoos, Species, Cities, Countries)
+// ----------------------------------------------------
+app.get('/api/search/global', async (req, res) => {
+  try {
+    const query = req.query.q || '';
+    const results = await dbService.globalSearch(query);
+    res.json(results);
+  } catch (error) {
+    console.error("Global search failed:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+
+
+// Get all species master list from SQLite (supports ?group=)
+app.get('/api/species', async (req, res) => {
+  try {
+    const { group } = req.query;
+    const species = await dbService.getAllWildlife({ group });
+    res.json(species);
+  } catch (error) {
+    console.error("Get species list failed:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Get specific species details from SQLite (Taxonomy, IUCN, Occurrences, Forests)
+app.get('/api/species/:id', async (req, res) => {
+  try {
+    const species = await dbService.getWildlifeById(req.params.id);
+    if (!species) return res.status(404).json({ error: "Species not found." });
+    res.json(species);
+  } catch (error) {
+    console.error("Get species by ID failed:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Backwards-compatible wildlife details endpoint (Pure SQLite - NO LLM / NO external APIs)
+app.get('/api/wildlife/:id', async (req, res) => {
+  try {
+    const animal = await dbService.getWildlifeById(req.params.id);
+    if (!animal) return res.status(404).json({ error: "Wildlife not found." });
+    res.json(animal);
+  } catch (error) {
+    console.error("Get wildlife by ID failed:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Get species occurrence records from SQLite
+app.get('/api/species/:id/occurrences', async (req, res) => {
+  try {
+    const { limit = 100, offset = 0 } = req.query;
+    const occurrences = await dbService.getSpeciesOccurrences(req.params.id, limit, offset);
+    res.json(occurrences);
+  } catch (error) {
+    console.error("Get species occurrences failed:", error);
     res.status(500).json({ error: error.message });
   }
 });
@@ -126,166 +447,268 @@ app.get('/api/sightings', async (req, res) => {
   }
 });
 
-// Get specific wildlife details
-app.get('/api/wildlife/:id', async (req, res) => {
+// Get validation report and database statistics
+app.get('/api/validation-report', async (req, res) => {
   try {
-    const animal = await dbService.getWildlifeById(req.params.id);
-    if (!animal) return res.status(404).json({ error: "Wildlife not found." });
-
-    // Dynamically fetch and merge detailed profile information from Gemini
-    try {
-      const detailedProfile = await geminiService.generateDetailedSpeciesProfile(animal.name);
-      if (detailedProfile) {
-        const merged = {
-          ...animal,
-          kingdom: detailedProfile.kingdom || animal.kingdom,
-          phylum: detailedProfile.phylum || animal.phylum,
-          class: detailedProfile.class || animal.class,
-          order: detailedProfile.order || animal.order,
-          family: detailedProfile.family || animal.family,
-          genus: detailedProfile.genus || animal.genus,
-          species: detailedProfile.species || animal.species,
-          description: detailedProfile.description || animal.description,
-          countries: detailedProfile.countries || animal.countries,
-          averageHeight: detailedProfile.averageHeight || animal.averageHeight,
-          averageWeight: detailedProfile.averageWeight || animal.averageWeight,
-          speed: detailedProfile.speed || animal.speed,
-          reproduction: detailedProfile.reproduction || animal.reproduction,
-          populationTrend: detailedProfile.populationTrend || animal.populationTrend,
-          majorThreats: detailedProfile.majorThreats || animal.majorThreats,
-          conservationEfforts: detailedProfile.conservationEfforts || animal.conservationEfforts,
-          interestingFacts: (detailedProfile.funFacts && detailedProfile.funFacts.length > 0)
-            ? detailedProfile.funFacts
-            : animal.interestingFacts
-        };
-        return res.json(merged);
-      }
-    } catch (geminiError) {
-      console.error("Failed to augment wildlife details with Gemini profile:", geminiError);
-    }
-
-    res.json(animal);
-  } catch (error) {
-    console.error("Get wildlife by ID failed:", error);
-    res.status(503).json({
-      success: false,
-      message: "Service is temporarily unavailable."
+    const stats = await dbService.getStats();
+    const coordinateValidation = await validateDatasetCoordinates();
+    res.json({
+      ...stats,
+      coordinateValidation
     });
+  } catch (error) {
+    console.error("Get validation report failed:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Dedicated Coordinate Validation Report for Forests and Zoos
+app.get('/api/validation/coordinates', async (req, res) => {
+  try {
+    const report = await validateDatasetCoordinates();
+    res.json(report);
+  } catch (error) {
+    console.error("Coordinate validation failed:", error);
+    res.status(500).json({ error: error.message });
   }
 });
 
 // ----------------------------------------------------
-// Authentication Routes (Production-Grade JWT)
+// Global GBIF Wildlife Occurrences Routes (Pure SQLite)
 // ----------------------------------------------------
-app.post('/api/auth/register', async (req, res) => {
+
+// Get telemetry statistics on stored GBIF occurrences
+app.get('/api/gbif/stats', async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
-    let assignedRole = role || 'user';
-    if (email && email.toLowerCase().trim() === 'admin@wildatlas.com') {
-      assignedRole = 'admin';
+    const stats = await gbifService.getStats();
+    res.json(stats);
+  } catch (error) {
+    console.error("Failed to fetch GBIF stats:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Query stored GBIF occurrences with filters from SQLite
+app.get('/api/gbif/occurrences', async (req, res) => {
+  try {
+    const {
+      category,
+      q,
+      search,
+      country,
+      minLat,
+      maxLat,
+      minLng,
+      maxLng,
+      limit = 100,
+      offset = 0
+    } = req.query;
+
+    const occurrences = await gbifService.getStoredOccurrences({
+      group: category || undefined,
+      search: search || q || undefined,
+      country: country || undefined,
+      minLat: minLat !== undefined ? parseFloat(minLat) : undefined,
+      maxLat: maxLat !== undefined ? parseFloat(maxLat) : undefined,
+      minLng: minLng !== undefined ? parseFloat(minLng) : undefined,
+      maxLng: maxLng !== undefined ? parseFloat(maxLng) : undefined,
+      limit: parseInt(limit, 10) || 100,
+      offset: parseInt(offset, 10) || 0
+    });
+
+    res.json(occurrences);
+  } catch (error) {
+    console.error("Failed to query GBIF occurrences:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Get a single GBIF occurrence by ID from SQLite
+app.get('/api/gbif/occurrences/:id', async (req, res) => {
+  try {
+    const occurrence = await gbifService.getOccurrenceById(req.params.id);
+    if (!occurrence) {
+      return res.status(404).json({ error: "GBIF occurrence record not found." });
     }
-    const user = await authService.register(name, email, password, assignedRole);
-    res.status(201).json({ user: { id: user.id, name: user.name, email: user.email, role: user.role } });
+    res.json(occurrence);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    console.error("Failed to fetch GBIF occurrence detail:", error);
+    res.status(500).json({ error: error.message });
   }
 });
 
-app.post('/api/auth/login', async (req, res) => {
+// Trigger a real GBIF occurrence import
+// Supports category: 'all' | 'mammals' | 'birds' | 'reptiles', limit (batch size), offset (pagination), requireImage
+app.post('/api/gbif/import', async (req, res) => {
   try {
-    const { email, password } = req.body;
-    const result = await authService.login(email, password);
+    const {
+      category = 'all',
+      limit = 20,
+      offset = 0,
+      requireImage = false
+    } = req.body;
+
+    const parsedLimit = Math.min(Math.max(parseInt(limit, 10) || 20, 1), 300);
+    const parsedOffset = Math.max(parseInt(offset, 10) || 0, 0);
+
+    let result;
+    if (category === 'all') {
+      result = await gbifService.importAllCategories({
+        limit: parsedLimit,
+        offset: parsedOffset,
+        requireImage: Boolean(requireImage)
+      });
+    } else {
+      const catResult = await gbifService.importCategory({
+        category,
+        limit: parsedLimit,
+        offset: parsedOffset,
+        requireImage: Boolean(requireImage)
+      });
+      const stats = await gbifService.getStats();
+      result = {
+        success: true,
+        summary: {
+          totalFetched: catResult.fetched,
+          totalInserted: catResult.inserted,
+          totalDuplicates: catResult.duplicatesSkipped,
+          currentDatabaseTotal: stats.total,
+          currentBreakdown: stats.breakdown,
+          uniqueSpecies: stats.uniqueSpecies,
+          uniqueCountries: stats.uniqueCountries
+        },
+        categoryDetails: {
+          [category]: catResult
+        }
+      };
+    }
+
     res.json(result);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    console.error("GBIF import failed:", error);
+    res.status(500).json({ error: error.message });
   }
 });
 
-app.post('/api/auth/logout', authService.verifyToken, async (req, res) => {
+// ----------------------------------------------------
+// Authentication & User Data Routes (Firebase Authentication & Cloud Firestore)
+// ----------------------------------------------------
+
+// Validate email format, disposable domains, and MX records (pre-registration check)
+app.post('/api/auth/validate-email', authLimiter, async (req, res) => {
   try {
-    await authService.logout(req.user.id);
-    res.json({ success: true, message: "Logged out successfully." });
+    const { email } = req.body;
+    if (!email) {
+      return res.status(400).json({ isValid: false, message: "Email is required." });
+    }
+    const result = await validateEmailComprehensive(email);
+    res.json(result);
+  } catch (error) {
+    console.error("Email validation error:", error);
+    res.status(500).json({ isValid: false, message: "Error validating email domain." });
+  }
+});
+
+// Retrieve current authenticated user profile from Cloud Firestore
+app.get('/api/auth/me', verifyFirebaseToken, async (req, res) => {
+  try {
+    const profile = await authService.getUserProfile(req.user.uid);
+    res.json({
+      uid: req.user.uid,
+      id: req.user.uid,
+      name: profile?.name || req.user.name || '',
+      email: req.user.email,
+      role: profile?.role || req.user.role || 'user',
+      avatar: profile?.avatar || req.user.avatar || null,
+      emailVerified: req.user.email_verified,
+      createdAt: profile?.createdAt || null
+    });
+  } catch (error) {
+    console.error("Failed to fetch user profile:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Alias for /api/me
+app.get('/api/me', verifyFirebaseToken, async (req, res) => {
+  try {
+    const profile = await authService.getUserProfile(req.user.uid);
+    res.json({
+      uid: req.user.uid,
+      id: req.user.uid,
+      name: profile?.name || req.user.name || '',
+      email: req.user.email,
+      role: profile?.role || req.user.role || 'user',
+      avatar: profile?.avatar || req.user.avatar || null,
+      emailVerified: req.user.email_verified,
+      createdAt: profile?.createdAt || null
+    });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
 
-app.post('/api/auth/refresh', async (req, res) => {
-  try {
-    const { refreshToken } = req.body;
-    const result = await authService.refresh(refreshToken);
-    res.json(result);
-  } catch (error) {
-    res.status(401).json({ error: error.message });
-  }
-});
-
-app.get('/api/auth/me', authService.verifyToken, async (req, res) => {
-  try {
-    const user = await authService.getUserMetadata(req.user.id);
-    res.json(user);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-app.put('/api/auth/profile', authService.verifyToken, async (req, res) => {
+// Update profile name and avatar in Firestore & Firebase Auth
+app.put('/api/auth/profile', verifyFirebaseToken, requireVerifiedEmail, async (req, res) => {
   try {
     const { name, avatar } = req.body;
-    const { authDbService } = await import('./services/authDbService.js');
-    const updatedUser = await authDbService.updateUserProfile(req.user.id, { name, avatar });
+    const uid = req.user.uid;
+
+    if (name && typeof name === 'string') {
+      // 1. Update Firebase Auth displayName
+      await firebaseAuth.updateUser(uid, {
+        displayName: name.trim(),
+        photoURL: avatar || undefined
+      }).catch((err) => console.warn('[Auth] Firebase Auth displayName update notice:', err.message));
+
+      // 2. Update Cloud Firestore
+      await firestore.collection('users').doc(uid).set({
+        name: name.trim(),
+        avatar: avatar || null,
+        updatedAt: new Date()
+      }, { merge: true }).catch((err) => console.warn('[Auth] Firestore profile update notice:', err.message));
+
+      // 3. Update SQLite local cache
+      await authDbService.updateUserProfile(uid, { name: name.trim(), avatar: avatar || null });
+    }
+
     res.json({
-      uid: updatedUser.id.toString(),
-      id: updatedUser.id,
-      name: updatedUser.name,
-      email: updatedUser.email,
-      role: updatedUser.role,
-      avatar: updatedUser.avatar
+      uid,
+      id: uid,
+      name: name?.trim() || req.user.name,
+      email: req.user.email,
+      role: req.user.role,
+      avatar: avatar || req.user.avatar,
+      emailVerified: req.user.email_verified
     });
   } catch (error) {
+    console.error("Profile update failed:", error);
     res.status(400).json({ error: error.message });
   }
 });
 
-app.patch('/api/auth/change-password', authService.verifyToken, async (req, res) => {
+// Delete account from Firebase Auth, Firestore, and SQLite
+app.delete('/api/auth/account', verifyFirebaseToken, async (req, res) => {
   try {
-    const { oldPassword, newPassword } = req.body;
-    if (!newPassword || newPassword.trim() === '') {
-      return res.status(400).json({ error: "New password cannot be empty." });
-    }
-    if (newPassword.length > 72) {
-      return res.status(400).json({ error: "Password exceeds storage limits (72 characters maximum)." });
-    }
-    const { authDbService } = await import('./services/authDbService.js');
-    const user = await authDbService.getUserById(req.user.id);
-    const bcrypt = await import('bcryptjs');
-    const isMatch = await bcrypt.default.compare(oldPassword, user.password_hash);
-    if (!isMatch) {
-      return res.status(400).json({ error: "Invalid old password." });
-    }
-    const salt = await bcrypt.default.genSalt(12);
-    const passwordHash = await bcrypt.default.hash(newPassword, salt);
-    await authDbService.updateUserPassword(req.user.id, passwordHash);
-    res.json({ success: true, message: "Password updated successfully." });
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
-});
+    const uid = req.user.uid;
+    // 1. Delete from Firebase Auth
+    await firebaseAuth.deleteUser(uid).catch((err) => console.warn('[Auth] Firebase Auth deleteUser notice:', err.message));
+    // 2. Delete from Cloud Firestore
+    await firestore.collection('users').doc(uid).delete().catch((err) => console.warn('[Auth] Firestore delete doc notice:', err.message));
+    // 3. Delete from SQLite
+    await authDbService.deleteUser(uid);
 
-app.delete('/api/auth/account', authService.verifyToken, async (req, res) => {
-  try {
-    const { authDbService } = await import('./services/authDbService.js');
-    await authDbService.deleteUser(req.user.id);
     res.json({ success: true, message: "Account deleted successfully." });
   } catch (error) {
+    console.error("Account deletion failed:", error);
     res.status(500).json({ error: error.message });
   }
 });
 
 // ----------------------------------------------------
-// Protected User Routes (Token Required)
+// Protected User Routes (Token Required + Verified Email Mandatory)
 // ----------------------------------------------------
-app.use('/api/user', authService.verifyToken);
+app.use('/api/user', verifyFirebaseToken, requireVerifiedEmail);
 
 // Synchronize user registration info
 app.post('/api/user/register', async (req, res) => {
@@ -471,25 +894,7 @@ app.delete('/api/user/chat/:id', async (req, res) => {
   }
 });
 
-// Calculate distance and route metrics between user location and habitat/zoo
-app.post('/api/user/route', async (req, res) => {
-  try {
-    const { startLat, startLng, destLat, destLng } = req.body;
-    if (startLat === undefined || startLng === undefined || destLat === undefined || destLng === undefined) {
-      return res.status(400).json({ error: "Start and destination coordinates are required." });
-    }
-    const route = routingService.calculateRoute(
-      Number(startLat),
-      Number(startLng),
-      Number(destLat),
-      Number(destLng)
-    );
-    res.json(route);
-  } catch (error) {
-    console.error("Route calculation failed:", error);
-    res.status(500).json({ error: error.message });
-  }
-});
+
 
 // Get user specific sightings
 app.get('/api/user/sightings', async (req, res) => {
@@ -641,16 +1046,16 @@ app.get('/api/admin/chats', async (req, res) => {
 // Admin Analytics & Monitoring Dashboard (Clean, real database telemetry)
 app.get('/api/admin/dashboard', async (req, res) => {
   try {
-    const [forests, users, chats, zoos, sightings, sightingsBreakdown, recentUsers, recentActivity, isDbAlive] = await Promise.all([
+    const [forests, users, chats, sightings, sightingsBreakdown, recentUsers, recentActivity, isDbAlive, gbifStats] = await Promise.all([
       dbService.getForests(),
       authService.getAllUsers(),
       authService.getAllChats(),
-      zooService.getAllZoos(),
       authDbService.getSightings(),
       authDbService.getSightingsBreakdown(),
       authDbService.getRecentUsers(5),
       authService.getRecentSystemActivity(10),
-      authDbService.checkDatabaseHealth()
+      authDbService.checkDatabaseHealth(),
+      gbifService.getStats()
     ]);
     
     const wildlifeCount = await dbService.getTotalWildlifeCount();
@@ -663,10 +1068,11 @@ app.get('/api/admin/dashboard', async (req, res) => {
         totalUsers: users.length,
         totalForests: forests.length,
         totalWildlife: wildlifeCount,
-        totalZoos: zoos.length,
         totalChats: chats.length,
-        totalSightings: sightings.length
+        totalSightings: sightings.length,
+        totalGbifOccurrences: gbifStats.total
       },
+      gbifStats,
       sightingsBreakdown: {
         pending: sightingsBreakdown.pending,
         verified: sightingsBreakdown.verified,
@@ -678,7 +1084,8 @@ app.get('/api/admin/dashboard', async (req, res) => {
       systemHealth: {
         database: isDbAlive ? "Connected" : "Error",
         geminiAI: isGeminiAvailable ? "Available" : "Unavailable",
-        mapService: "Available"
+        mapService: "Available",
+        gbifDataService: "Connected"
       }
     });
   } catch (error) {
@@ -693,7 +1100,6 @@ app.get('/api/admin/analytics', async (req, res) => {
     const forests = await dbService.getForests();
     const users = await authService.getAllUsers();
     const chats = await authService.getAllChats();
-    const zoos = await zooService.getAllZoos();
     const sightings = await authDbService.getSightings();
     const wildlifeCount = await dbService.getTotalWildlifeCount();
 
@@ -701,30 +1107,9 @@ app.get('/api/admin/analytics', async (req, res) => {
       forestsCount: forests.length,
       wildlifeCount: wildlifeCount,
       usersCount: users.length,
-      zoosCount: zoos.length,
       sightingsCount: sightings.length,
       chatsCount: chats.length
     });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-// Admin: Add new global zoo
-app.post('/api/admin/zoos', async (req, res) => {
-  try {
-    const zoo = await zooService.addZoo(req.body);
-    res.status(201).json(zoo);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-// Admin: Delete a zoo
-app.delete('/api/admin/zoos/:id', async (req, res) => {
-  try {
-    await zooService.deleteZoo(req.params.id);
-    res.json({ success: true, message: "Zoo deleted successfully." });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

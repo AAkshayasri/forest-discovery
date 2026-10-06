@@ -3,12 +3,20 @@
   "version": "1.0.0",
   "description": "WildAtlas - AI Powered Forest and Wildlife Explorer",
   "private": true,
+  "type": "module",
   "scripts": {
-    "install:all": "npm install && npm install --prefix client && npm install --prefix server",
+    "install:all": "npm install && npm install --prefix client --legacy-peer-deps && npm install --prefix server",
     "dev": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\"",
-    "start": "npm run start --prefix server"
+    "start": "npm run start --prefix server",
+    "ingest": "node scripts/ingest-biodiversity.js",
+    "refresh-data": "node scripts/ingest-biodiversity.js --refresh"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "firebase": "^12.19.0",
+    "sqlite3": "^6.0.1",
+    "xlsx": "^0.18.5"
   }
 }

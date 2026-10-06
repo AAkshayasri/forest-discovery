@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 
 interface FavoriteSpecies {
-  id: number;
+  id: number | string;
   name: string;
   scientificName: string;
   imageUrl: string;
@@ -11,8 +11,8 @@ interface FavoriteSpecies {
 interface FavoritesContextProps {
   favorites: FavoriteSpecies[];
   addFavorite: (species: FavoriteSpecies) => void;
-  removeFavorite: (id: number) => void;
-  isFavorite: (id: number) => boolean;
+  removeFavorite: (id: number | string) => void;
+  isFavorite: (id: number | string) => boolean;
 }
 
 export const FavoritesContext = createContext<FavoritesContextProps | undefined>(undefined);
@@ -40,7 +40,7 @@ export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     });
   };
 
-  const removeFavorite = (id: number) => {
+  const removeFavorite = (id: number | string) => {
     setFavorites((prev) => {
       const updated = prev.filter((s) => s.id !== id);
       localStorage.setItem('wildatlas_favorites', JSON.stringify(updated));
@@ -48,7 +48,7 @@ export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     });
   };
 
-  const isFavorite = (id: number) => {
+  const isFavorite = (id: number | string) => {
     return favorites.some((s) => s.id === id);
   };
 

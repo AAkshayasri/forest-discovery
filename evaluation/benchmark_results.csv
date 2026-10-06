@@ -1,0 +1,13 @@
+Category,Metric,Point Count,Latency (ms),Status,Benchmark Details
+"Ingestion & Hierarchy","Dataset Parse & Spatial Indexing",268,0.00,PASS,"Processed 268 entities with strict coordinate boundary checks"
+"Spatial Indexing","Linear Viewport Query (1,000 pts, Unclustered)",1000,0.05,PASS,"Matched 0 points in viewport bounding box"
+"Spatial Indexing","Clustered Marker Partition (1,000 pts, QuadGrid)",1000,0.27,PASS,"Partitioned into 410 spatial cluster buckets"
+"Spatial Indexing","Linear Viewport Query (10,000 pts, Unclustered)",10000,0.97,PASS,"Matched 0 points in viewport bounding box"
+"Spatial Indexing","Clustered Marker Partition (10,000 pts, QuadGrid)",10000,2.34,PASS,"Partitioned into 419 spatial cluster buckets"
+"Spatial Indexing","Linear Viewport Query (50,000 pts, Unclustered)",50000,1.85,PASS,"Matched 0 points in viewport bounding box"
+"Spatial Indexing","Clustered Marker Partition (50,000 pts, QuadGrid)",50000,11.62,PASS,"Partitioned into 451 spatial cluster buckets"
+"OSRM Road Routing","Route: London (UK) -> Oxford (UK)",2,3665.40,PASS,"Distance: 96.2 km, Duration: 91 min, Waypoints: 1587"
+"OSRM Road Routing","Route: Paris (FR) -> Lyon (FR)",2,661.10,PASS,"Distance: 465.9 km, Duration: 298 min, Waypoints: 8613"
+"OSRM Road Routing","Route: Berlin (DE) -> Munich (DE)",2,316.84,PASS,"Distance: 585.2 km, Duration: 351 min, Waypoints: 6585"
+"OSRM Road Routing","Route: Delhi (IN) -> Jim Corbett NP (IN)",2,319.59,PASS,"Distance: 293.2 km, Duration: 281 min, Waypoints: 3178"
+"OSRM Road Routing","Route: New York (US) -> Adirondack Park (US)",2,328.90,PASS,"Distance: 429.4 km, Duration: 342 min, Waypoints: 6261"

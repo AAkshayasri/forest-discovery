@@ -1,0 +1,28 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // 1. Deny by default
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+
+    // 2. User Sighting Uploads: users/{uid}/sightings/{sightingId}/{fileName}
+    match /users/{userId}/sightings/{sightingId}/{fileName} {
+      // User can read and write only their own files
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if request.auth != null 
+                   && request.auth.uid == userId
+                   && request.resource.size < 5 * 1024 * 1024 // 5MB max
+                   && request.resource.contentType.matches('image/.*');
+    }
+
+    // 3. User Avatars: users/{uid}/avatar/{fileName}
+    match /users/{userId}/avatar/{fileName} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null 
+                   && request.auth.uid == userId
+                   && request.resource.size < 2 * 1024 * 1024 // 2MB max
+                   && request.resource.contentType.matches('image/.*');
+    }
+  }
+}

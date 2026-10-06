@@ -4,20 +4,32 @@ import { api } from '../services/api';
 import { 
   ShieldAlert, LayoutDashboard, Trash2, 
   Users, MessageSquare, Trees, Layers, 
-  PlusCircle, Loader2, ScanEye, Building2,
+  PlusCircle, Loader2, ScanEye,
   CheckCircle2, AlertTriangle, XCircle, Activity,
-  ShieldCheck, Plus, Edit3, Search, CheckSquare, Square, X
+  ShieldCheck, Plus, Edit3, Search, CheckSquare, Square, X,
+  Globe, Download, RefreshCw, Database, ExternalLink, Compass
 } from 'lucide-react';
 import { Button } from '../components/common/Button';
+import { SpeciesImage } from '../components/common/SpeciesImage';
 
 interface AdminDashboardData {
   counts: {
     totalUsers: number;
     totalForests: number;
     totalWildlife: number;
-    totalZoos: number;
     totalChats: number;
     totalSightings: number;
+    totalGbifOccurrences?: number;
+  };
+  gbifStats?: {
+    total: number;
+    breakdown: {
+      mammals: number;
+      birds: number;
+      reptiles: number;
+    };
+    uniqueSpecies: number;
+    uniqueCountries: number;
   };
   sightingsBreakdown: {
     pending: number;
@@ -31,26 +43,38 @@ interface AdminDashboardData {
     database: string;
     geminiAI: string;
     mapService: string;
+    gbifDataService?: string;
   };
 }
 
 export const AdminPanel: React.FC = () => {
   const { user } = useAuth();
-  const [activeSubTab, setActiveSubTab] = useState<'overview' | 'forests' | 'wildlife' | 'zoos' | 'sightings' | 'logs'>('overview');
+  const [activeSubTab, setActiveSubTab] = useState<'overview' | 'forests' | 'wildlife' | 'sightings' | 'gbif' | 'logs'>('overview');
   
   // Data states
   const [dashboardData, setDashboardData] = useState<AdminDashboardData | null>(null);
   const [forests, setForests] = useState<any[]>([]);
   const [users, setUsers] = useState<any[]>([]);
   const [chats, setChats] = useState<any[]>([]);
-  const [zoos, setZoos] = useState<any[]>([]);
   const [sightings, setSightings] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+
+  // GBIF Occurrence States
+  const [gbifStats, setGbifStats] = useState<any | null>(null);
+  const [gbifOccurrences, setGbifOccurrences] = useState<any[]>([]);
+  const [loadingGbif, setLoadingGbif] = useState(false);
+  const [gbifImporting, setGbifImporting] = useState(false);
+  const [gbifImportCategory, setGbifImportCategory] = useState<'all' | 'mammals' | 'birds' | 'reptiles'>('all');
+  const [gbifBatchSize, setGbifBatchSize] = useState<number>(20);
+  const [gbifOffset, setGbifOffset] = useState<number>(0);
+  const [gbifRequireImage, setGbifRequireImage] = useState<boolean>(false);
+  const [gbifTableCategoryFilter, setGbifTableCategoryFilter] = useState<'all' | 'mammals' | 'birds' | 'reptiles'>('all');
+  const [gbifSearchQuery, setGbifSearchQuery] = useState('');
+  const [gbifImportResult, setGbifImportResult] = useState<any | null>(null);
 
   // Search & Filter States
   const [forestSearch, setForestSearch] = useState('');
   const [wildlifeSearch, setWildlifeSearch] = useState('');
-  const [zooSearch, setZooSearch] = useState('');
   const [userSearch, setUserSearch] = useState('');
   const [sightingsSearch, setSightingsSearch] = useState('');
   const [sightingsStatusFilter, setSightingsStatusFilter] = useState<'all' | 'pending' | 'verified' | 'flagged'>('all');
@@ -112,13 +136,6 @@ export const AdminPanel: React.FC = () => {
     factsInput: ''
   });
 
-  // Zoo Form States
-  const [zooName, setZooName] = useState('');
-  const [zooCountry, setZooCountry] = useState('');
-  const [zooLatitude, setZooLatitude] = useState('');
-  const [zooLongitude, setZooLongitude] = useState('');
-  const [zooNotable, setZooNotable] = useState('');
-
   const [actionLoading, setActionLoading] = useState(false);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -127,19 +144,17 @@ export const AdminPanel: React.FC = () => {
   const loadAdminData = async () => {
     setLoading(true);
     try {
-      const [dashRes, forestRes, userRes, chatRes, zooRes, sightingsRes] = await Promise.all([
+      const [dashRes, forestRes, userRes, chatRes, sightingsRes] = await Promise.all([
         api.getAdminDashboard(),
         api.getForests(),
         api.getUsers(),
         api.getChats(),
-        api.getZoos(),
         api.getAdminSightings()
       ]);
       setDashboardData(dashRes);
       setForests(forestRes);
       setUsers(userRes);
       setChats(chatRes);
-      setZoos(zooRes);
       setSightings(sightingsRes);
 
       if (!selectedForestForWildlife && forestRes.length > 0) {
@@ -168,6 +183,51 @@ export const AdminPanel: React.FC = () => {
     }
   };
 
+  // Load GBIF Telemetry & Stored Records
+  const loadGbifData = async () => {
+    setLoadingGbif(true);
+    try {
+      const [statsRes, occurrencesRes] = await Promise.all([
+        api.getGbifStats(),
+        api.getGbifOccurrences({
+          category: gbifTableCategoryFilter !== 'all' ? gbifTableCategoryFilter : undefined,
+          search: gbifSearchQuery || undefined,
+          limit: 100
+        })
+      ]);
+      setGbifStats(statsRes);
+      setGbifOccurrences(occurrencesRes);
+    } catch (err) {
+      console.error("Failed to load GBIF data:", err);
+    } finally {
+      setLoadingGbif(false);
+    }
+  };
+
+  // Trigger GBIF Import Batch
+  const handleGbifImport = async (categoryToImport?: 'all' | 'mammals' | 'birds' | 'reptiles', limitOverride?: number) => {
+    const targetCat = categoryToImport || gbifImportCategory;
+    const targetLimit = limitOverride || gbifBatchSize;
+    setGbifImporting(true);
+    setGbifImportResult(null);
+    try {
+      const res = await api.importGbifData({
+        category: targetCat,
+        limit: targetLimit,
+        offset: gbifOffset,
+        requireImage: gbifRequireImage
+      });
+      setGbifImportResult(res);
+      triggerSuccess(`GBIF Import: ${res.summary.totalInserted} new occurrences inserted (${res.summary.totalDuplicates} duplicate records skipped).`);
+      await loadGbifData();
+      await loadAdminData();
+    } catch (err: any) {
+      triggerError(err.message || "GBIF occurrence import failed.");
+    } finally {
+      setGbifImporting(false);
+    }
+  };
+
   useEffect(() => {
     if (selectedForestForWildlife) {
       loadForestWildlife(selectedForestForWildlife);
@@ -175,8 +235,15 @@ export const AdminPanel: React.FC = () => {
   }, [selectedForestForWildlife]);
 
   useEffect(() => {
+    if (activeSubTab === 'gbif') {
+      loadGbifData();
+    }
+  }, [activeSubTab, gbifTableCategoryFilter, gbifSearchQuery]);
+
+  useEffect(() => {
     if (user && user.role === 'admin') {
       loadAdminData();
+      loadGbifData();
     }
   }, [user]);
 
@@ -403,47 +470,7 @@ export const AdminPanel: React.FC = () => {
     }
   };
 
-  // 4. Submit Zoo Form
-  const handleAddZoo = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setActionLoading(true);
-    try {
-      const payload = {
-        name: zooName,
-        country: zooCountry,
-        latitude: parseFloat(zooLatitude),
-        longitude: parseFloat(zooLongitude),
-        notable_species: zooNotable
-      };
 
-      await api.addZoo(payload);
-
-      setZooName('');
-      setZooCountry('');
-      setZooLatitude('');
-      setZooLongitude('');
-      setZooNotable('');
-
-      triggerSuccess("Zoo / Conservation Center indexed successfully!");
-      loadAdminData();
-    } catch (error: any) {
-      triggerError(error.message || "Failed to add zoo.");
-    } finally {
-      setActionLoading(false);
-    }
-  };
-
-  // 6. Delete Zoo
-  const handleDeleteZoo = async (id: number) => {
-    if (!window.confirm("Are you sure you want to delete this zoo?")) return;
-    try {
-      await api.deleteZoo(id);
-      triggerSuccess("Zoo entry purged.");
-      loadAdminData();
-    } catch (error: any) {
-      triggerError(error.message || "Zoo deletion failed.");
-    }
-  };
 
   // 7. Verify Sighting
   const handleVerifySighting = async (id: number, status: 'verified' | 'flagged') => {
@@ -520,7 +547,7 @@ export const AdminPanel: React.FC = () => {
           
           {/* Sub Navigation */}
           <div className="flex gap-1.5 p-1 bg-surface-container border border-outline-variant/45 rounded-lg self-start sm:self-center overflow-x-auto max-w-full">
-            {(['overview', 'forests', 'wildlife', 'zoos', 'sightings', 'logs'] as const).map((sub) => (
+            {(['overview', 'forests', 'wildlife', 'sightings', 'gbif', 'logs'] as const).map((sub) => (
               <button
                 key={sub}
                 onClick={() => setActiveSubTab(sub)}
@@ -530,7 +557,7 @@ export const AdminPanel: React.FC = () => {
                     : 'text-on-surface-variant hover:text-primary'
                 }`}
               >
-                {sub === 'overview' ? 'Dashboard Overview' : sub === 'logs' ? 'Users & Logs' : sub}
+                {sub === 'overview' ? 'Dashboard Overview' : sub === 'gbif' ? 'GBIF Wildlife Data' : sub === 'logs' ? 'Users & Logs' : sub}
               </button>
             ))}
           </div>
@@ -566,52 +593,54 @@ export const AdminPanel: React.FC = () => {
                   <h2 className="font-headline-md text-sm font-bold text-on-surface flex items-center gap-2">
                     <Activity className="w-4.5 h-4.5 text-primary" /> System Overview Telemetry
                   </h2>
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5">
+                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
                     
-                    <div className="glass-panel bg-surface-container-high/90 p-4 rounded-xl border-outline-variant/40 flex items-start justify-between">
+                    <div className="glass-panel bg-surface-container-high/90 p-3.5 rounded-xl border-outline-variant/40 flex items-start justify-between">
                       <div>
                         <span className="block text-[9px] text-on-surface-variant font-bold uppercase tracking-wider font-label-sm">Total Users</span>
-                        <span className="font-display-lg text-2xl font-bold text-on-surface block mt-1">{dashboardData.counts.totalUsers}</span>
+                        <span className="font-display-lg text-xl font-bold text-on-surface block mt-1">{dashboardData.counts.totalUsers}</span>
                       </div>
                       <Users className="w-4 h-4 text-primary" />
                     </div>
 
-                    <div className="glass-panel bg-surface-container-high/90 p-4 rounded-xl border-outline-variant/40 flex items-start justify-between">
+                    <div className="glass-panel bg-surface-container-high/90 p-3.5 rounded-xl border-outline-variant/40 flex items-start justify-between">
                       <div>
                         <span className="block text-[9px] text-on-surface-variant font-bold uppercase tracking-wider font-label-sm">Total Forests</span>
-                        <span className="font-display-lg text-2xl font-bold text-on-surface block mt-1">{dashboardData.counts.totalForests}</span>
+                        <span className="font-display-lg text-xl font-bold text-on-surface block mt-1">{dashboardData.counts.totalForests}</span>
                       </div>
                       <Trees className="w-4 h-4 text-primary" />
                     </div>
 
-                    <div className="glass-panel bg-surface-container-high/90 p-4 rounded-xl border-outline-variant/40 flex items-start justify-between">
+                    <div className="glass-panel bg-surface-container-high/90 p-3.5 rounded-xl border-outline-variant/40 flex items-start justify-between">
                       <div>
                         <span className="block text-[9px] text-on-surface-variant font-bold uppercase tracking-wider font-label-sm">Wildlife Records</span>
-                        <span className="font-display-lg text-2xl font-bold text-on-surface block mt-1">{dashboardData.counts.totalWildlife}</span>
+                        <span className="font-display-lg text-xl font-bold text-on-surface block mt-1">{dashboardData.counts.totalWildlife}</span>
                       </div>
                       <Layers className="w-4 h-4 text-secondary" />
                     </div>
 
-                    <div className="glass-panel bg-surface-container-high/90 p-4 rounded-xl border-outline-variant/40 flex items-start justify-between">
+
+
+                    <div className="glass-panel bg-surface-container-high/90 p-3.5 rounded-xl border-outline-variant/40 flex items-start justify-between">
                       <div>
-                        <span className="block text-[9px] text-on-surface-variant font-bold uppercase tracking-wider font-label-sm">Total Zoos</span>
-                        <span className="font-display-lg text-2xl font-bold text-on-surface block mt-1">{dashboardData.counts.totalZoos}</span>
+                        <span className="block text-[9px] text-on-surface-variant font-bold uppercase tracking-wider font-label-sm">GBIF Occurrences</span>
+                        <span className="font-display-lg text-xl font-bold text-[#a5d0b9] block mt-1">{dashboardData.counts.totalGbifOccurrences ?? gbifStats?.total ?? 0}</span>
                       </div>
-                      <Building2 className="w-4 h-4 text-tertiary" />
+                      <Globe className="w-4 h-4 text-[#a5d0b9]" />
                     </div>
 
-                    <div className="glass-panel bg-surface-container-high/90 p-4 rounded-xl border-outline-variant/40 flex items-start justify-between">
+                    <div className="glass-panel bg-surface-container-high/90 p-3.5 rounded-xl border-outline-variant/40 flex items-start justify-between">
                       <div>
-                        <span className="block text-[9px] text-on-surface-variant font-bold uppercase tracking-wider font-label-sm">AI Telemetry Chats</span>
-                        <span className="font-display-lg text-2xl font-bold text-on-surface block mt-1">{dashboardData.counts.totalChats}</span>
+                        <span className="block text-[9px] text-on-surface-variant font-bold uppercase tracking-wider font-label-sm">AI Telemetry</span>
+                        <span className="font-display-lg text-xl font-bold text-on-surface block mt-1">{dashboardData.counts.totalChats}</span>
                       </div>
                       <MessageSquare className="w-4 h-4 text-primary" />
                     </div>
 
-                    <div className="glass-panel bg-surface-container-high/90 p-4 rounded-xl border-outline-variant/40 flex items-start justify-between">
+                    <div className="glass-panel bg-surface-container-high/90 p-3.5 rounded-xl border-outline-variant/40 flex items-start justify-between">
                       <div>
-                        <span className="block text-[9px] text-on-surface-variant font-bold uppercase tracking-wider font-label-sm">Total Sightings</span>
-                        <span className="font-display-lg text-2xl font-bold text-on-surface block mt-1">{dashboardData.counts.totalSightings}</span>
+                        <span className="block text-[9px] text-on-surface-variant font-bold uppercase tracking-wider font-label-sm">Sightings</span>
+                        <span className="font-display-lg text-xl font-bold text-on-surface block mt-1">{dashboardData.counts.totalSightings}</span>
                       </div>
                       <ScanEye className="w-4 h-4 text-secondary" />
                     </div>
@@ -724,18 +753,7 @@ export const AdminPanel: React.FC = () => {
                         </button>
                       </div>
 
-                      <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-container/60 border border-outline-variant/30">
-                        <div className="flex items-center gap-2">
-                          <Building2 className="w-4 h-4 text-tertiary" />
-                          <span className="font-bold text-on-surface">Global Zoos ({dashboardData.counts.totalZoos})</span>
-                        </div>
-                        <button
-                          onClick={() => setActiveSubTab('zoos')}
-                          className="text-[11px] font-bold text-tertiary hover:underline cursor-pointer"
-                        >
-                          Manage Zoos &rarr;
-                        </button>
-                      </div>
+
                     </div>
                   </div>
 
@@ -891,13 +909,7 @@ export const AdminPanel: React.FC = () => {
                         >
                           <Plus className="w-3.5 h-3.5 text-secondary" /> Add Wildlife
                         </Button>
-                        <Button 
-                          variant="ghost" 
-                          onClick={() => setActiveSubTab('zoos')}
-                          className="justify-start gap-1.5 rounded-lg text-xs bg-surface-container hover:bg-surface-container-high"
-                        >
-                          <Plus className="w-3.5 h-3.5 text-tertiary" /> Add Zoo
-                        </Button>
+
                         <Button 
                           variant="ghost" 
                           onClick={() => setActiveSubTab('sightings')}
@@ -1239,7 +1251,9 @@ export const AdminPanel: React.FC = () => {
                         )
                         .map((w) => (
                           <div key={w.id} className="p-3 bg-[#1c1b1b] border border-outline-variant/40 rounded-lg flex items-center justify-between font-body-md gap-3">
-                            <img src={w.imageUrl} alt={w.name} className="w-12 h-12 object-cover rounded-md border border-outline-variant/30 shrink-0" />
+                            <div className="w-12 h-12 rounded-md overflow-hidden shrink-0 border border-outline-variant/30">
+                              <SpeciesImage src={w.imageUrl} alt={w.name} speciesGroup={w.type} className="w-full h-full object-cover" />
+                            </div>
                             <div className="flex-1 min-w-0">
                               <div className="font-semibold text-xs text-on-surface truncate">{w.name}</div>
                               <div className="text-[10px] text-primary italic truncate">{w.scientificName}</div>
@@ -1274,119 +1288,7 @@ export const AdminPanel: React.FC = () => {
               </div>
             )}
 
-            {/* 4. ZOOS SUB TAB */}
-            {activeSubTab === 'zoos' && (
-              <div className="grid md:grid-cols-2 gap-6 items-start text-left">
-                {/* Zoo Form */}
-                <form onSubmit={handleAddZoo} className="glass-panel bg-surface-container-high/95 p-6 rounded-lg border-outline-variant/45 space-y-4">
-                  <h3 className="font-headline-md text-sm font-bold text-on-surface flex items-center gap-2 mb-2 border-b border-outline-variant/45 pb-2">
-                    <PlusCircle className="w-4.5 h-4.5 text-primary" /> Index Zoo / Conservation Center
-                  </h3>
 
-                  <div className="space-y-1">
-                    <label className="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider font-label-sm">Zoo / Center Name</label>
-                    <input
-                      type="text" required value={zooName} onChange={(e) => setZooName(e.target.value)}
-                      placeholder="e.g. Singapore Zoo"
-                      className="w-full px-3 py-2 text-xs rounded-lg text-on-surface glass-input font-body-md"
-                    />
-                  </div>
-
-                  <div className="space-y-1">
-                    <label className="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider font-label-sm">Country</label>
-                    <input
-                      type="text" required value={zooCountry} onChange={(e) => setZooCountry(e.target.value)}
-                      placeholder="e.g. Singapore"
-                      className="w-full px-3 py-2 text-xs rounded-lg text-on-surface glass-input font-body-md"
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-2">
-                    <div className="space-y-1">
-                      <label className="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider font-label-sm">Latitude</label>
-                      <input
-                        type="number" step="0.00001" required value={zooLatitude} onChange={(e) => setZooLatitude(e.target.value)}
-                        placeholder="e.g. 1.4043"
-                        className="w-full px-3 py-2 text-xs rounded-lg text-on-surface glass-input font-body-md"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider font-label-sm">Longitude</label>
-                      <input
-                        type="number" step="0.00001" required value={zooLongitude} onChange={(e) => setZooLongitude(e.target.value)}
-                        placeholder="e.g. 103.7930"
-                        className="w-full px-3 py-2 text-xs rounded-lg text-on-surface glass-input font-body-md"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-1">
-                    <label className="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider font-label-sm">Notable Species (Comma-separated)</label>
-                    <input
-                      type="text" required value={zooNotable} onChange={(e) => setZooNotable(e.target.value)}
-                      placeholder="e.g. Giant Panda, White Tiger, Komodo Dragon"
-                      className="w-full px-3 py-2 text-xs rounded-lg text-on-surface glass-input font-body-md"
-                    />
-                  </div>
-
-                  <button
-                    type="submit" disabled={actionLoading}
-                    className="w-full py-2.5 rounded-full bg-primary hover:brightness-105 font-bold text-xs text-on-primary transition-all cursor-pointer flex items-center justify-center gap-1.5 font-label-md"
-                  >
-                    {actionLoading && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                    Index Zoo Record
-                  </button>
-                </form>
-
-                {/* Zoos Directory List */}
-                <div className="glass-panel bg-surface-container-high/95 p-6 rounded-lg border-outline-variant/45 space-y-4">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-outline-variant/45 pb-3">
-                    <h3 className="font-headline-md text-sm font-bold text-on-surface flex items-center gap-2">
-                      <Building2 className="w-4.5 h-4.5 text-primary" />
-                      Zoos & Conservation Centers Directory ({zoos.length})
-                    </h3>
-
-                    {/* Zoo search */}
-                    <div className="relative w-full sm:w-44">
-                      <Search className="w-3.5 h-3.5 text-on-surface-variant absolute left-2.5 top-1/2 -translate-y-1/2" />
-                      <input
-                        type="text"
-                        placeholder="Search zoos..."
-                        value={zooSearch}
-                        onChange={(e) => setZooSearch(e.target.value)}
-                        className="w-full pl-8 pr-3 py-1.5 text-xs rounded-lg glass-input text-on-surface font-body-md"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="max-h-[400px] overflow-y-auto space-y-3 pr-1">
-                    {zoos
-                      .filter(z => 
-                        z.name.toLowerCase().includes(zooSearch.toLowerCase()) || 
-                        z.country.toLowerCase().includes(zooSearch.toLowerCase())
-                      )
-                      .map((z) => (
-                        <div key={z.id} className="p-3 bg-[#1c1b1b] border border-outline-variant/40 rounded-lg flex items-center justify-between font-body-md">
-                          <div>
-                            <div className="font-semibold text-xs text-on-surface">{z.name}</div>
-                            <div className="text-[10px] text-on-surface-variant mt-0.5 font-label-sm">{z.country} • Lat: {z.latitude}, Lng: {z.longitude}</div>
-                            <div className="text-[9px] text-primary italic mt-1">Exhibits: {z.notable_species}</div>
-                          </div>
-                          <button
-                            onClick={() => handleDeleteZoo(z.id)}
-                            className="p-1.5 rounded bg-error/20 hover:bg-error/30 text-error border border-error/20 hover:border-error/40 transition-all cursor-pointer"
-                          >
-                            <Trash2 className="w-4 h-4" />
-                          </button>
-                        </div>
-                      ))}
-                    {zoos.length === 0 && (
-                      <p className="text-xs text-on-surface-variant text-center py-6 italic">No zoos registered yet.</p>
-                    )}
-                  </div>
-                </div>
-              </div>
-            )}
 
             {/* 5. SIGHTINGS SUB TAB (With Batch Moderation, Filters, and Checkboxes) */}
             {activeSubTab === 'sightings' && (
@@ -1642,6 +1544,309 @@ export const AdminPanel: React.FC = () => {
                     )}
                   </div>
                 </div>
+              </div>
+            )}
+
+            {/* 6. GBIF GLOBAL OCCURRENCE DATASET & INGESTION CONSOLE */}
+            {activeSubTab === 'gbif' && (
+              <div className="space-y-6 animate-fade-in text-left">
+                
+                {/* Telemetry Overview Cards */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                  <div className="glass-panel bg-surface-container-high/90 p-4 rounded-xl border border-outline-variant/40 flex flex-col justify-between">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] text-on-surface-variant font-bold uppercase tracking-wider font-label-sm">Total Ingested</span>
+                      <Globe className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="font-display-lg text-2xl font-bold text-on-surface mt-2">{gbifStats?.total || 0}</span>
+                    <span className="text-[9px] text-[#a5d0b9] mt-1 font-label-sm">Live SQLite Records</span>
+                  </div>
+
+                  <div className="glass-panel bg-surface-container-high/90 p-4 rounded-xl border border-outline-variant/40 flex flex-col justify-between">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] text-on-surface-variant font-bold uppercase tracking-wider font-label-sm">Mammals</span>
+                      <span className="text-sm">🦁</span>
+                    </div>
+                    <span className="font-display-lg text-2xl font-bold text-[#f7b28c] mt-2">{gbifStats?.breakdown?.mammals || 0}</span>
+                    <span className="text-[9px] text-on-surface-variant mt-1 font-label-sm">class = Mammalia</span>
+                  </div>
+
+                  <div className="glass-panel bg-surface-container-high/90 p-4 rounded-xl border border-outline-variant/40 flex flex-col justify-between">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] text-on-surface-variant font-bold uppercase tracking-wider font-label-sm">Birds</span>
+                      <span className="text-sm">🦅</span>
+                    </div>
+                    <span className="font-display-lg text-2xl font-bold text-[#7dd3fc] mt-2">{gbifStats?.breakdown?.birds || 0}</span>
+                    <span className="text-[9px] text-on-surface-variant mt-1 font-label-sm">class = Aves</span>
+                  </div>
+
+                  <div className="glass-panel bg-surface-container-high/90 p-4 rounded-xl border border-outline-variant/40 flex flex-col justify-between">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] text-on-surface-variant font-bold uppercase tracking-wider font-label-sm">Reptiles</span>
+                      <span className="text-sm">🦎</span>
+                    </div>
+                    <span className="font-display-lg text-2xl font-bold text-[#86efac] mt-2">{gbifStats?.breakdown?.reptiles || 0}</span>
+                    <span className="text-[9px] text-on-surface-variant mt-1 font-label-sm">class = Reptilia</span>
+                  </div>
+
+                  <div className="glass-panel bg-surface-container-high/90 p-4 rounded-xl border border-outline-variant/40 flex flex-col justify-between">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] text-on-surface-variant font-bold uppercase tracking-wider font-label-sm">Unique Species</span>
+                      <Database className="w-4 h-4 text-tertiary" />
+                    </div>
+                    <span className="font-display-lg text-2xl font-bold text-on-surface mt-2">{gbifStats?.uniqueSpecies || 0}</span>
+                    <span className="text-[9px] text-on-surface-variant mt-1 font-label-sm">Distinct Taxa</span>
+                  </div>
+
+                  <div className="glass-panel bg-surface-container-high/90 p-4 rounded-xl border border-outline-variant/40 flex flex-col justify-between">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] text-on-surface-variant font-bold uppercase tracking-wider font-label-sm">Countries</span>
+                      <Compass className="w-4 h-4 text-secondary" />
+                    </div>
+                    <span className="font-display-lg text-2xl font-bold text-on-surface mt-2">{gbifStats?.uniqueCountries || 0}</span>
+                    <span className="text-[9px] text-on-surface-variant mt-1 font-label-sm">Worldwide Coverage</span>
+                  </div>
+                </div>
+
+                {/* Ingestion & Import Controller */}
+                <div className="glass-panel bg-surface-container-high/95 p-6 rounded-xl border border-outline-variant/45 space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-outline-variant/35 pb-3">
+                    <div>
+                      <h3 className="font-headline-md text-sm font-bold text-on-surface flex items-center gap-2">
+                        <Download className="w-4.5 h-4.5 text-primary" />
+                        GBIF Occurrence Importer
+                      </h3>
+                      <p className="text-[11px] text-on-surface-variant mt-0.5">
+                        Fetch real global wildlife records from GBIF API with deduplication, coordinate validation, and batching.
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => loadGbifData()}
+                      disabled={loadingGbif}
+                      className="px-3 py-1.5 rounded-lg border border-outline-variant/40 text-xs text-on-surface-variant hover:text-primary flex items-center gap-1.5 self-start cursor-pointer font-label-sm"
+                    >
+                      <RefreshCw className={`w-3.5 h-3.5 ${loadingGbif ? 'animate-spin' : ''}`} />
+                      Refresh Data
+                    </button>
+                  </div>
+
+                  {/* Form Controls */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pt-1">
+                    <div className="space-y-1">
+                      <label className="text-[10px] font-bold text-on-surface-variant uppercase font-label-sm">Taxon Category</label>
+                      <select
+                        value={gbifImportCategory}
+                        onChange={(e) => setGbifImportCategory(e.target.value as any)}
+                        className="w-full px-3 py-2 text-xs rounded-lg glass-input text-on-surface focus:border-primary/80"
+                      >
+                        <option value="all">All Categories (Mammals, Birds, Reptiles)</option>
+                        <option value="mammals">Mammals (class = Mammalia)</option>
+                        <option value="birds">Birds (class = Aves)</option>
+                        <option value="reptiles">Reptiles (class = Reptilia)</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="text-[10px] font-bold text-on-surface-variant uppercase font-label-sm">Batch Size (Limit per Category)</label>
+                      <select
+                        value={gbifBatchSize}
+                        onChange={(e) => setGbifBatchSize(Number(e.target.value))}
+                        className="w-full px-3 py-2 text-xs rounded-lg glass-input text-on-surface focus:border-primary/80"
+                      >
+                        <option value={20}>20 records (Test / Standard Batch)</option>
+                        <option value={50}>50 records (Medium Batch)</option>
+                        <option value={100}>100 records (Large Batch)</option>
+                        <option value={200}>200 records (Bulk Batch)</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="text-[10px] font-bold text-on-surface-variant uppercase font-label-sm">Pagination Offset</label>
+                      <input
+                        type="number"
+                        min={0}
+                        step={20}
+                        value={gbifOffset}
+                        onChange={(e) => setGbifOffset(Math.max(0, parseInt(e.target.value, 10) || 0))}
+                        className="w-full px-3 py-2 text-xs rounded-lg glass-input text-on-surface focus:border-primary/80"
+                        placeholder="0 (First page)"
+                      />
+                    </div>
+
+                    <div className="space-y-1 flex flex-col justify-end">
+                      <label className="text-[10px] font-bold text-on-surface-variant uppercase font-label-sm mb-1.5 flex items-center gap-2 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={gbifRequireImage}
+                          onChange={(e) => setGbifRequireImage(e.target.checked)}
+                          className="rounded text-primary focus:ring-primary h-4 w-4 bg-surface-container"
+                        />
+                        Require Still Image Photo
+                      </label>
+                    </div>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="flex flex-wrap items-center gap-3 pt-2 border-t border-outline-variant/30">
+                    <button
+                      onClick={() => handleGbifImport('all', 20)}
+                      disabled={gbifImporting}
+                      className="px-4 py-2 rounded-lg text-xs font-bold bg-secondary text-on-secondary hover:brightness-105 disabled:opacity-50 shadow flex items-center gap-2 cursor-pointer font-label-sm"
+                    >
+                      {gbifImporting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
+                      <ShieldCheck className="w-4 h-4" />
+                      Run 20-Record Verification Test
+                    </button>
+
+                    <button
+                      onClick={() => handleGbifImport()}
+                      disabled={gbifImporting}
+                      className="px-4 py-2 rounded-lg text-xs font-bold bg-primary text-on-primary hover:brightness-105 disabled:opacity-50 shadow flex items-center gap-2 cursor-pointer font-label-sm"
+                    >
+                      {gbifImporting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
+                      <Download className="w-4 h-4" />
+                      Start Custom GBIF Import
+                    </button>
+                  </div>
+
+                  {/* Live Import Result Banner */}
+                  {gbifImportResult && (
+                    <div className="p-4 rounded-xl bg-surface-container-low border border-primary/30 space-y-2 animate-fade-in text-xs font-body-md">
+                      <div className="flex items-center justify-between font-bold text-primary">
+                        <span className="flex items-center gap-1.5">
+                          <CheckCircle2 className="w-4 h-4 text-primary" />
+                          Import Batch Result Telemetry
+                        </span>
+                        <span className="text-[10px] text-on-surface-variant">{new Date().toLocaleTimeString()}</span>
+                      </div>
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
+                        <div className="p-2 rounded bg-surface-container border border-outline-variant/20">
+                          <span className="text-[9px] text-on-surface-variant uppercase block">Fetched from GBIF</span>
+                          <strong className="text-on-surface text-sm">{gbifImportResult.summary?.totalFetched ?? gbifImportResult.fetched ?? 0}</strong>
+                        </div>
+                        <div className="p-2 rounded bg-surface-container border border-outline-variant/20">
+                          <span className="text-[9px] text-on-surface-variant uppercase block">Newly Inserted</span>
+                          <strong className="text-primary text-sm">+{gbifImportResult.summary?.totalInserted ?? gbifImportResult.inserted ?? 0}</strong>
+                        </div>
+                        <div className="p-2 rounded bg-surface-container border border-outline-variant/20">
+                          <span className="text-[9px] text-on-surface-variant uppercase block">Duplicates Prevented</span>
+                          <strong className="text-warning text-sm">{gbifImportResult.summary?.totalDuplicates ?? gbifImportResult.duplicatesSkipped ?? 0}</strong>
+                        </div>
+                        <div className="p-2 rounded bg-surface-container border border-outline-variant/20">
+                          <span className="text-[9px] text-on-surface-variant uppercase block">Total in DB</span>
+                          <strong className="text-[#a5d0b9] text-sm">{gbifImportResult.summary?.currentDatabaseTotal ?? gbifStats?.total ?? 0}</strong>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Stored Occurrences Registry Table */}
+                <div className="glass-panel bg-surface-container-high/95 p-6 rounded-xl border border-outline-variant/45 space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-outline-variant/35 pb-3">
+                    <div>
+                      <h3 className="font-headline-md text-sm font-bold text-on-surface flex items-center gap-2">
+                        <Database className="w-4.5 h-4.5 text-primary" />
+                        Stored GBIF Occurrences ({gbifOccurrences.length})
+                      </h3>
+                      <p className="text-[11px] text-on-surface-variant mt-0.5">
+                        Verified wildlife records ready for spatial mapping and public biodiversity exploration.
+                      </p>
+                    </div>
+
+                    {/* Filter & Search Bar */}
+                    <div className="flex items-center gap-2">
+                      <select
+                        value={gbifTableCategoryFilter}
+                        onChange={(e) => setGbifTableCategoryFilter(e.target.value as any)}
+                        className="px-2.5 py-1.5 text-xs rounded-lg glass-input text-on-surface"
+                      >
+                        <option value="all">All Categories</option>
+                        <option value="mammals">Mammals</option>
+                        <option value="birds">Birds</option>
+                        <option value="reptiles">Reptiles</option>
+                      </select>
+
+                      <div className="relative">
+                        <Search className="w-3.5 h-3.5 absolute left-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant" />
+                        <input
+                          type="text"
+                          value={gbifSearchQuery}
+                          onChange={(e) => setGbifSearchQuery(e.target.value)}
+                          placeholder="Search species / country..."
+                          className="pl-8 pr-3 py-1.5 text-xs rounded-lg glass-input text-on-surface w-48 focus:w-60 transition-all"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Occurrences List / Table */}
+                  <div className="max-h-[500px] overflow-y-auto space-y-2">
+                    {gbifOccurrences.map((occ) => (
+                      <div
+                        key={occ.id}
+                        className="p-3.5 bg-surface-container rounded-lg border border-outline-variant/30 hover:border-primary/40 transition-all flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs"
+                      >
+                        <div className="flex items-start gap-3">
+                          <div className="w-12 h-12 rounded-lg overflow-hidden shrink-0 border border-outline-variant/30">
+                            <SpeciesImage
+                              src={occ.image_url}
+                              alt={occ.scientific_name}
+                              speciesGroup={occ.category}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+
+                          <div className="space-y-0.5">
+                            <div className="flex items-center gap-2">
+                              <h4 className="font-bold text-on-surface font-headline-md">{occ.scientific_name}</h4>
+                              <span className={`px-2 py-0.2 rounded-full text-[9px] font-bold uppercase font-label-sm ${
+                                occ.category === 'mammals' ? 'bg-[#f7b28c]/20 text-[#f7b28c] border border-[#f7b28c]/30' :
+                                occ.category === 'birds' ? 'bg-[#7dd3fc]/20 text-[#7dd3fc] border border-[#7dd3fc]/30' :
+                                'bg-[#86efac]/20 text-[#86efac] border border-[#86efac]/30'
+                              }`}>
+                                {occ.category}
+                              </span>
+                            </div>
+                            {occ.common_name && (
+                              <p className="text-[11px] text-on-surface-variant italic">{occ.common_name}</p>
+                            )}
+                            <p className="text-[10px] text-on-surface-variant font-label-sm">
+                              📍 {occ.locality ? `${occ.locality}, ` : ''}{occ.state_province ? `${occ.state_province}, ` : ''}{occ.country || 'Global'}
+                              <span className="text-[#a5d0b9] ml-1.5 font-mono font-bold">({Number(occ.latitude).toFixed(3)}, {Number(occ.longitude).toFixed(3)})</span>
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-3 text-right self-end md:self-center">
+                          <div className="text-[10px] text-on-surface-variant">
+                            <div>{occ.event_date ? `Observed: ${occ.event_date}` : 'Basis: ' + (occ.basis_of_record || 'Observation')}</div>
+                            <div className="text-[9px] text-[#8ba394] mt-0.5">{occ.dataset_name || 'GBIF Network'}</div>
+                          </div>
+
+                          <a
+                            href={occ.gbif_url || `https://www.gbif.org/occurrence/${occ.gbif_id}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface-variant border border-outline-variant/40 transition-all"
+                            title="View official record on GBIF"
+                          >
+                            <ExternalLink className="w-3.5 h-3.5" />
+                          </a>
+                        </div>
+                      </div>
+                    ))}
+
+                    {gbifOccurrences.length === 0 && (
+                      <div className="text-center py-12 text-on-surface-variant text-xs space-y-2">
+                        <Globe className="w-8 h-8 text-outline mx-auto" />
+                        <p>No GBIF occurrence records matching current filters.</p>
+                        <p className="text-[10px] text-[#8ba394]">Use the importer above to fetch verified records from GBIF.</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
               </div>
             )}
 

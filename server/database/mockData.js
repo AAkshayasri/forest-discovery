@@ -14867,5 +14867,78 @@ export const mockWildlife = [
       "It exhibits annual migration patterns in this forest."
     ],
     "distribution": "Egypt, Europe"
+  },
+  {
+    "id": 6001,
+    "forestId": 121,
+    "name": "Asiatic Lion",
+    "scientificName": "Panthera leo persica",
+    "type": "animal",
+    "imageUrl": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?q=80&w=800&auto=format&fit=crop",
+    "habitat": "Dry deciduous scrub and teak forest",
+    "diet": "Carnivore (Chital, Sambar, Nilgai)",
+    "behaviour": "Social apex predator living in smaller prides than African lions, territorial and crepuscular hunter.",
+    "lifespan": "16-18 years",
+    "conservationStatus": "Endangered",
+    "interestingFacts": [
+      "Gir National Park is the only remaining natural sanctuary for the Asiatic Lion in the entire world.",
+      "Asiatic lions have a characteristic longitudinal fold of skin running along their belly.",
+      "Adult males develop a darker, shorter mane that allows their ears to remain visible."
+    ],
+    "distribution": "Gir National Park, Gujarat, India"
+  },
+  {
+    "id": 6002,
+    "forestId": 121,
+    "name": "Indian Leopard",
+    "scientificName": "Panthera pardus fusca",
+    "type": "animal",
+    "imageUrl": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?q=80&w=800&auto=format&fit=crop",
+    "habitat": "Dense forest and rocky ravines",
+    "diet": "Carnivore",
+    "behaviour": "Solitary, elusive predator skilled at climbing trees and night stalking.",
+    "lifespan": "12-17 years",
+    "conservationStatus": "Vulnerable",
+    "interestingFacts": [
+      "Gir holds one of the highest densities of wild leopards anywhere in India.",
+      "Indian leopards are master ambush hunters capable of carrying prey larger than themselves up trees."
+    ],
+    "distribution": "Indian Subcontinent"
+  },
+  {
+    "id": 6003,
+    "forestId": 121,
+    "name": "Indian Peafowl",
+    "scientificName": "Pavo cristatus",
+    "type": "bird",
+    "imageUrl": "https://images.unsplash.com/photo-1535083783855-76ae62b2914e?q=80&w=800&auto=format&fit=crop",
+    "habitat": "Forest floor and riverbanks",
+    "diet": "Omnivore",
+    "behaviour": "Forages on the forest floor during the day and roosts high in tall teak trees at night.",
+    "lifespan": "15-20 years",
+    "conservationStatus": "Least Concern",
+    "interestingFacts": [
+      "The national bird of India, highly abundant across the Gir forest ecosystem.",
+      "Emits loud alarm calls that warn other animals of approaching lions or leopards."
+    ],
+    "distribution": "India, South Asia"
+  },
+  {
+    "id": 6004,
+    "forestId": 121,
+    "name": "Mugger Crocodile",
+    "scientificName": "Crocodylus palustris",
+    "type": "reptile",
+    "imageUrl": "https://images.unsplash.com/photo-1549480017-c5332f14309e?q=80&w=800&auto=format&fit=crop",
+    "habitat": "Hiran and Kamleshwar rivers and reservoirs",
+    "diet": "Carnivore (Fish, Waterbirds, Mammals)",
+    "behaviour": "Basks on riverbanks and dam reservoirs during winter mornings, active aquatic predator.",
+    "lifespan": "28-40 years",
+    "conservationStatus": "Vulnerable",
+    "interestingFacts": [
+      "The Kamleshwar Dam reservoir inside Gir is referred to as the 'Crocodile Sanctuary of Gujarat'.",
+      "Mugger crocodiles use twigs on their snouts as lures to catch nest-building birds."
+    ],
+    "distribution": "Indian Subcontinent"
   }
 ];

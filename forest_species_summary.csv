@@ -1,0 +1,269 @@
+forest_id,forest_name,country,continent,mammal_count,bird_count,reptile_count,total_species,verification_status,data_completeness
+F000001,Sundarbans mangroves,India / Bangladesh,Asia,12,41,11,70,verified,partial
+F000002,Western Ghats moist forests,India,Asia,12,37,20,92,verified,partial
+F000003,Silent Valley,India,Asia,13,43,19,98,verified,partial
+F000004,Nagarhole-Bandipur,India,Asia,13,37,20,90,verified,partial
+F000005,Gir Forest,India,Asia,9,25,18,62,verified,partial
+F000006,Corbett / Terai Arc,India,Asia,10,33,15,69,verified,partial
+F000007,Namdapha,India,Asia,11,42,20,90,verified,partial
+F000008,Chittagong Hill Tracts,Bangladesh,Asia,13,27,18,94,verified,partial
+F000009,Chitwan lowland sal forest,Nepal,Asia,9,34,17,65,verified,partial
+F000010,Sinharaja,Sri Lanka,Asia,12,35,19,94,verified,partial
+F000011,Borneo lowland rainforest,Indonesia/Malaysia/Brunei,Asia,19,58,20,100,verified,partial
+F000012,Danum Valley,Malaysia,Asia,14,21,16,93,verified,partial
+F000013,Gunung Mulu,Malaysia,Asia,12,28,22,94,verified,partial
+F000014,Taman Negara,Malaysia,Asia,15,53,17,100,verified,partial
+F000015,Ulu Temburong,Brunei,Asia,11,27,5,71,verified,partial
+F000016,Leuser Ecosystem,Indonesia,Asia,6,27,15,68,verified,partial
+F000017,Kerinci Seblat,Indonesia,Asia,2,11,10,38,verified,partial
+F000018,Bukit Barisan Selatan,Indonesia,Asia,9,35,17,82,verified,partial
+F000019,Lorentz,Indonesia,Asia,0,10,3,48,verified,partial
+F000020,Khao Yai,Thailand,Asia,8,21,1,37,verified,partial
+F000021,Kaeng Krachan,Thailand,Asia,3,10,4,33,verified,partial
+F000022,Cardamom Mountains,Cambodia,Asia,0,3,2,28,verified,partial
+F000023,Nam Ha,Laos,Asia,0,23,1,33,verified,partial
+F000024,Cat Tien,Vietnam,Asia,14,14,12,47,verified,partial
+F000025,Cuc Phuong,Vietnam,Asia,2,24,18,51,verified,partial
+F000026,Palawan / Puerto Princesa,Philippines,Asia,7,7,13,49,verified,partial
+F000027,Sierra Madre (Luzon),Philippines,Asia,9,25,17,76,verified,partial
+F000028,Siberian taiga (central),Russia,Asia,1,0,0,8,verified,partial
+F000029,Sikhote-Alin / Ussuri,Russia,Asia,0,1,6,38,verified,partial
+F000030,Greater Khingan (Da Hinggan),China,Asia,12,44,0,60,verified,partial
+F000031,Changbai Mountain,China,Asia,8,6,6,58,verified,partial
+F000032,Shennongjia,China,Asia,2,14,1,39,verified,partial
+F000033,Zhangjiajie,China,Asia,1,23,13,49,verified,partial
+F000034,Xishuangbanna tropical forest,China,Asia,11,27,4,52,verified,partial
+F000035,Khan Khentii taiga,Mongolia,Asia,0,20,0,34,verified,partial
+F000036,Shirakami-Sanchi beech forest,Japan,Asia,11,14,8,60,verified,partial
+F000037,Yakushima cedar forest,Japan,Asia,2,24,4,58,verified,partial
+F000038,Gotjawal forest Jeju,South Korea,Asia,2,25,0,34,verified,partial
+F000039,Hyrcanian (Caspian) forests,Iran / Azerbaijan,Asia,2,15,14,50,verified,partial
+F000040,Caucasus mixed forests,Georgia / Armenia,Asia,1,17,13,75,verified,partial
+F000041,Tian Shan walnut-fruit forests,Kyrgyzstan,Asia,1,28,7,69,verified,partial
+F000042,Dhofar cloud forests,Oman,Asia,3,11,6,41,verified,partial
+F000043,Congo Basin rainforest (core),DR Congo,Africa,0,19,0,42,verified,partial
+F000044,Salonga,DR Congo,Africa,0,60,0,60,verified,partial
+F000045,Virunga forests,DR Congo,Africa,11,20,3,41,verified,partial
+F000046,Ituri Forest,DR Congo,Africa,12,30,13,65,verified,partial
+F000047,Dja Faunal Reserve,Cameroon,Africa,3,7,14,70,verified,partial
+F000048,Campo-Ma'an,Cameroon,Africa,1,11,18,54,verified,partial
+F000049,Odzala-Kokoua,Congo,Africa,8,12,3,35,verified,partial
+F000050,Nouabale-Ndoki,Congo,Africa,6,4,2,25,verified,partial
+F000051,Monte Alen,Equatorial Guinea,Africa,14,24,12,68,verified,partial
+F000052,Minkebe,Gabon,Africa,0,27,0,66,verified,partial
+F000053,Lope-Okanda,Gabon,Africa,10,36,3,55,verified,partial
+F000054,Ivindo,Gabon,Africa,4,6,1,36,verified,partial
+F000055,Dzanga-Sangha,Central African Republic,Africa,6,19,19,52,verified,partial
+F000056,Tai National Park,Cote d'Ivoire,Africa,0,0,2,22,verified,partial
+F000057,Sapo National Park,Liberia,Africa,0,34,0,72,verified,partial
+F000058,Gola Rainforest,Sierra Leone,Africa,13,24,7,52,verified,partial
+F000059,Kakum National Park,Ghana,Africa,2,7,0,33,verified,partial
+F000060,Omo Forest Reserve,Nigeria,Africa,2,10,13,43,verified,partial
+F000061,Cross River forests,Nigeria,Africa,0,54,1,56,verified,partial
+F000062,Bia National Park,Ghana,Africa,3,8,1,37,verified,partial
+F000063,Kakamega Forest,Kenya,Africa,7,38,4,49,verified,partial
+F000064,Aberdare Forest,Kenya,Africa,0,30,7,37,verified,partial
+F000065,Mau Forest Complex,Kenya,Africa,18,55,1,74,verified,partial
+F000066,Mount Kenya forest belt,Kenya,Africa,0,56,10,67,verified,partial
+F000067,Bwindi Impenetrable Forest,Uganda,Africa,3,35,5,53,verified,partial
+F000068,Kibale Forest,Uganda,Africa,17,12,6,42,verified,partial
+F000069,Budongo Forest,Uganda,Africa,5,26,1,32,verified,partial
+F000070,Mabira Forest,Uganda,Africa,9,20,4,38,verified,partial
+F000071,Harenna Forest (Bale Mountains),Ethiopia,Africa,4,31,0,40,verified,partial
+F000072,Kafa Biosphere Reserve,Ethiopia,Africa,2,4,2,34,verified,partial
+F000073,Nyungwe Forest,Rwanda,Africa,3,41,13,64,verified,partial
+F000074,Kibira National Park,Burundi,Africa,5,25,0,32,verified,partial
+F000075,Jozani Forest,Tanzania,Africa,13,3,12,44,verified,partial
+F000076,Udzungwa Mountains,Tanzania,Africa,16,31,12,80,verified,partial
+F000077,Eastern Arc forests (general),Tanzania,Africa,10,30,15,60,verified,partial
+F000078,Knysna-Tsitsikamma forest,South Africa,Africa,3,30,10,71,verified,partial
+F000079,Kruger woodland/mopane belt,South Africa,Africa,17,7,2,47,verified,partial
+F000080,Miombo woodlands (central belt),Zambia,Africa,18,26,4,49,verified,partial
+F000081,Gorongosa forests,Mozambique,Africa,13,20,5,56,verified,partial
+F000082,Chimanimani forest,Zimbabwe/Mozambique,Africa,2,16,7,38,verified,partial
+F000083,Kasungu / Miombo,Malawi,Africa,4,5,3,30,verified,partial
+F000084,Mkomazi-Miombo transition,Tanzania,Africa,20,43,12,85,verified,partial
+F000085,Okavango riparian forest,Botswana,Africa,1,43,1,54,verified,partial
+F000086,Namib escarpment woodland,Namibia,Africa,0,30,0,30,verified,partial
+F000087,Andasibe-Mantadia (eastern rainforest),Madagascar,Africa,10,1,11,43,verified,partial
+F000088,Masoala rainforest,Madagascar,Africa,9,22,11,54,verified,partial
+F000089,Ankarafantsika (dry forest),Madagascar,Africa,0,0,7,52,verified,partial
+F000090,Ranomafana rainforest,Madagascar,Africa,3,5,8,39,verified,partial
+F000091,Spiny forest (south),Madagascar,Africa,11,30,0,70,verified,partial
+F000092,Rif cedar/oak forests,Morocco,Africa,1,8,2,34,verified,partial
+F000093,Atlas Mountains cedar forests,Morocco,Africa,9,30,9,59,verified,partial
+F000094,Kroumirie forests,Tunisia,Africa,12,24,4,70,verified,partial
+F000095,Kabylie forests,Algeria,Africa,7,5,3,56,verified,partial
+F000096,Canadian Boreal Forest (core),Canada,North America,11,10,0,52,verified,partial
+F000097,Great Bear Rainforest,Canada,North America,0,23,0,56,verified,partial
+F000098,Clayoquot Sound,Canada,North America,0,3,4,37,verified,partial
+F000099,Boreal Shield (Ontario/Quebec),Canada,North America,1,17,1,25,verified,partial
+F000100,Algonquin Provincial Park forest,Canada,North America,6,11,0,24,verified,partial
+F000101,Acadian forest region,Canada,North America,4,18,5,49,verified,partial
+F000102,Mackenzie boreal forest,Canada,North America,15,33,0,71,verified,partial
+F000103,Yukon boreal/taiga,Canada,North America,6,10,0,38,verified,partial
+F000104,Vancouver Island temperate rainforest,Canada,North America,0,12,0,45,verified,partial
+F000105,Olympic National Forest,USA,North America,14,6,0,50,verified,partial
+F000106,Hoh Rainforest,USA,North America,11,21,0,62,verified,partial
+F000107,Tongass National Forest,USA,North America,8,20,0,58,verified,partial
+F000108,Chugach National Forest,USA,North America,6,6,0,32,verified,partial
+F000109,Redwood National and State Parks,USA,North America,3,3,0,38,verified,partial
+F000110,Mount Hood National Forest,USA,North America,0,6,0,38,verified,partial
+F000111,Willamette National Forest,USA,North America,13,14,5,61,verified,partial
+F000112,Sierra Nevada forests (Sequoia/Kings Canyon),USA,North America,7,5,5,41,verified,partial
+F000113,Yosemite forest belt,USA,North America,8,17,3,44,verified,partial
+F000114,Rocky Mountain National Forest belt,USA,North America,3,7,0,24,verified,partial
+F000115,White Mountains (Arizona),USA,North America,11,23,3,60,verified,partial
+F000116,Kaibab National Forest,USA,North America,2,8,0,30,verified,partial
+F000117,Black Hills National Forest,USA,North America,13,23,0,52,verified,partial
+F000118,Bitterroot National Forest,USA,North America,6,10,1,32,verified,partial
+F000119,Great Smoky Mountains forest,USA,North America,13,10,9,54,verified,partial
+F000120,Appalachian forest (general),USA,North America,9,28,7,67,verified,partial
+F000121,Shenandoah National Forest,USA,North America,3,5,0,32,verified,partial
+F000122,Adirondack Park forest,USA,North America,14,8,4,32,verified,partial
+F000123,White Mountain National Forest,USA,North America,12,30,0,54,verified,partial
+F000124,Green Mountain National Forest,USA,North America,13,19,3,42,verified,partial
+F000125,Ozark National Forest,USA,North America,10,26,11,73,verified,partial
+F000126,Big Thicket forest,USA,North America,1,16,10,57,verified,partial
+F000127,Congaree forest,USA,North America,2,28,5,46,verified,partial
+F000128,Everglades / South Florida forest-wetland,USA,North America,11,30,4,63,verified,partial
+F000129,Lacandon Jungle,Mexico,North America,8,54,1,66,verified,partial
+F000130,Calakmul Biosphere Reserve,Mexico,North America,10,30,8,53,verified,partial
+F000131,Sierra Madre Occidental pine-oak forest,Mexico,North America,10,1,2,36,verified,partial
+F000132,Sierra Madre del Sur,Mexico,North America,11,21,15,70,verified,partial
+F000133,Monarch Butterfly Biosphere Reserve,Mexico,North America,0,38,4,53,verified,partial
+F000134,Maya Biosphere Reserve,Guatemala,North America,2,27,2,35,verified,partial
+F000135,Sierra de las Minas,Guatemala,North America,0,1,0,38,verified,partial
+F000136,Rio PlÃ¡tano Biosphere Reserve,Honduras,North America,15,44,13,77,verified,partial
+F000137,Bosawas Biosphere Reserve,Nicaragua,North America,13,4,3,20,verified,partial
+F000138,Indio Maiz Biological Reserve,Nicaragua,North America,3,12,17,42,verified,partial
+F000139,Corcovado National Park,Costa Rica,North America,11,11,4,41,verified,partial
+F000140,Monteverde Cloud Forest,Costa Rica,North America,15,19,5,50,verified,partial
+F000141,La Amistad International Park,Costa Rica/Panama,North America,11,16,10,56,verified,partial
+F000142,Darien Forest,Panama,North America,2,27,14,51,verified,partial
+F000143,El Yunque National Forest,USA,North America,0,26,1,40,verified,partial
+F000144,Blue and John Crow Mountains forest,Jamaica,North America,13,27,14,73,verified,partial
+F000145,Sierra de Bahoruco,Dominican Republic,North America,9,27,13,68,verified,partial
+F000146,Massif de la Hotte,Haiti,North America,0,28,12,72,verified,partial
+F000147,Amazon Rainforest (core),Brazil,South America,2,14,4,38,verified,partial
+F000148,Tapajos National Forest,Brazil,South America,16,17,13,62,verified,partial
+F000149,Jau National Park,Brazil,South America,2,21,13,46,verified,partial
+F000150,Xingu Indigenous Park forest,Brazil,South America,17,67,20,105,verified,partial
+F000151,Amazonas (Peruvian Amazon),Peru,South America,10,31,12,60,verified,partial
+F000152,Manu National Park,Peru,South America,3,27,4,53,verified,partial
+F000153,Tambopata National Reserve,Peru,South America,1,4,17,39,verified,partial
+F000154,Yasuni National Park,Ecuador,South America,3,4,15,42,verified,partial
+F000155,Sangay National Park,Ecuador,South America,9,12,0,36,verified,partial
+F000156,Chiribiquete National Park,Colombia,South America,2,34,2,68,verified,partial
+F000157,Amacayacu National Park,Colombia,South America,9,28,4,50,verified,partial
+F000158,Madidi National Park,Bolivia,South America,2,13,2,39,verified,partial
+F000159,Noel Kempff Mercado National Park,Bolivia,South America,1,29,10,47,verified,partial
+F000160,Amazonas state forest,Venezuela,South America,13,51,13,77,verified,partial
+F000161,Canaima National Park,Venezuela,South America,18,29,10,59,verified,partial
+F000162,Central Suriname Nature Reserve,Suriname,South America,0,29,9,45,verified,partial
+F000163,Guiana Amazonian Park,French Guiana,South America,2,2,2,40,verified,partial
+F000164,Iwokrama Forest,Guyana,South America,6,30,6,68,verified,partial
+F000165,Atlantic Forest (Mata Atlantica core),Brazil,South America,12,31,18,95,verified,partial
+F000166,Serra do Mar,Brazil,South America,1,4,1,38,verified,partial
+F000167,Iguacu National Park forest,Brazil/Argentina,South America,1,7,3,33,verified,partial
+F000168,Serra dos Orgaos,Brazil,South America,1,20,1,37,verified,partial
+F000169,Pantanal fringe forest,Brazil,South America,14,16,2,57,verified,partial
+F000170,Valdivian Temperate Rainforest,Chile,South America,1,5,1,36,verified,partial
+F000171,Alerce Andino National Park,Chile,South America,11,27,1,66,verified,partial
+F000172,Chiloe National Park,Chile,South America,0,5,1,38,verified,partial
+F000173,Nahuel Huapi forest,Argentina,South America,14,3,4,51,verified,partial
+F000174,Los Alerces National Park,Argentina,South America,9,5,2,42,verified,partial
+F000175,Tierra del Fuego forest,Argentina/Chile,South America,9,26,3,50,verified,partial
+F000176,Yungas cloud forest,Bolivia/Argentina,South America,6,16,2,38,verified,partial
+F000177,Calilegua National Park,Argentina,South America,1,12,0,35,verified,partial
+F000178,Podocarpus National Park,Ecuador,South America,0,26,2,61,verified,partial
+F000179,Sierra Nevada de Santa Marta forest,Colombia,South America,2,3,0,36,verified,partial
+F000180,Darien Gap forest (Colombian side),Colombia,South America,16,48,20,91,verified,partial
+F000181,Kanuku Mountains,Guyana,South America,1,6,1,35,verified,partial
+F000182,Gran Chaco dry forest,Paraguay/Argentina,South America,2,32,1,37,verified,partial
+F000183,Cerrado woodland (transition),Brazil,South America,10,27,18,94,verified,partial
+F000184,Scandinavian boreal forest (general),Sweden,Europe,3,8,0,18,verified,partial
+F000185,Tyresta National Park,Sweden,Europe,0,32,0,35,verified,partial
+F000186,Fulufjallet forest,Sweden,Europe,0,17,0,24,verified,partial
+F000187,Femundsmarka forest,Norway,Europe,1,15,0,22,verified,partial
+F000188,Trillemarka-Rollagsfjell,Norway,Europe,1,26,0,40,verified,partial
+F000189,Nordland boreal forest,Norway,Europe,4,19,0,23,verified,partial
+F000190,Nuuksio National Park,Finland,Europe,10,28,7,56,verified,partial
+F000191,Karelian old-growth forest,Finland,Europe,4,28,3,38,verified,partial
+F000192,Urho Kekkonen National Park,Finland,Europe,3,17,0,20,verified,partial
+F000193,Sjaelso forest,Denmark,Europe,8,36,0,62,verified,partial
+F000194,Black Forest (Schwarzwald),Germany,Europe,12,34,8,62,verified,partial
+F000195,Bavarian Forest,Germany,Europe,0,28,0,28,verified,partial
+F000196,Thuringian Forest,Germany,Europe,9,34,6,68,verified,partial
+F000197,Teutoburg Forest,Germany,Europe,9,17,4,36,verified,partial
+F000198,Ardennes Forest,Belgium/Luxembourg/France,Europe,2,19,1,27,verified,partial
+F000199,Foret de Fontainebleau,France,Europe,13,19,6,51,verified,partial
+F000200,Foret de Chambord/Sologne,France,Europe,1,20,0,23,verified,partial
+F000201,Vosges Forest,France,Europe,16,25,3,55,verified,partial
+F000202,Landes Forest,France,Europe,0,41,0,55,verified,partial
+F000203,Bialowieza Forest,Poland/Belarus,Europe,6,13,0,24,verified,partial
+F000204,Bory Tucholskie,Poland,Europe,0,4,0,13,verified,partial
+F000205,Veluwe forest,Netherlands,Europe,0,32,0,34,verified,partial
+F000206,New Forest,United Kingdom,Europe,7,24,0,40,verified,partial
+F000207,Caledonian Forest,United Kingdom,Europe,9,30,5,64,verified,partial
+F000208,Killarney National Park forest,Ireland,Europe,14,28,0,69,verified,partial
+F000209,Bohemian Forest (Sumava),Czech Republic,Europe,3,11,0,30,verified,partial
+F000210,Carpathian primeval beech forests,Romania/Ukraine/Slovakia,Europe,2,14,0,33,verified,partial
+F000211,Retezat National Park forest,Romania,Europe,1,28,6,41,verified,partial
+F000212,Bukk National Park forest,Hungary,Europe,12,28,1,64,verified,partial
+F000213,Tatra National Park forest,Poland/Slovakia,Europe,12,28,0,58,verified,partial
+F000214,Carpathian Biosphere Reserve,Ukraine,Europe,0,16,2,29,verified,partial
+F000215,Belovezhskaya Pushcha,Belarus,Europe,5,39,9,59,verified,partial
+F000216,Berezinsky Biosphere Reserve,Belarus,Europe,0,12,5,38,verified,partial
+F000217,Russian taiga (European part),Russia,Europe,0,2,0,28,verified,partial
+F000218,Kologriv Forest,Russia,Europe,0,1,0,28,verified,partial
+F000219,Sila National Park forest,Italy,Europe,0,10,0,33,verified,partial
+F000220,Aspromonte forest,Italy,Europe,9,32,0,67,verified,partial
+F000221,Abruzzo Lazio and Molise NP forest,Italy,Europe,2,21,3,41,verified,partial
+F000222,Cansiglio Forest,Italy,Europe,12,42,8,81,verified,partial
+F000223,Irati Forest,Spain,Europe,2,20,5,55,verified,partial
+F000224,Picos de Europa forest,Spain,Europe,0,3,0,27,verified,partial
+F000225,Muniellos Forest,Spain,Europe,12,27,13,69,verified,partial
+F000226,Sierra de las Nieves forest,Spain,Europe,10,28,4,68,verified,partial
+F000227,Peneda-Geres National Park forest,Portugal,Europe,3,4,2,31,verified,partial
+F000228,Perucica primeval forest,Bosnia and Herzegovina,Europe,11,34,8,77,verified,partial
+F000229,Pindus Mountains forest,Greece,Europe,5,35,10,74,verified,partial
+F000230,Rila National Park forest,Bulgaria,Europe,12,27,0,48,verified,partial
+F000231,Rodopi Mountains forest,Bulgaria/Greece,Europe,14,29,4,68,verified,partial
+F000232,Daintree Rainforest,Australia,Oceania,0,4,1,35,verified,partial
+F000233,Wet Tropics of Queensland,Australia,Oceania,0,8,1,37,verified,partial
+F000234,Atherton Tablelands rainforest,Australia,Oceania,0,5,3,38,verified,partial
+F000235,Eungella National Park forest,Australia,Oceania,11,25,24,85,verified,partial
+F000236,Lamington National Park,Australia,Oceania,1,5,4,37,verified,partial
+F000237,Gondwana Rainforests,Australia,Oceania,1,9,3,35,verified,partial
+F000238,Iron Range National Park,Australia,Oceania,13,26,9,74,verified,partial
+F000239,Litchfield National Park forest,Australia,Oceania,1,3,5,29,verified,partial
+F000240,Kakadu forest/woodland,Australia,Oceania,2,8,5,32,verified,partial
+F000241,Blue Mountains forest,Australia,Oceania,3,34,15,73,verified,partial
+F000242,Royal National Park forest,Australia,Oceania,4,3,0,14,verified,partial
+F000243,Border Ranges National Park,Australia,Oceania,1,4,3,36,verified,partial
+F000244,Barrington Tops forest,Australia,Oceania,9,27,17,59,verified,partial
+F000245,South East Forests National Park,Australia,Oceania,5,34,4,80,verified,partial
+F000246,Dandenong Ranges forest,Australia,Oceania,2,4,3,21,verified,partial
+F000247,Otway Ranges forest,Australia,Oceania,8,6,2,41,verified,partial
+F000248,Yarra Ranges forest,Australia,Oceania,1,3,0,38,verified,partial
+F000249,Wombat State Forest,Australia,Oceania,2,7,3,36,verified,partial
+F000250,Errinundra National Park,Australia,Oceania,8,20,11,80,verified,partial
+F000251,Tasmanian Wilderness (TWWHA),Australia,Oceania,4,2,0,39,verified,partial
+F000252,Tarkine (Takayna) Forest,Australia,Oceania,12,25,3,62,verified,partial
+F000253,Franklin-Gordon Wild Rivers forest,Australia,Oceania,2,0,0,33,verified,partial
+F000254,Mount Field National Park forest,Australia,Oceania,8,36,1,70,verified,partial
+F000255,Hartz Mountains forest,Australia,Oceania,2,11,9,61,verified,partial
+F000256,Styx Valley (tall eucalypt),Australia,Oceania,1,7,4,39,verified,partial
+F000257,Karri Forest (Boranup/Pemberton),Australia,Oceania,4,30,12,68,verified,partial
+F000258,Walpole-Nornalup NP (Tingle forest),Australia,Oceania,0,1,1,41,verified,partial
+F000259,Porongurup National Park forest,Australia,Oceania,1,8,2,37,verified,partial
+F000260,Mount Lofty Ranges forest,Australia,Oceania,4,31,15,67,verified,partial
+F000261,Kangaroo Island forest remnants,Australia,Oceania,10,28,12,83,verified,partial
+F000262,Waipoua Forest (kauri),New Zealand,Oceania,8,15,3,78,verified,partial
+F000263,Fiordland forest,New Zealand,Oceania,0,5,0,38,verified,partial
+F000264,Te Urewera forest,New Zealand,Oceania,0,3,0,35,verified,partial
+F000265,Papua New Guinea lowland rainforest,Papua New Guinea,Oceania,11,27,0,60,verified,partial
+F000266,New Caledonia rainforest,New Caledonia,Oceania,0,12,3,31,verified,partial
+F000267,Solomon Islands rainforest,Solomon Islands,Oceania,16,9,10,59,verified,partial
+F000268,Vanuatu rainforest,Vanuatu,Oceania,1,6,1,28,verified,partial

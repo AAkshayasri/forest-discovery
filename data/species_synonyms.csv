@@ -1,0 +1,416 @@
+species_id,accepted_scientific_name,synonym_name,source,taxonomic_status
+S000019,"Ardea modesta J.E.Gray, 1831","Ardea alba modesta J.E.Gray, 1831",GBIF Backbone Taxonomy,SYNONYM
+S000034,Herpestes edwardsi,"Urva edwardsii (É.Geoffroy Saint-Hilaire, 1818)",GBIF Backbone Taxonomy,SYNONYM
+S000035,"Canis lupus familiaris Linnaeus, 1758","Canis familiaris Linnaeus, 1758",GBIF Backbone Taxonomy,SYNONYM
+S000103,"Parus aplonotus Blyth, 1847","Machlolophus aplonotus (Blyth, 1847)",GBIF Backbone Taxonomy,SYNONYM
+S000110,"Herpestes vitticollis Bennett, 1835","Urva vitticollis (Bennett, 1835)",GBIF Backbone Taxonomy,SYNONYM
+S000115,"Bos frontalis gaurus C.H.Smith, 1827","Bos gaurus C.H.Smith, 1827",GBIF Backbone Taxonomy,SYNONYM
+S000125,Turdoides affinis,"Argya affinis (Jerdon, 1845)",GBIF Backbone Taxonomy,SYNONYM
+S000213,Turdoides striata,"Argya striata (Dumont, 1823)",GBIF Backbone Taxonomy,SYNONYM
+S000214,Saxicoloides fulicatus,"Copsychus fulicatus (Linnaeus, 1766)",GBIF Backbone Taxonomy,SYNONYM
+S000279,Chaimarrornis leucocephalus,"Phoenicurus leucocephalus Vigors, 1831",GBIF Backbone Taxonomy,SYNONYM
+S000282,Asymblepharus himalayanus,"Ablepharus himalayanus (Günther, 1864)",GBIF Backbone Taxonomy,SYNONYM
+S000289,Pycnonotus flaviventris,"Rubigula flaviventris (Tickell, 1833)",GBIF Backbone Taxonomy,SYNONYM
+S000291,Psittiparus bakeri,"Paradoxornis bakeri (Hartert & Ejo, 1900)",GBIF Backbone Taxonomy,SYNONYM
+S000307,Heterophasia annectans,"Leioptila annectens Blyth, 1847",GBIF Backbone Taxonomy,SYNONYM
+S000319,Porphyrio porphyrio poliocephalus,"Porphyrio poliocephalus (Latham, 1801)",GBIF Backbone Taxonomy,SYNONYM
+S000328,Turdoides earlei,"Argya earlei (Blyth, 1844)",GBIF Backbone Taxonomy,SYNONYM
+S000353,"Papilio memnon Linnaeus, 1758","Papilio agenor Linnaeus, 1758",GBIF Backbone Taxonomy,SYNONYM
+S000371,"Symbrenthia hypselis assama Fruhstorfer, 1900","Symbrenthia lilaea Hewitson, 1864",GBIF Backbone Taxonomy,SYNONYM
+S000403,Minla cyanouroptera,"Actinodura cyanouroptera (Hodgson, 1837)",GBIF Backbone Taxonomy,SYNONYM
+S000419,Boiga ochracea,"Boiga multomaculata ochracea (Theobald, 1868) Köhler, Charunrochana, Mogk, Than, Kurniawan, Kadafi, Das, Tillack & O'Shea, 2023",GBIF Backbone Taxonomy,SYNONYM
+S000446,Asymblepharus sikimmensis,"Ablepharus sikimmensis (Blyth, 1854)",GBIF Backbone Taxonomy,SYNONYM
+S000476,Drosera spatulata var. spatulata,Drosera burmanni DC.,GBIF Backbone Taxonomy,SYNONYM
+S000484,"Herpestes fuscus Waterhouse, 1838","Urva fusca Waterhouse, 1838",GBIF Backbone Taxonomy,SYNONYM
+S000494,Turdoides rufescens,"Argya rufescens (Blyth, 1847)",GBIF Backbone Taxonomy,SYNONYM
+S000497,"Muscicapa latirostris Raffles, 1822","Muscicapa dauurica Pallas, 1811",GBIF Backbone Taxonomy,SYNONYM
+S000508,Indosylvirana serendipi,"Hylarana serendipi Biju, Garg, Mahony, Wijayathilaka, Senevirathne & Meegaskumbura, 2014",GBIF Backbone Taxonomy,SYNONYM
+S000523,"Alcedo euryzona peninsulae Laubmann, 1941","Alcedo peninsulae Laubmann, 1941",GBIF Backbone Taxonomy,SYNONYM
+S000538,Rhinomyias umbratilis,"Cyornis umbratilis (Strickland, 1849)",GBIF Backbone Taxonomy,SYNONYM
+S000540,Trichastoma bicolor,"Pellorneum bicolor (R.P.Lesson, 1839)",GBIF Backbone Taxonomy,SYNONYM
+S000541,Pycnonotus squamatus,"Ixodia squamata (Temminck, 1828)",GBIF Backbone Taxonomy,SYNONYM
+S000395,Prionailurus bengalensis bengalensis,"Prionailurus javanensis (Desmarest, 1816)",GBIF Backbone Taxonomy,SYNONYM
+S000566,Ceyx erithaca erithaca,"Ceyx rufidorsa Strickland, 1847",GBIF Backbone Taxonomy,SYNONYM
+S000642,Pulchrana glandulosa,"Hylarana glandulosa (Boulenger, 1882)",GBIF Backbone Taxonomy,SYNONYM
+S000655,Pulchrana baramica,"Hylarana baramica (Boettger, 1900)",GBIF Backbone Taxonomy,SYNONYM
+S000669,Capnogryllacris borneoensis,"Borneogryllacris borneoensis (Haan, 1843)",GBIF Backbone Taxonomy,SYNONYM
+S000692,Haliaeetus leucogaster,"Icthyophaga leucogaster (J.F.Gmelin, 1788)",GBIF Backbone Taxonomy,SYNONYM
+S000710,Cacomantis variolosus sepulcralis,"Cacomantis sepulcralis (S.Muller, 1843)",GBIF Backbone Taxonomy,SYNONYM
+S000715,Amnirana nicobariensis,"Hylarana nicobariensis Stoliczka, 1870",GBIF Backbone Taxonomy,SYNONYM
+S000721,Pellorneum capistratum nigrocapitatum,"Pellorneum nigrocapitatum (Eyton, 1839)",GBIF Backbone Taxonomy,SYNONYM
+S000728,Stachyris erythroptera,"Cyanoderma erythropterum (Blyth, 1842)",GBIF Backbone Taxonomy,SYNONYM
+S000563,Lophura ignita,"Lophura rufa (Raffles, 1822)",GBIF Backbone Taxonomy,SYNONYM
+S000730,Reinwardtipicus validus,"Chrysocolaptes validus (Temminck, 1825)",GBIF Backbone Taxonomy,SYNONYM
+S000789,Aquarius cordifolius,Echinodorus cordifolius (L.) Griseb.,GBIF Backbone Taxonomy,SYNONYM
+S000827,Hypogramma hypogrammicum,"Kurochkinegramma hypogrammicum (S.Müller, 1843)",GBIF Backbone Taxonomy,SYNONYM
+S000849,"Pitta schneideri Hartert, 1909","Hydrornis schneideri (Hartert & Ejo, 1909)",GBIF Backbone Taxonomy,SYNONYM
+S000867,Zanclostomus curvirostris,"Phaenicophaeus curvirostris (Shaw, 1810)",GBIF Backbone Taxonomy,SYNONYM
+S000918,Gaultheria Kalm ex L.,Diplycosia Blume,GBIF Backbone Taxonomy,SYNONYM
+S000289,Pycnonotus flaviventris,"Rubigula flaviventris johnsoni Gyldenstolpe, 1913",GBIF Backbone Taxonomy,SYNONYM
+S000162,Terpsiphone paradisi,"Terpsiphone affinis (Blyth, 1846)",GBIF Backbone Taxonomy,SYNONYM
+S001004,"Pomatorhinus hypoleucos tickelli Hume, 1877","Erythrogenys hypoleucos tickelli (Hume, 1877)",GBIF Backbone Taxonomy,SYNONYM
+S001009,Macronus gularis lutescens,"Mixornis gularis lutescens Delacour, 1926",GBIF Backbone Taxonomy,SYNONYM
+S000036,Paradoxurus hermaphroditus,"Paradoxurus musangus (Raffles, 1821)",GBIF Backbone Taxonomy,SYNONYM
+S001034,Craspedocephalus rubeus,"Trimeresurus rubeus Mrinalini et al., 2015",GBIF Backbone Taxonomy,SYNONYM
+S001056,Saxicola rubicola,"Saxicola torquatus rubicola (Linnaeus, 1766)",GBIF Backbone Taxonomy,SYNONYM
+S001085,Ypthima pandocus,"Ypthima sempera Felder, 1863",GBIF Backbone Taxonomy,SYNONYM
+S000549,Macaca fascicularis,"Macaca fascicularis philippensis (I.Geoffroy Saint-Hilaire, 1843)",GBIF Backbone Taxonomy,SYNONYM
+S001115,"Apatura Fabricius, 1807","Rohana Moore, 1880",GBIF Backbone Taxonomy,SYNONYM
+S001122,Lepidogrammus cumingi,"Dasylophus cumingi (Fraser, 1839)",GBIF Backbone Taxonomy,SYNONYM
+S001158,Salix phylicifolia L.,Salix phylicifolia subsp. phylicifolia,GBIF Backbone Taxonomy,SYNONYM
+S001160,Anthoxanthum nitens,Hierochloe arctica J.Presl,GBIF Backbone Taxonomy,SYNONYM
+S001183,Prunus glandulifolia Rupr.,Prunus maackii Rupr.,GBIF Backbone Taxonomy,SYNONYM
+S001218,Delichon urbicum lagopodum,"Delichon lagopodum (Pallas, 1811)",GBIF Backbone Taxonomy,SYNONYM
+S001228,Tamias sibiricus,"Eutamias sibiricus (Laxmann, 1769)",GBIF Backbone Taxonomy,SYNONYM
+S001261,Acer tataricum subsp. ginnala,Acer ginnala Maxim.,GBIF Backbone Taxonomy,SYNONYM
+S001271,Monochamus urussovii,"Monochamus sartor urussovii (Fischer von Waldheim, 1805) Fischer von Waldheim, 1805",GBIF Backbone Taxonomy,SYNONYM
+S001281,"Cerura erminea menciana Moore, 1877","Cerura menciana Moore, 1877",GBIF Backbone Taxonomy,SYNONYM
+S001287,Rhabdophis tigrinus,"Rhabdophis lateralis (Berthold, 1859)",GBIF Backbone Taxonomy,SYNONYM
+S001293,Anemone raddeana Regel,Anemonoides raddeana (Regel) Holub,GBIF Backbone Taxonomy,SYNONYM
+S001302,Stylophorum lasiocarpum,Chelidonium lasiocarpum Oliv.,GBIF Backbone Taxonomy,SYNONYM
+S001320,"Yuhina diademata J.Verreaux, 1869","Parayuhina diademata (J.Verreaux, 1869)",GBIF Backbone Taxonomy,SYNONYM
+S001323,Dryobates cathpharius pernyii,"Dryobates pernyii (J.Verreaux, 1867)",GBIF Backbone Taxonomy,SYNONYM
+S001324,Garrulax ocellatus,"Ianthocincla ocellata (Vigors, 1831)",GBIF Backbone Taxonomy,SYNONYM
+S001367,Rhaphiolepis bibas,Eriobotrya japonica (Thunb.) Lindl.,GBIF Backbone Taxonomy,SYNONYM
+S001382,Coracina melaschistos,"Lalage melaschistos (Hodgson, 1836)",GBIF Backbone Taxonomy,SYNONYM
+S001400,Anemonastrum narcissiflorum subsp. crinitum,Anemonastrum crinitum (Juz.) Holub,GBIF Backbone Taxonomy,SYNONYM
+S001408,Linum nutans Maxim.,Linum baicalense Juz.,GBIF Backbone Taxonomy,SYNONYM
+S001411,"Grus vipio Pallas, 1811","Antigone vipio (Pallas, 1811)",GBIF Backbone Taxonomy,SYNONYM
+S001412,Anthropoides virgo,"Grus virgo (Linnaeus, 1758)",GBIF Backbone Taxonomy,SYNONYM
+S001416,"Phalacrocorax pelagicus Pallas, 1811","Urile pelagicus (Pallas, 1811)",GBIF Backbone Taxonomy,SYNONYM
+S001431,Anemone pseudoaltaica H.Hara,Anemonoides pseudoaltaica (H.Hara) Holub,GBIF Backbone Taxonomy,SYNONYM
+S001471,"Milionia basalis zonea Moore, 1872","Milionia zonea Moore, 1872",GBIF Backbone Taxonomy,SYNONYM
+S000229,"Larus fuscus Linnaeus, 1758","Larus fuscus taimyrensis Buturlin, 1911",GBIF Backbone Taxonomy,SYNONYM
+S001528,"Atherina boyeri Risso, 1810","Atherina caspia Eichwald, 1831",GBIF Backbone Taxonomy,SYNONYM
+S001541,"Syngnathus abaster Risso, 1827","Syngnathus caspius Eichwald, 1831",GBIF Backbone Taxonomy,SYNONYM
+S001703,"Bubo africanus milesi Sharpe, 1886","Bubo milesi Sharpe, 1886",GBIF Backbone Taxonomy,SYNONYM
+S001711,Colotis amata,"Colotis calais (Cramer, 1775)",GBIF Backbone Taxonomy,SYNONYM
+S001723,Enteromius holotaenia,"Barbus holotaenia Boulenger, 1904",GBIF Backbone Taxonomy,SYNONYM
+S001743,Horizocerus hartlaubi granti,"Horizocerus granti (E.Hartert, 1895)",GBIF Backbone Taxonomy,SYNONYM
+S001745,Haliaeetus vocifer,"Icthyophaga vocifer (Daudin, 1800)",GBIF Backbone Taxonomy,SYNONYM
+S001754,Cyanomitra olivacea,"Nectarinia olivacea (A.Smith, 1840)",GBIF Backbone Taxonomy,SYNONYM
+S001758,Pardipicus nivosus herberti,"Campethera nivosa herberti (Alexander, 1908)",GBIF Backbone Taxonomy,SYNONYM
+S001761,Bubulcus ibis,"Ardea ibis Linnaeus, 1758",GBIF Backbone Taxonomy,SYNONYM
+S001763,Platysteira tonsa,"Dyaphorophyia tonsa Bates, 1911",GBIF Backbone Taxonomy,SYNONYM
+S001783,Guttera pucherani verreauxi,"Guttera verreauxi (D.G.Elliot, 1870)",GBIF Backbone Taxonomy,SYNONYM
+S001798,Anthreptes rectirostris tephrolaemus,"Anthreptes tephrolaemus (Jardine & Fraser, 1852)",GBIF Backbone Taxonomy,SYNONYM
+S001823,"Dioptrornis fischeri Reichenow, 1884","Melaenornis fischeri (Reichenow, 1884)",GBIF Backbone Taxonomy,SYNONYM
+S001835,Damaliscus korrigum jimela,"Damaliscus lunatus jimela (Matschie, 1892)",GBIF Backbone Taxonomy,SYNONYM
+S001864,Lonchura cucullata,"Spermestes cucullata Swainson, 1837",GBIF Backbone Taxonomy,SYNONYM
+S001867,Horizocerus albocristatus cassini,"Horizocerus cassini (Finsch, 1903)",GBIF Backbone Taxonomy,SYNONYM
+S001874,Lophocebus albigena johnstoni,"Lophocebus johnstoni (Lydekker, 1900)",GBIF Backbone Taxonomy,SYNONYM
+S001878,Myioparus griseigularis,"Fraseria griseigularis (F.J.Jackson, 1906)",GBIF Backbone Taxonomy,SYNONYM
+S001883,Muscicapa caerulescens,"Fraseria caerulescens (Hartlaub, 1865)",GBIF Backbone Taxonomy,SYNONYM
+S001920,Crex egregia,"Crecopsis egregia (W.Peters, 1854)",GBIF Backbone Taxonomy,SYNONYM
+S001966,"Synaptura cadenati Chabanaud, 1948","Dagetichthys cadenati (Chabanaud, 1948)",GBIF Backbone Taxonomy,SYNONYM
+S002025,"Manis tricuspis Rafinesque, 1821","Phataginus tricuspis (Rafinesque, 1821)",GBIF Backbone Taxonomy,SYNONYM
+S002047,Lonchura bicolor,Spermestes bicolor bicolor,GBIF Backbone Taxonomy,SYNONYM
+S002076,Lindackeria dentata,Oncoba dentata Oliv.,GBIF Backbone Taxonomy,SYNONYM
+S002081,Leptaspis zeylanica Nees ex Steud.,Leptaspis zeylanica Nees,GBIF Backbone Taxonomy,SYNONYM
+S002093,Impatiens mackeyana subsp. claeri,Impatiens claeri N.Hallé,GBIF Backbone Taxonomy,SYNONYM
+S002103,Gorsachius leuconotus,"Calherodius leuconotus (Wagler, 1827)",GBIF Backbone Taxonomy,SYNONYM
+S002148,"Cubitermes Wasmann, 1906","Isognathotermes Sjöstedt, 1926",GBIF Backbone Taxonomy,SYNONYM
+S002154,Pachylobus igaganga,Dacryodes igaganga Aubrév. & Pellegr.,GBIF Backbone Taxonomy,SYNONYM
+S002156,Synsepalum stipulatum,Synsepalum longecuneatum De Wild.,GBIF Backbone Taxonomy,SYNONYM
+S002166,Pachylobus trimerus,Santiria trimera (Oliv.) Aubrév.,GBIF Backbone Taxonomy,SYNONYM
+S002212,Vitex congolensis var. congolensis,Vitex phaeotricha Mildbr. ex W.Piep.,GBIF Backbone Taxonomy,SYNONYM
+S002239,Friesodielsia velutina,Monanthotaxis velutina (Sprague & Hutch.) P.H.Hoekstra,GBIF Backbone Taxonomy,SYNONYM
+S001771,Lophoceros fasciatus,"Lophoceros semifasciatus (Hartlaub, 1855)",GBIF Backbone Taxonomy,SYNONYM
+S002260,"Batis poensis occulta Lawson, 1984","Batis occulta Lawson, 1984",GBIF Backbone Taxonomy,SYNONYM
+S002270,Lonchura fringilloides,"Spermestes fringilloides (Lafresnaye, 1835)",GBIF Backbone Taxonomy,SYNONYM
+S002284,Nyctemera Hübner,"Chiromachla Strand, 1909",GBIF Backbone Taxonomy,SYNONYM
+S002291,Chloropoea boisduvalii,"Pseudacraea boisduvalii Doubleday, 1845",GBIF Backbone Taxonomy,SYNONYM
+S002312,"Charaxes Ochsenheimer, 1816","Zingha Hemming, 1939",GBIF Backbone Taxonomy,SYNONYM
+S002317,Glutophrissa sabina,"Appias sabina (C. & R.Felder, 1865)",GBIF Backbone Taxonomy,SYNONYM
+S002319,Phalanta columbina,"Phalanta eurytis (Doubleday, 1847)",GBIF Backbone Taxonomy,SYNONYM
+S002335,"Trachyphonus purpuratus J.Verreaux & E.Verreaux, 1851","Trachylaemus purpuratus (J.Verreaux & E.Verreaux, 1851)",GBIF Backbone Taxonomy,SYNONYM
+S002345,Milvus aegyptius,Milvus parasiticus,GBIF Backbone Taxonomy,SYNONYM
+S002442,Taurotragus oryx,"Tragelaphus oryx (Pallas, 1766)",GBIF Backbone Taxonomy,SYNONYM
+S002003,Tragelaphus scriptus,"Tragelaphus sylvaticus (Sparrman, 1780)",GBIF Backbone Taxonomy,SYNONYM
+S001549,Spilopelia senegalensis,"Streptopelia senegalensis (Linnaeus, 1766)",GBIF Backbone Taxonomy,SYNONYM
+S002321,Junonia terea,"Junonia elgiva Hewitson, 1864",GBIF Backbone Taxonomy,SYNONYM
+S001874,Lophocebus albigena johnstoni,"Lophocebus ugandae (Matschie, 1912)",GBIF Backbone Taxonomy,SYNONYM
+S002047,Lonchura bicolor,"Spermestes bicolor (Fraser, 1843)",GBIF Backbone Taxonomy,SYNONYM
+S002519,Lybius bidentatus,"Pogonornis bidentatus (Shaw, 1798)",GBIF Backbone Taxonomy,SYNONYM
+S002391,Chlorocebus pygerythrus,"Chlorocebus pygerythrus centralis (Neumann, 1900)",GBIF Backbone Taxonomy,SYNONYM
+S002538,"Parus leuconotus Guerin-Meneville, 1843","Melaniparus leuconotus (Guérin-Méneville, 1843)",GBIF Backbone Taxonomy,SYNONYM
+S002541,Oenanthe bottae frenata,"Oenanthe frenata (Heuglin, 1869)",GBIF Backbone Taxonomy,SYNONYM
+S002542,Bugeranus carunculatus,"Grus carunculatus (Gmelin, 1789)",GBIF Backbone Taxonomy,SYNONYM
+S002545,Dioptrornis chocolatinus,"Melaenornis chocolatinus (Rüppell, 1840)",GBIF Backbone Taxonomy,SYNONYM
+S002555,Psophocichla litsitsirupa simensis,"Turdus simensis (Rüppell, 1837)",GBIF Backbone Taxonomy,SYNONYM
+S002556,Tauraco leucotis,"Menelikornis leucotis (Rüppell, 1835)",GBIF Backbone Taxonomy,SYNONYM
+S002559,Egretta intermedia brachyrhyncha,"Ardea brachyrhyncha (Brehm, 1854)",GBIF Backbone Taxonomy,SYNONYM
+S002572,Shirakiopsis elliptica,Sapium ellipticum (Hochst.) Pax,GBIF Backbone Taxonomy,SYNONYM
+S002573,Astropanax volkensii,Schefflera volkensii (Harms) Harms,GBIF Backbone Taxonomy,SYNONYM
+S002589,"Sylvicapra Ogilby, 1837","Cephalophorus Gray, 1842",GBIF Backbone Taxonomy,SYNONYM
+S002592,Cucumis oreosyce H.Schaef.,Oreosyce africana Hook.fil.,GBIF Backbone Taxonomy,SYNONYM
+S002374,Parus funereus,"Melaniparus funereus J.Verreaux & É.Verreaux, 1855",GBIF Backbone Taxonomy,SYNONYM
+S002603,Coracina caesia,"Ceblepyris caesius Lichtenstein & Mhc, 1823",GBIF Backbone Taxonomy,SYNONYM
+S002433,"Musophaga rossae Gould, 1852","Tauraco rossae (Gould, 1852)",GBIF Backbone Taxonomy,SYNONYM
+S002628,Neotragus moschatus,"Nesotragus moschatus Von Dueben, 1846",GBIF Backbone Taxonomy,SYNONYM
+S002641,Cephalophus natalensis harveyi,"Cephalophus harveyi (Thomas, 1893)",GBIF Backbone Taxonomy,SYNONYM
+S002659,"Hypolimnas dubius anthedon Doubleday, 1845","Hypolimnas anthedon Doubleday, 1845",GBIF Backbone Taxonomy,SYNONYM
+S002660,Xanthosoma sagittifolium,Xanthosoma violaceum Schott,GBIF Backbone Taxonomy,SYNONYM
+S002726,Thalasseus sandvicensis,"Thalasseus sandvicensis sandvicensis (Latham, 1787)",GBIF Backbone Taxonomy,SYNONYM
+S002764,"Belenois Hübner, 1819","Pseudanaphaeis Bernardi, 1953",GBIF Backbone Taxonomy,SYNONYM
+S002766,"Gallinula angulata Sundevall, 1850","Paragallinula angulata (Sundevall, 1850)",GBIF Backbone Taxonomy,SYNONYM
+S002778,Trachylepis margaritifera,"Trachylepis margaritifer (Peters, 1854)",GBIF Backbone Taxonomy,SYNONYM
+S002786,Ceratotherium simum,"Ceratotherium simum simum (Burchell, 1817)",GBIF Backbone Taxonomy,SYNONYM
+S002788,"Genetta G.Cuvier, 1816","Genetta Oken, 1816",GBIF Backbone Taxonomy,SYNONYM
+S002800,Corythaixoides concolor,"Crinifer concolor (A.Smith, 1833)",GBIF Backbone Taxonomy,SYNONYM
+S002837,"Acraea cabira Hopffer, 1855","Telchinia cabira (Hopffer, 1855)",GBIF Backbone Taxonomy,SYNONYM
+S002852,"Manis temminckii Smuts, 1832","Smutsia temminckii (Smuts, 1832)",GBIF Backbone Taxonomy,SYNONYM
+S002863,Junonia antilope,"Precis antilope (Feisthamel, 1850)",GBIF Backbone Taxonomy,SYNONYM
+S002893,Hibiscus L.,Sabdariffa Kostel.,GBIF Backbone Taxonomy,SYNONYM
+S002890,Pternistis leucoscepus,"Francolinus leucoscepus G.R.Gray, 1867",GBIF Backbone Taxonomy,SYNONYM
+S002912,Ortygornis sephaena,"Dendroperdix sephaena (A.Smith, 1836)",GBIF Backbone Taxonomy,SYNONYM
+S002925,Pternistis adspersus,"Francolinus adspersus Waterhouse, 1838",GBIF Backbone Taxonomy,SYNONYM
+S002962,Filoboletus manipularis,Favolaschia manipularis (Berk.) Teng,GBIF Backbone Taxonomy,SYNONYM
+S002974,"Deinopis madagascariensis Lenz, 1886","Asianopis madagascariensis (Lenz, 1886)",GBIF Backbone Taxonomy,SYNONYM
+S002979,"Melipotis perpendicularis Guenée, 1852","Cyligramma disturbans (Walker, 1858)",GBIF Backbone Taxonomy,SYNONYM
+S003000,Astrochelys radiata,"Geochelone radiata (Shaw, 1802)",GBIF Backbone Taxonomy,SYNONYM
+S000240,Chelonia mydas,"Chelonia mydas japonica (Thunberg, 1787)",GBIF Backbone Taxonomy,SYNONYM
+S003005,Dilutineuron fasciculare,Racomitrium fasciculare (Schrad. ex Hedw.) Brid.,GBIF Backbone Taxonomy,SYNONYM
+S003034,Otus rutilus,"Otus rutilus rutilus (Pucheran, 1849)",GBIF Backbone Taxonomy,SYNONYM
+S003150,Ceropegia insignanthera Bruyns,Stapelianthus insignis Desc.,GBIF Backbone Taxonomy,SYNONYM
+S003151,Arivela viscosa,Cleome viscosa L.,GBIF Backbone Taxonomy,SYNONYM
+S003153,"Lepilemur hubbardi Louis Jr., Engberg, Lei, Geng, Sommer, Randriamampionona, Randriamanana, Zaonarivelo et al., 2006","Lepilemur hubbardorum Louis Jr., Engberg, Lei, Geng, Sommer, Randriamampionona, Randriamanana, Zaonarivelo et al., 2006",GBIF Backbone Taxonomy,SYNONYM
+S003162,Ninox superciliaris,"Athene superciliaris (Vieillot, 1817)",GBIF Backbone Taxonomy,SYNONYM
+S003200,Ficaria grandiflora Robert,Ficaria verna subsp. ficariiformis (Rouy & Foucaud) B.Walln.,GBIF Backbone Taxonomy,SYNONYM
+S003185,Oxalis pes-caprae L.,Oxalis pes-caprae f. pleniflora (Lowe) Sunding,GBIF Backbone Taxonomy,SYNONYM
+S003219,Elephantulus rozeti,"Petrosaltator rozeti (Duvernoy, 1833)",GBIF Backbone Taxonomy,SYNONYM
+S003229,Calandrella rufescens,"Alaudala rufescens (Vieillot, 1819)",GBIF Backbone Taxonomy,SYNONYM
+S003238,"Agama impalearis Boettger, 1874",Agama bibronii Duméril & Duméril,GBIF Backbone Taxonomy,SYNONYM
+S003269,Tropinota squalida squalida,"Tropinota squalida pilosa (Brulle, 1832)",GBIF Backbone Taxonomy,SYNONYM
+S003272,"Ichneumon pygmaeus Poda, 1761","Calameuta pygmaea (Poda, 1761)",GBIF Backbone Taxonomy,SYNONYM
+S003292,Ophrys fusca subsp. fusca,"Ophrys fusca subsp. maghrebiaca Kreutz, Rebbas, Babali, Miara & Ait-Hamm.",GBIF Backbone Taxonomy,SYNONYM
+S003295,Opuntia maxima Mill.,Opuntia ficus-indica f. amyclaea (Ten.) Schelle,GBIF Backbone Taxonomy,SYNONYM
+S003333,Microtus pennsylvanicus,"Microtus drummondi (Audubon & Bachman, 1854)",GBIF Backbone Taxonomy,SYNONYM
+S003364,"Mustela Linnaeus, 1758","Neogale Gray, 1865",GBIF Backbone Taxonomy,SYNONYM
+S003464,Speyeria atlantis,"Argynnis atlantis Edwards, 1862",GBIF Backbone Taxonomy,SYNONYM
+S003531,Regulus calendula,"Corthylio calendula (Linnaeus, 1766)",GBIF Backbone Taxonomy,SYNONYM
+S003542,Myodes rutilus,"Clethrionomys rutilus (Pallas, 1779)",GBIF Backbone Taxonomy,SYNONYM
+S003543,"Tamias minimus Bachman, 1839","Neotamias minimus (Bachman, 1839)",GBIF Backbone Taxonomy,SYNONYM
+S003545,"Mustela erminea richardsonii Bonaparte, 1838","Mustela richardsonii Bonaparte, 1838",GBIF Backbone Taxonomy,SYNONYM
+S003467,Leuconotopicus villosus,"Dryobates villosus (Linnaeus, 1766)",GBIF Backbone Taxonomy,SYNONYM
+S003579,Polygonia vaualbum,"Nymphalis l-album (Esper, 1781)",GBIF Backbone Taxonomy,SYNONYM
+S003591,Phlebia tremellosa,Merulius tremellosus Schrad.,GBIF Backbone Taxonomy,SYNONYM
+S003637,"Cervus elaphus canadensis Erxleben, 1777","Cervus canadensis Erxleben, 1777",GBIF Backbone Taxonomy,SYNONYM
+S003638,Mahonia nervosa,Berberis nervosa Pursh,GBIF Backbone Taxonomy,SYNONYM
+S003032,Megaptera novaeangliae,"Megaptera novaeangliae kuzira (Gray, 1850)",GBIF Backbone Taxonomy,SYNONYM
+S003647,"Coryphella trilineata O'Donoghue, 1921","Orienthella trilineata (O'Donoghue, 1921)",GBIF Backbone Taxonomy,SYNONYM
+S003662,Phalacrocorax auritus,"Nannopterum auritum (R.P.Lesson, 1831)",GBIF Backbone Taxonomy,SYNONYM
+S003700,Xanthocyparis nootkatensis,Callitropsis nootkatensis (D.Don) D.P.Little,GBIF Backbone Taxonomy,SYNONYM
+S003711,"Hyperprosopon anale Agassiz, 1861","Hypocritichthys analis (Agassiz, 1861)",GBIF Backbone Taxonomy,SYNONYM
+S003712,Amanita muscaria,Amanita muscaria subsp. flavivolvata Singer,GBIF Backbone Taxonomy,SYNONYM
+S003757,Micromeria douglasii Benth.,Clinopodium douglasii (Benth.) Kuntze,GBIF Backbone Taxonomy,SYNONYM
+S003761,Synthyris reniformis Benth.,Veronica regina-nivalis M.M.Mart.Ort. & Albach,GBIF Backbone Taxonomy,SYNONYM
+S003770,Dolichousnea longissima,Usnea longissima Ach.,GBIF Backbone Taxonomy,SYNONYM
+S003793,"Cynips Linnaeus, 1758","Antron Kinsey, 1930",GBIF Backbone Taxonomy,SYNONYM
+S003810,Abies concolor,Abies concolor subsp. lowiana (Gordon) E.Murray,GBIF Backbone Taxonomy,SYNONYM
+S003827,"Venusia Curtis, 1839","Nomenia Pearsall, 1905",GBIF Backbone Taxonomy,SYNONYM
+S003848,Pinus ponderosa var. scopulorum Engelm.,Pinus scopulorum (Engelm.) Lemmon,GBIF Backbone Taxonomy,SYNONYM
+S003852,Mahonia repens,Berberis repens Lindl.,GBIF Backbone Taxonomy,SYNONYM
+S003482,Tamiasciurus hudsonicus,"Tamiasciurus fremonti Audubon & Bachman, 1853",GBIF Backbone Taxonomy,SYNONYM
+S003914,Echinocactus polycephalus subsp. xeranthemoides,Homalocephala polycephala subsp. xeranthemoides (J.M.Coult.) Vargas & Bárcenas,GBIF Backbone Taxonomy,SYNONYM
+S003922,Bison bison,"Bos bison Linnaeus, 1758",GBIF Backbone Taxonomy,SYNONYM
+S003934,Pelecyphora vivipara,Escobaria vivipara (Nutt.) Buxb.,GBIF Backbone Taxonomy,SYNONYM
+S003966,Hexastylis arifolia,Asarum arifolium Michx.,GBIF Backbone Taxonomy,SYNONYM
+S003997,Phellinus robiniae,Fulvifomes robiniae (Murrill) Murrill,GBIF Backbone Taxonomy,SYNONYM
+S004063,Etheostoma pulchellum,"Etheostoma spectabile pulchellum (Girard, 1859)",GBIF Backbone Taxonomy,SYNONYM
+S004069,Jubula hutchinsiae subsp. pennsylvanica,Jubula pennsylvanica (Steph.) A.Evans,GBIF Backbone Taxonomy,SYNONYM
+S004075,"Etheostoma juliae Meek, 1891","Nothonotus juliae (Meek, 1891)",GBIF Backbone Taxonomy,SYNONYM
+S004108,Haldea striatula,"Virginia striatula (Linnaeus, 1766)",GBIF Backbone Taxonomy,SYNONYM
+S004122,Mahonia bealei,Berberis bealei Fortune,GBIF Backbone Taxonomy,SYNONYM
+S000274,Gallinula chloropus,"Gallinula galeata (Lichtenstein & Mhc, 1818)",GBIF Backbone Taxonomy,SYNONYM
+S004171,Nandayus nenday,"Aratinga nenday (Vieillot, 1823)",GBIF Backbone Taxonomy,SYNONYM
+S004175,"Pipra mentalis P.L.Sclater, 1857","Ceratopipra mentalis (P.L.Sclater, 1857)",GBIF Backbone Taxonomy,SYNONYM
+S004176,Pionopsitta haematotis,"Pyrilia haematotis (P.L.Sclater & Salvin, 1860)",GBIF Backbone Taxonomy,SYNONYM
+S004182,Leucopternis albicollis,"Pseudastur albicollis (Latham, 1790)",GBIF Backbone Taxonomy,SYNONYM
+S004205,Tapirella bairdii,"Tapirus bairdii (Gill, 1865)",GBIF Backbone Taxonomy,SYNONYM
+S004214,Psilorhinus morio,"Cyanocorax morio (Wagler, 1829)",GBIF Backbone Taxonomy,SYNONYM
+S004219,Phalacrocorax brasilianus,"Nannopterum brasilianum (J.F.Gmelin, 1789)",GBIF Backbone Taxonomy,SYNONYM
+S004228,Buteo nitidus plagiatus,"Buteo plagiatus (Schlegel, 1862)",GBIF Backbone Taxonomy,SYNONYM
+S002323,Tirumala petiverana,"Heliconius erato petiverana (E.Doubleday, 1847)",GBIF Backbone Taxonomy,SYNONYM
+S004257,Aratinga nana,"Eupsittula nana (Vigors, 1830)",GBIF Backbone Taxonomy,SYNONYM
+S004260,"Trachops cirrhosus coffini Goldman, 1925","Trachops coffini Goldman, 1925",GBIF Backbone Taxonomy,SYNONYM
+S004274,Pippenalia delphinifolia,Pippenalia delphiniifolia (Rydb.) McVaugh,GBIF Backbone Taxonomy,SYNONYM
+S004280,Pteridium aquilinum subsp. feei,Pteridium feei (Schaffn. ex Fée) Maxon ex Faull,GBIF Backbone Taxonomy,SYNONYM
+S004283,Echinocereus acifer subsp. huitcholensis,Echinocereus topiensis W.Rischer & Trocha,GBIF Backbone Taxonomy,SYNONYM
+S004292,"Tamias dorsalis Baird, 1855","Neotamias dorsalis (Baird, 1855)",GBIF Backbone Taxonomy,SYNONYM
+S004295,Cupressus lusitanica var. lusitanica,Hesperocyparis lusitanica (Mill.) Bartel,GBIF Backbone Taxonomy,SYNONYM
+S004321,Schiedeella llaveana subsp. llaveana,Schiedeella transversalis (A.Rich. & Galeotti) Schltr.,GBIF Backbone Taxonomy,SYNONYM
+S004340,Callicista columella istapa,"Strymon istapa (Reakirt, 1867)",GBIF Backbone Taxonomy,SYNONYM
+S004346,Marginatocereus marginatus,Lophocereus marginatus (DC.) S.Arias & Terrazas,GBIF Backbone Taxonomy,SYNONYM
+S004350,"Ptilogonys cinereus Swainson, 1827","Ptiliogonys cinereus Swainson, 1827",GBIF Backbone Taxonomy,SYNONYM
+S003538,Setophaga coronata,"Setophaga coronata coronata (Linnaeus, 1766)",GBIF Backbone Taxonomy,SYNONYM
+S004381,Cerrena hydnoides,Hexagonia hydnoides (Sw.) M.Fidalgo,GBIF Backbone Taxonomy,SYNONYM
+S004391,Coea acheronta,"Historis acheronta (Fabricius, 1775)",GBIF Backbone Taxonomy,SYNONYM
+S004409,Chelonanthus alatus Standl.,Helia acutangula (Ruiz & Pav.) Kuntze,GBIF Backbone Taxonomy,SYNONYM
+S004563,Schiffornis turdina stenorhyncha,"Schiffornis stenorhyncha (P.L.Sclater & Salvin, 1869)",GBIF Backbone Taxonomy,SYNONYM
+S004568,Sturnella militaris,"Leistes militaris (Linnaeus, 1758)",GBIF Backbone Taxonomy,SYNONYM
+S004569,Polioptila plumbea bilineata,"Polioptila bilineata (Bonaparte, 1850)",GBIF Backbone Taxonomy,SYNONYM
+S004180,Heraclides thoas autocles,"Heraclides thoas (Linnaeus, 1771)",GBIF Backbone Taxonomy,SYNONYM
+S004601,Dypsis lutescens,Chrysalidocarpus lutescens H.Wendl.,GBIF Backbone Taxonomy,SYNONYM
+S004605,"Saurothera vieilloti Bonaparte, 1850","Coccyzus vieilloti (Bonaparte, 1850)",GBIF Backbone Taxonomy,SYNONYM
+S004610,Anthracothorax dominicus aurulentus,"Anthracothorax aurulentus (Audebert & Vieillot, 1801)",GBIF Backbone Taxonomy,SYNONYM
+S004616,Herpestes javanicus auropunctatus,"Urva auropunctata (Hodgson, 1836)",GBIF Backbone Taxonomy,SYNONYM
+S004624,"Acanthurus bahianus Castelnau, 1855","Acanthurus tractus Poey, 1860",GBIF Backbone Taxonomy,SYNONYM
+S004683,Patagioenas inornata,"Patagioenas inornata inornata (Vigors, 1827)",GBIF Backbone Taxonomy,SYNONYM
+S004696,Saurothera longirostris,Coccyzus longirostris longirostris,GBIF Backbone Taxonomy,SYNONYM
+S000029,"Bos taurus Linnaeus, 1758","Bos primigenius Bojanus, 1827",GBIF Backbone Taxonomy,SYNONYM
+S001652,"Equus caballus Linnaeus, 1758","Equus caballus caballus Linnaeus, 1758",GBIF Backbone Taxonomy,SYNONYM
+S004703,Euphonia musica,"Chlorophonia musica (J.F.Gmelin, 1789)",GBIF Backbone Taxonomy,SYNONYM
+S004720,"Acanthocerus crucifer Palisot de Beauvois, 1818","Acanthocerus cruciger O'Shea, 1980",GBIF Backbone Taxonomy,SYNONYM
+S004442,"Fregata magnificens Mathews, 1914","Fregata magnificens rothschildi Mathews, 1914",GBIF Backbone Taxonomy,SYNONYM
+S004696,Saurothera longirostris,"Coccyzus longirostris (Hermann, 1783)",GBIF Backbone Taxonomy,SYNONYM
+S004771,Icterus icterus croconotus,"Icterus croconotus (Wagler, 1829)",GBIF Backbone Taxonomy,SYNONYM
+S004805,Thecla leucophaeus,"Siderus leucophaeus (Hübner, 1818)",GBIF Backbone Taxonomy,SYNONYM
+S004840,Pitangus lictor,"Philohydor lictor (Lichtenstein, 1823)",GBIF Backbone Taxonomy,SYNONYM
+S004889,Hylocryptus rectirostris,"Clibanornis rectirostris (M.Wied-Neuwied, 1831)",GBIF Backbone Taxonomy,SYNONYM
+S004263,Pecari tajacu,"Tayassu tajacu (Linnaeus, 1758)",GBIF Backbone Taxonomy,SYNONYM
+S004913,Lycalopex vetulus,"Pseudalopex vetulus (Lund, 1842)",GBIF Backbone Taxonomy,SYNONYM
+S004934,"Anolis punctatus Daudin, 1802","Dactyloa punctata (Daudin, 1802)",GBIF Backbone Taxonomy,SYNONYM
+S004966,Leontocebus illigeri,"Saguinus illigeri (Pucheran, 1845)",GBIF Backbone Taxonomy,SYNONYM
+S004967,Leontocebus lagonotus,"Saguinus lagonotus (Jiménez de la Espada, 1870)",GBIF Backbone Taxonomy,SYNONYM
+S004971,Mesoclemmys raniceps,"Mesoclemmys wermuthi (Mertens, 1969)",GBIF Backbone Taxonomy,SYNONYM
+S004983,Leontocebus weddelli,"Saguinus weddelli (Deville, 1849)",GBIF Backbone Taxonomy,SYNONYM
+S004993,Callisia serrulata,Tripogandra serrulata (Vahl) Handlos,GBIF Backbone Taxonomy,SYNONYM
+S005036,Leontocebus tripartitus,"Saguinus tripartitus (A.Milne-Edwards, 1878)",GBIF Backbone Taxonomy,SYNONYM
+S005081,"Argyreuptychia palladia Butler, 1866","Cissia palladia (Butler, 1867)",GBIF Backbone Taxonomy,SYNONYM
+S005087,Elina invaria,"Castnia invaria Walker, 1854",GBIF Backbone Taxonomy,SYNONYM
+S005096,Glutophrissa drusilla,"Appias drusilla (Cramer, 1779)",GBIF Backbone Taxonomy,SYNONYM
+S005114,Neochelidon tibialis,"Atticora tibialis (Cassin, 1853)",GBIF Backbone Taxonomy,SYNONYM
+S005136,Leontocebus nigricollis,"Saguinus nigricollis (Spix, 1823)",GBIF Backbone Taxonomy,SYNONYM
+S005137,Aratinga leucophthalma,"Psittacara leucophthalmus (Müller & Pls, 1776)",GBIF Backbone Taxonomy,SYNONYM
+S005104,Pipile cumanensis,"Pipile grayi (Pelzeln, 1870)",GBIF Backbone Taxonomy,SYNONYM
+S005183,Leucopternis schistaceus,"Buteogallus schistaceus (Sundevall, 1850)",GBIF Backbone Taxonomy,SYNONYM
+S005201,Artibeus cinereus,"Dermanura cinereum Gervais, 1856",GBIF Backbone Taxonomy,SYNONYM
+S005209,Atticora melanoleuca,"Pygochelidon melanoleuca (M.Wied-Neuwied, 1820)",GBIF Backbone Taxonomy,SYNONYM
+S005220,"Cercosaura ocellata Wagler, 1830",Cercosaura ocellata ocellata,GBIF Backbone Taxonomy,SYNONYM
+S005240,"Pipra cornuta Spix, 1825","Ceratopipra cornuta (Spix, 1825)",GBIF Backbone Taxonomy,SYNONYM
+S005252,"Mazama Rafinesque, 1817","Passalites Gloger, 1841",GBIF Backbone Taxonomy,SYNONYM
+S004902,Cyclopes didactylus,"Cyclopes didactylus didactylus (Linnaeus, 1758)",GBIF Backbone Taxonomy,SYNONYM
+S005331,Pachycondyla commutata,"Neoponera commutata (Roger, 1860)",GBIF Backbone Taxonomy,SYNONYM
+S005337,"Buteo albicaudatus Vieillot, 1816","Geranoaetus albicaudatus (Vieillot, 1816)",GBIF Backbone Taxonomy,SYNONYM
+S005348,Pipra pipra,"Pseudopipra pipra (Linnaeus, 1758)",GBIF Backbone Taxonomy,SYNONYM
+S005363,"Parydra Stenhammer, 1844","Napaea Robineau-Desvoidy, 1830",GBIF Backbone Taxonomy,SYNONYM
+S005387,Sphiggurus spinosus,"Coendou spinosus F.Cuvier, 1823",GBIF Backbone Taxonomy,SYNONYM
+S004771,Icterus icterus croconotus,"Icterus jamacaii (Gmelin, 1788)",GBIF Backbone Taxonomy,SYNONYM
+S005414,"Dynamine mylitta Cramer, 1782","Dynamine postverta Cramer, 1782",GBIF Backbone Taxonomy,SYNONYM
+S005436,Favolus tenuiculus P.Beauv.,Favolus brasiliensis (Fr.) Fr.,GBIF Backbone Taxonomy,SYNONYM
+S005512,Cerradicola elliptica,Camptosema ellipticum (Desv.) Govaerts,GBIF Backbone Taxonomy,SYNONYM
+S005520,Bursera leptophloeos Mart.,Commiphora leptophloeos (Mart.) J.B.Gillett,GBIF Backbone Taxonomy,SYNONYM
+S005543,Parablechnum chilense,Blechnum chilense (Kaulf.) Mett.,GBIF Backbone Taxonomy,SYNONYM
+S005559,Eryngium humboldtii F.Delaroche,Eryngium paniculatum Cav. & Dombey ex F.Delaroche,GBIF Backbone Taxonomy,SYNONYM
+S005570,Notiochelidon cyanoleuca,"Pygochelidon cyanoleuca (Vieillot, 1817)",GBIF Backbone Taxonomy,SYNONYM
+S005579,Tepualia stipularis,Metrosideros stipularis (Hook. & Arn.) Hook.fil.,GBIF Backbone Taxonomy,SYNONYM
+S005583,Lycalopex gymnocercus,"Lycalopex griseus (Gray, 1837)",GBIF Backbone Taxonomy,SYNONYM
+S005584,Otaria byronia,"Otaria flavescens (Shaw, 1800)",GBIF Backbone Taxonomy,SYNONYM
+S005587,Sturnella loyca,"Leistes loyca (Molina, 1782)",GBIF Backbone Taxonomy,SYNONYM
+S005606,Pelecorhynchus biguttatus,"Coenura biguttatus Philippi, 1865",GBIF Backbone Taxonomy,SYNONYM
+S005651,Lama glama guanicoe,"Lama guanicoe (Müller, 1776)",GBIF Backbone Taxonomy,SYNONYM
+S005653,Abrothrix longipilis,"Abrothrix hirta (Thomas, 1895)",GBIF Backbone Taxonomy,SYNONYM
+S005661,Wendtia gracilis Meyen,Balbisia gracilis (Meyen) Hunz. & Ariza,GBIF Backbone Taxonomy,SYNONYM
+S005688,Austroblechnum penna-marina subsp. penna-marina,Blechnum penna-marina (Poir.) Kuhn,GBIF Backbone Taxonomy,SYNONYM
+S005695,Phalacrocorax magellanicus,"Leucocarbo magellanicus (J.F.Gmelin, 1789)",GBIF Backbone Taxonomy,SYNONYM
+S003032,Megaptera novaeangliae,"Megaptera novaeangliae australis (Lesson, 1828)",GBIF Backbone Taxonomy,SYNONYM
+S005699,Xolmis pyrope,"Pyrope pyrope (Kittlitz, 1830)",GBIF Backbone Taxonomy,SYNONYM
+S005711,"Upucerthia andaecola Orbigny & Lafresnaye, 1838","Ochetorhynchus andaecola (d'Orbigny & Lafresnaye, 1838)",GBIF Backbone Taxonomy,SYNONYM
+S005714,Vicugna vicugna,"Lama vicugna (Molina, 1782)",GBIF Backbone Taxonomy,SYNONYM
+S005743,Verbena scrobiculata Griseb.,Glandularia scrobiculata (Griseb.) Tronc.,GBIF Backbone Taxonomy,SYNONYM
+S005754,Vireo olivaceus chivi,"Vireo chivi (Vieillot, 1817)",GBIF Backbone Taxonomy,SYNONYM
+S005766,Mesosphaerum eriocephalum,Hyptis eriocephala Benth.,GBIF Backbone Taxonomy,SYNONYM
+S005788,"Sturnella bellicosa Filippi, 1847","Leistes bellicosus (de Filippi, 1847)",GBIF Backbone Taxonomy,SYNONYM
+S005791,Furnarius leucopus cinnamomeus,"Furnarius cinnamomeus (R.P.Lesson, 1844)",GBIF Backbone Taxonomy,SYNONYM
+S005792,Aratinga erythrogenys,"Psittacara erythrogenys R.P.Lesson, 1844",GBIF Backbone Taxonomy,SYNONYM
+S005794,Pseudoscops clamator,"Asio clamator (Vieillot, 1808)",GBIF Backbone Taxonomy,SYNONYM
+S005812,Vriesea rubra,Cipuropsis rubra (Ruiz & Pav.) Kessous,GBIF Backbone Taxonomy,SYNONYM
+S005824,Basileuterus basilicus,"Myiothlypis basilica (Todd, 1913)",GBIF Backbone Taxonomy,SYNONYM
+S004808,Icterus cayanensis,"Icterus pyrrhopterus (Vieillot, 1819)",GBIF Backbone Taxonomy,SYNONYM
+S005252,"Mazama Rafinesque, 1817","Subulo Smith, 1827",GBIF Backbone Taxonomy,SYNONYM
+S005977,Rhodofomes roseus,Fomitopsis rosea (Alb. & Schwein.) P.Karst.,GBIF Backbone Taxonomy,SYNONYM
+S003081,Cheloniidae,Chelonidae,GBIF Backbone Taxonomy,SYNONYM
+S001552,"Corvus cornix Linnaeus, 1758","Corvus corone cornix Linnaeus, 1758",GBIF Backbone Taxonomy,SYNONYM
+S006032,Xanthoporia radiata,Mensularia radiata (Sowerby) Lázaro Ibiza,GBIF Backbone Taxonomy,SYNONYM
+S000027,"Felis catus Linnaeus, 1758",Felis domesticus,GBIF Backbone Taxonomy,SYNONYM
+S005954,Cyanistes caeruleus,"Parus caeruleus Linnaeus, 1758",GBIF Backbone Taxonomy,SYNONYM
+S001210,Mareca strepera,"Anas strepera Linnaeus, 1758",GBIF Backbone Taxonomy,SYNONYM
+S001396,Poecile palustris,"Parus palustris Linnaeus, 1758",GBIF Backbone Taxonomy,SYNONYM
+S006053,"Crocodylus Laurenti, 1768","Crocodilus Laurenti, 1768",GBIF Backbone Taxonomy,SYNONYM
+S003191,Coloeus monedula,"Corvus monedula Linnaeus, 1758",GBIF Backbone Taxonomy,SYNONYM
+S006084,Hymenostilbe ampullifera Petch,Akanthomyces ampullifer (Petch) Mains,GBIF Backbone Taxonomy,SYNONYM
+S006097,"Eptesicus Rafinesque, 1820","Cnephaeus Kaup, 1829",GBIF Backbone Taxonomy,SYNONYM
+S006116,Ovis aries musimon,"Ovis ammon musimon (Pallas, 1811)",GBIF Backbone Taxonomy,SYNONYM
+S006133,Bison bonasus,"Bos bonasus Linnaeus, 1758",GBIF Backbone Taxonomy,SYNONYM
+S006235,Rosulabryum rubens,Ptychostomum rubens (Mitt.) Holyoak & N.Pedersen,GBIF Backbone Taxonomy,SYNONYM
+S006247,Xylodon radula,Basidioradulum radula (Fr.) Nobles,GBIF Backbone Taxonomy,SYNONYM
+S006250,Poeltonia grisea,Physconia grisea (Lam.) Poelt,GBIF Backbone Taxonomy,SYNONYM
+S006267,Anemone nemorosa L.,Anemonoides nemorosa (L.) Holub,GBIF Backbone Taxonomy,SYNONYM
+S006280,Euphorbia esula subsp. esula,Euphorbia borodinii Sambuk,GBIF Backbone Taxonomy,SYNONYM
+S006328,Helleborus bocconei subsp. bocconei,Helleborus multifidus subsp. bocconei (Ten.) B.Mathew,GBIF Backbone Taxonomy,SYNONYM
+S006372,Crocodylus arduini,"Megadontosuchus arduini (De Zigno, 1880)",GBIF Backbone Taxonomy,SYNONYM
+S006382,Discus rotundatus,"Goniodiscus rotundatus (O.F.Müller, 1774)",GBIF Backbone Taxonomy,SYNONYM
+S006384,Aporrectodea caliginosa trapezoides,"Aporrectodea trapezoides (Dugés, 1828)",GBIF Backbone Taxonomy,SYNONYM
+S006503,Ichthyosaura alpestris,"Mesotriton alpestris (Laurenti, 1768)",GBIF Backbone Taxonomy,SYNONYM
+S006504,Pelophylax kurtmuelleri,"Pelophylax ridibundus kurtmuelleri (Gayda, 1940)",GBIF Backbone Taxonomy,SYNONYM
+S006510,Juniperus phoenicea subsp. turbinata,Juniperus turbinata Guss.,GBIF Backbone Taxonomy,SYNONYM
+S001524,Mareca penelope,"Anas penelope Linnaeus, 1758",GBIF Backbone Taxonomy,SYNONYM
+S000165,"Ardea alba Linnaeus, 1758","Egretta alba (Linnaeus, 1758)",GBIF Backbone Taxonomy,SYNONYM
+S006538,Protoxerula flavo-olivacea,"Oudemansiella flavo-olivacea (R.H.Petersen & Halling) Zhu L.Yang, G.M.Muell., G.Kost & Rexer",GBIF Backbone Taxonomy,SYNONYM
+S006554,Papurana daemeli,"Hylarana daemeli Steindachner, 1868",GBIF Backbone Taxonomy,SYNONYM
+S006560,"Litoria Tschudi, 1838","Colleeneremia Wells & Wellington, 1985",GBIF Backbone Taxonomy,SYNONYM
+S006606,Litoria fallax,"Dryomantis fallax (Peters, 1880)",GBIF Backbone Taxonomy,SYNONYM
+S006616,Ranoidea caerulea,"Pelodryas caerulea (White, 1790)",GBIF Backbone Taxonomy,SYNONYM
+S006636,Phytolacca icosandra L.,Phytolacca octandra L.,GBIF Backbone Taxonomy,SYNONYM
+S006642,Macropus agilis,"Notamacropus agilis (Gould, 1842)",GBIF Backbone Taxonomy,SYNONYM
+S006682,Scymnodes lividigaster,"Apolinus lividigaster (Mulsant, 1853)",GBIF Backbone Taxonomy,SYNONYM
+S006733,Nyctimystes infrafrenatus,"Sandyrana infrafrenata (Günther, 1867)",GBIF Backbone Taxonomy,SYNONYM
+S006734,Lathrecista asiatica,"Lathrecista asiatica festa (Selys, 1879)",GBIF Backbone Taxonomy,SYNONYM
+S006746,Spilocuscus maculatus nudicaudatus,"Spilocuscus nudicaudatus (Gould, 1850)",GBIF Backbone Taxonomy,SYNONYM
+S006752,"Pitta erythrogaster macklotii Temminck, 1834","Erythropitta macklotii (Temminck, 1834)",GBIF Backbone Taxonomy,SYNONYM
+S006761,Eclectus roratus polychloros,"Eclectus polychloros macgillivrayi Mathews, 1913",GBIF Backbone Taxonomy,SYNONYM
+S006771,"Crocodylus johnsoni Krefft, 1873","Crocodylus johnstoni Krefft, 1873",GBIF Backbone Taxonomy,SYNONYM
+S006783,Macropus antilopinus,"Osphranter antilopinus Gould, 1842",GBIF Backbone Taxonomy,SYNONYM
+S006787,Danaus chrysippus petilia,"Danaus petilia Stoll, 1790",GBIF Backbone Taxonomy,SYNONYM
+S006788,"Candalides Hübner, 1819","Erina Swainson, 1833",GBIF Backbone Taxonomy,SYNONYM
+S006808,Habenaria elongata R.Br.,Pecteilis elongata (R.Br.) M.A.Clem. & D.L.Jones,GBIF Backbone Taxonomy,SYNONYM
+S006834,"Megalurus timoriensis Wallace, 1864","Cincloramphus timoriensis (Wallace, 1864)",GBIF Backbone Taxonomy,SYNONYM
+S006843,Lomaria nuda,Blechnum nudum (Labill.) Mett. ex Luerss.,GBIF Backbone Taxonomy,SYNONYM
+S006844,Pseudolycopodium densum,Lycopodium deuterodensum Herter,GBIF Backbone Taxonomy,SYNONYM
+S006854,Trichoglossus haematodus moluccanus,"Trichoglossus moluccanus (Gmelin, 1788)",GBIF Backbone Taxonomy,SYNONYM
+S006890,"Sericornis citreogularis Gould, 1838","Neosericornis citreogularis (Gould, 1838)",GBIF Backbone Taxonomy,SYNONYM
+S006917,Litoria peronii,"Pengilleyia peronii (Tschudi, 1838)",GBIF Backbone Taxonomy,SYNONYM
+S006922,"Toxidia Mabille, 1891","Timoconia Strand, 1909",GBIF Backbone Taxonomy,SYNONYM
+S006978,Zizina labradus,"Zizina otis labradus (Godart, 1824)",GBIF Backbone Taxonomy,SYNONYM
+S006983,Leptecophylla parvifolia,Leucopogon parviflorus (Andrews) Lindl.,GBIF Backbone Taxonomy,SYNONYM
+S006993,Lecanopteris pustulata subsp. pustulata,Microsorum pustulatum (G.Forst.) Copel.,GBIF Backbone Taxonomy,SYNONYM
+S007059,Alsophila australis subsp. australis,Cyathea australis (R.Br.) Domin,GBIF Backbone Taxonomy,SYNONYM
+S007081,Dracophyllum persistentifolium S.Venter,Richea scoparia Hook.fil.,GBIF Backbone Taxonomy,SYNONYM
+S007087,Parablechnum wattsii,Blechnum wattsii Tindale,GBIF Backbone Taxonomy,SYNONYM
+S007128,Gallinula mortierii,"Tribonyx mortierii Du Bus de Gisignies, 1840",GBIF Backbone Taxonomy,SYNONYM
+S001456,Caretta caretta,"Caretta caretta gigas (Deraniyagala, 1939)",GBIF Backbone Taxonomy,SYNONYM
+S007137,Chenopodium candolleanum subsp. candolleanum,Rhagodia candolleana Moq.,GBIF Backbone Taxonomy,SYNONYM
+S007142,Drimys aromatica,Tasmannia lanceolata (Poir.) A.C.Sm.,GBIF Backbone Taxonomy,SYNONYM
+S007145,Dracophyllum pandanifolium,Richea pandanifolia Hook.fil.,GBIF Backbone Taxonomy,SYNONYM
+S007149,Dracophyllum tasmanicum S.Venter,Richea milliganii (Hook.fil.) F.Muell.,GBIF Backbone Taxonomy,SYNONYM
+S007200,Drosera peltata subsp. auriculata,Drosera auriculata Backh. ex Planch.,GBIF Backbone Taxonomy,SYNONYM
+S006641,Pseudocheirus peregrinus,"Pseudocheirus occidentalis (Thomas, 1888)",GBIF Backbone Taxonomy,SYNONYM
+S007250,Pandion cristatus,"Pandion haliaetus cristatus (Vieillot, 1816)",GBIF Backbone Taxonomy,SYNONYM
+S007281,"Aeshna brevistyla Rambur, 1842","Adversaeschna brevistyla (Rambur, 1842)",GBIF Backbone Taxonomy,SYNONYM
+S007282,"Hesthesis angulatus Pascoe, 1863","Hesthesis angulata Aurivillius, 1912",GBIF Backbone Taxonomy,SYNONYM
+S007302,Stylidium spathulatum R.Br.,Stylidium spinulosum subsp. montanum Carlquist,GBIF Backbone Taxonomy,SYNONYM
+S001987,"Apis mellifera Linnaeus, 1758","Apis mellifera ligustica Spinola, 1806",GBIF Backbone Taxonomy,SYNONYM
+S007359,Cryptocheilus australis,"Heterodontonyx australis (Guérin-Méneville, 1830)",GBIF Backbone Taxonomy,SYNONYM
+S007365,Foetorepus calauropomus,"Synchiropus calauropomus (Richardson, 1844)",GBIF Backbone Taxonomy,SYNONYM
+S007372,Macropus eugenii,"Notamacropus eugenii (Desmarest, 1817)",GBIF Backbone Taxonomy,SYNONYM
+S007394,Ozothamnus glomeratus,Helichrysum lanceolatum (Buchanan) Kirk,GBIF Backbone Taxonomy,SYNONYM
+S007400,Conoderus exsul,"Monocrepidius exsul Sharp, 1877",GBIF Backbone Taxonomy,SYNONYM
+S007406,Icarus filiformis,Blechnum filiforme (A.Cunn.) Ettingsh.,GBIF Backbone Taxonomy,SYNONYM
+S007414,Puffinus tenuirostris,"Ardenna tenuirostris (Temminck, 1836)",GBIF Backbone Taxonomy,SYNONYM
+S007467,Lecanopteris novae-zealandiae,Microsorum novae-zealandiae (Baker) Copel.,GBIF Backbone Taxonomy,SYNONYM
+S007497,Coelogyne bracteosa,Dendrochilum longifolium Rchb.f.,GBIF Backbone Taxonomy,SYNONYM
+S007518,Murexechinus melanurus,"Murexia melanurus (Thomas, 1899)",GBIF Backbone Taxonomy,SYNONYM
+S007543,Acanthaster planci,"Acanthaster solaris (Schreber, 1793)",GBIF Backbone Taxonomy,SYNONYM
+S007545,"Megalurulus mariei J.Verreaux, 1869","Cincloramphus mariae (J.Verreaux, 1869)",GBIF Backbone Taxonomy,SYNONYM
+S007565,Premnas biaculeatus,"Amphiprion biaculeatus (Bloch, 1790)",GBIF Backbone Taxonomy,SYNONYM

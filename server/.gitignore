@@ -1,0 +1,13 @@
+node_modules/
+.env
+.env.*
+!.env.example
+*.db
+*.sqlite
+*.sqlite3
+auth.db
+serviceAccountKey*.json
+firebase-adminsdk*.json
+logs/
+*.log
+.DS_Store

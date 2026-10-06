@@ -4,7 +4,7 @@ import { Shield, Calendar, Award, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export const Profile: React.FC = () => {
-  const { user, isDemo } = useAuth();
+  const { user } = useAuth();
 
   if (!user) {
     return (
@@ -41,7 +41,7 @@ export const Profile: React.FC = () => {
           </div>
 
           {/* Badge Display */}
-          <div className="flex gap-2 font-label-sm">
+          <div className="flex flex-wrap items-center justify-center gap-2 font-label-sm">
             <span className={`px-3 py-1 rounded-full border text-[10px] font-bold uppercase tracking-wider ${
               user.role === 'admin' 
                 ? 'bg-tertiary-container/30 text-tertiary border-tertiary/20' 
@@ -49,14 +49,16 @@ export const Profile: React.FC = () => {
             }`}>
               {user.role} Explorer
             </span>
-            {isDemo && (
-              <span className="px-3 py-1 rounded-full bg-surface-container-low border border-outline-variant/45 text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">
-                Demo Session
-              </span>
-            )}
+            <span className={`px-3 py-1 rounded-full border text-[10px] font-bold uppercase tracking-wider ${
+              user.emailVerified
+                ? 'bg-primary-container/25 text-primary border-primary/30'
+                : 'bg-warning-container/25 text-warning border-warning/30'
+            }`}>
+              {user.emailVerified ? '✓ Email Verified' : '⚠ Email Unverified'}
+            </span>
           </div>
 
-          <div className="w-full border-t border-outline-variant/45 my-6" />
+          <div className="w-full border-t border-outline-variant/45 my-4" />
 
           {/* Stats / Parameters */}
           <div className="w-full space-y-4 text-left">

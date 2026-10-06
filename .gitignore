@@ -13,8 +13,6 @@ coverage/
 .netlify/
 *.tsbuildinfo
 .agents/
-wildatlasgit/
-wildatlasgit.zip
 
 # Environment variables & secrets (Never commit real keys or secrets)
 .env
@@ -56,3 +54,19 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
+
+# SQLite temp files
+*.db-shm
+*.db-wal
+*.sqlite-shm
+*.sqlite-wal
+
+# Cache & Temporary Data
+data/cache/
+cache/
+
+# Local archives
+wildatlasgit/
+wildatlasgit.zip
+
+

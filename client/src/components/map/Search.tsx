@@ -1,35 +1,34 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search as SearchIcon, MapPin, Map, Navigation, X, Clock, Sparkles } from 'lucide-react';
+import { Search as SearchIcon, MapPin, X, Clock, Eye } from 'lucide-react';
 import { api } from '../../services/api';
 import { useSearchHistory } from '../../hooks/useSearchHistory';
-
-interface Forest {
-  id: number;
-  name: string;
-  country: string;
-  state: string;
-  latitude: number;
-  longitude: number;
-  description: string;
-}
+import type { NormalizedPlace } from '../../services/datasetLoader';
+import { normalizeRecord } from '../../services/datasetLoader';
 
 interface SearchProps {
-  onForestSelect: (forest: Forest) => void;
-  onRegionSearch: (results: Forest[], query: string) => void;
+  onPlaceSelect: (place: NormalizedPlace) => void;
+  onSpeciesSelect?: (speciesId: string | number) => void;
+  onRegionSearch?: (results: NormalizedPlace[], query: string) => void;
   onClearSearch: () => void;
 }
 
-export const Search: React.FC<SearchProps> = ({ onForestSelect, onRegionSearch, onClearSearch }) => {
+export const Search: React.FC<SearchProps> = ({
+  onPlaceSelect,
+  onSpeciesSelect,
+  onRegionSearch,
+  onClearSearch
+}) => {
   const [query, setQuery] = useState('');
-  const [suggestions, setSuggestions] = useState<Forest[]>([]);
+  const [results, setResults] = useState<{
+    forests: NormalizedPlace[];
+    zoos: NormalizedPlace[];
+    species: any[];
+  }>({ forests: [], zoos: [], species: [] });
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
   
   const { history, addSearch, clearHistory } = useSearchHistory();
-
-  const [aiSuggestions, setAiSuggestions] = useState<string[]>([]);
-  const [loadingAiIntent, setLoadingAiIntent] = useState(false);
 
   // Close suggestions dropdown on click outside
   useEffect(() => {
@@ -42,50 +41,54 @@ export const Search: React.FC<SearchProps> = ({ onForestSelect, onRegionSearch, 
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Fetch suggestions as user types
+  // Fetch suggestions as user types (debounced 200ms)
   useEffect(() => {
     const delayDebounce = setTimeout(async () => {
       if (query.trim().length < 2) {
-        setSuggestions([]);
-        setAiSuggestions([]);
+        setResults({ forests: [], zoos: [], species: [] });
         return;
       }
 
       setLoading(true);
       try {
-        const results = await api.searchForests(query);
-        setSuggestions(results);
-        
-        if (results.length === 0) {
-          setLoadingAiIntent(true);
-          try {
-            const aiData = await api.getSearchIntent(query);
-            setAiSuggestions(aiData.suggestions || []);
-          } catch (aiErr) {
-            console.error("AI search intent query failed:", aiErr);
-            setAiSuggestions([]);
-          } finally {
-            setLoadingAiIntent(false);
-          }
-        } else {
-          setAiSuggestions([]);
-        }
-        
+        const data = await api.searchGlobal(query);
+        const normalizedForests: NormalizedPlace[] = (data.forests || [])
+          .map((f: any) => normalizeRecord(f, 'forest'))
+          .filter((r: any) => r.valid)
+          .map((r: any) => r.place);
+
+        const normalizedZoos: NormalizedPlace[] = (data.zoos || [])
+          .map((z: any) => normalizeRecord(z, 'zoo'))
+          .filter((r: any) => r.valid)
+          .map((r: any) => r.place);
+
+        setResults({
+          forests: normalizedForests,
+          zoos: normalizedZoos,
+          species: data.species || []
+        });
         setIsOpen(true);
       } catch (error) {
-        console.error("Error fetching suggestions:", error);
+        console.error("Error fetching global search results:", error);
       } finally {
         setLoading(false);
       }
-    }, 300);
+    }, 200);
 
     return () => clearTimeout(delayDebounce);
   }, [query]);
 
-  const handleSelectForest = (forest: Forest) => {
-    setQuery(forest.name);
-    addSearch(forest.name);
-    onForestSelect(forest);
+  const handleSelectPlace = (place: NormalizedPlace) => {
+    setQuery(place.name);
+    addSearch(place.name);
+    onPlaceSelect(place);
+    setIsOpen(false);
+  };
+
+  const handleSelectSpecies = (sp: any) => {
+    setQuery(sp.name);
+    addSearch(sp.name);
+    if (onSpeciesSelect) onSpeciesSelect(sp.id || sp.species_id);
     setIsOpen(false);
   };
 
@@ -96,22 +99,36 @@ export const Search: React.FC<SearchProps> = ({ onForestSelect, onRegionSearch, 
     addSearch(query.trim());
     setLoading(true);
     try {
-      const results = await api.searchForests(query);
-      if (results.length > 0) {
-        // If query is an exact match for a forest, select it
-        const exactMatch = results.find(
-          (f: Forest) => f.name.toLowerCase() === query.toLowerCase().trim()
+      const data = await api.searchGlobal(query);
+      const normalizedForests: NormalizedPlace[] = (data.forests || [])
+        .map((f: any) => normalizeRecord(f, 'forest'))
+        .filter((r: any) => r.valid)
+        .map((r: any) => r.place);
+
+      const normalizedZoos: NormalizedPlace[] = (data.zoos || [])
+        .map((z: any) => normalizeRecord(z, 'zoo'))
+        .filter((r: any) => r.valid)
+        .map((r: any) => r.place);
+
+      if (normalizedForests.length > 0) {
+        const exactMatch = normalizedForests.find(
+          (f) => f.name.toLowerCase() === query.toLowerCase().trim()
         );
         if (exactMatch) {
-          handleSelectForest(exactMatch);
+          handleSelectPlace(exactMatch);
+        } else if (onRegionSearch) {
+          onRegionSearch(normalizedForests, query);
         } else {
-          // Send all matching forests to region search (filters pins)
-          onRegionSearch(results, query);
+          handleSelectPlace(normalizedForests[0]);
         }
+      } else if (normalizedZoos.length > 0) {
+        handleSelectPlace(normalizedZoos[0]);
+      } else if (data.species && data.species.length > 0) {
+        handleSelectSpecies(data.species[0]);
       }
       setIsOpen(false);
     } catch (error) {
-      console.error("Search failed:", error);
+      console.error("Search submit failed:", error);
     } finally {
       setLoading(false);
     }
@@ -119,14 +136,19 @@ export const Search: React.FC<SearchProps> = ({ onForestSelect, onRegionSearch, 
 
   const handleClear = () => {
     setQuery('');
-    setSuggestions([]);
+    setResults({ forests: [], zoos: [], species: [] });
     onClearSearch();
     setIsOpen(false);
   };
 
+  const hasResults = results.forests.length > 0 || results.zoos.length > 0 || results.species.length > 0;
+
   return (
-    <div ref={searchRef} className="relative w-full max-w-xl font-body-md">
-      <form onSubmit={handleSearchSubmit} className="relative flex items-center glass-panel p-1 rounded-full shadow-2xl transition-all duration-300 focus-within:ring-2 focus-within:ring-primary/50">
+    <div ref={searchRef} className="relative w-full max-w-xl font-body-md select-none">
+      <form
+        onSubmit={handleSearchSubmit}
+        className="relative flex items-center glass-panel bg-surface-container-high/95 p-1 rounded-full shadow-2xl transition-all duration-300 focus-within:ring-2 focus-within:ring-primary/50 border border-outline-variant/60"
+      >
         <div className="flex items-center px-4 gap-2 flex-1">
           <SearchIcon className="w-5 h-5 text-primary" />
           <input
@@ -134,8 +156,8 @@ export const Search: React.FC<SearchProps> = ({ onForestSelect, onRegionSearch, 
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onFocus={() => setIsOpen(true)}
-            placeholder="Search Forest, State, or Country..."
-            className="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-outline/65 font-body-md py-2.5 outline-none"
+            placeholder="Search Forest, Zoo, Country, State, City, or Species..."
+            className="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-outline/65 font-body-md py-2.5 outline-none text-xs sm:text-sm"
           />
         </div>
 
@@ -150,7 +172,7 @@ export const Search: React.FC<SearchProps> = ({ onForestSelect, onRegionSearch, 
         ) : (
           <button
             type="submit"
-            className="bg-primary text-on-primary font-label-md px-6 py-2 rounded-full hover:bg-primary/90 transition-all active:scale-95 shadow-md font-semibold text-xs uppercase tracking-wider"
+            className="bg-primary text-on-primary font-label-md px-5 py-2 rounded-full hover:bg-primary/90 transition-all active:scale-95 shadow-md font-semibold text-xs uppercase tracking-wider cursor-pointer"
           >
             Search
           </button>
@@ -159,12 +181,12 @@ export const Search: React.FC<SearchProps> = ({ onForestSelect, onRegionSearch, 
 
       {/* Suggestions Dropdown */}
       {isOpen && (
-        <div className="absolute w-full mt-3 rounded-xl glass-panel bg-[#201f1f]/95 border border-outline-variant/60 shadow-2xl overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-200 max-h-80 overflow-y-auto">
+        <div className="absolute w-full mt-3 rounded-2xl glass-panel bg-[#151c24]/98 border border-outline-variant/60 shadow-2xl overflow-hidden z-50 animate-in fade-in slide-from-top-2 duration-200 max-h-96 overflow-y-auto">
           
-          {/* Recent Searches Header */}
+          {/* Recent Searches */}
           {history.length > 0 && !query && (
             <div className="p-2 border-b border-outline-variant/30">
-              <div className="flex justify-between items-center px-3 py-1 text-[10px] font-bold text-primary tracking-wider uppercase">
+              <div className="flex justify-between items-center px-3 py-1 text-[10px] font-bold text-primary tracking-wider uppercase font-label-sm">
                 <span>Recent Searches</span>
                 <button
                   type="button"
@@ -172,7 +194,7 @@ export const Search: React.FC<SearchProps> = ({ onForestSelect, onRegionSearch, 
                     e.stopPropagation();
                     clearHistory();
                   }}
-                  className="text-[9px] hover:underline text-on-surface-variant normal-case cursor-pointer"
+                  className="text-[9px] hover:underline text-on-surface-variant normal-case cursor-pointer font-label-sm"
                 >
                   Clear History
                 </button>
@@ -191,87 +213,120 @@ export const Search: React.FC<SearchProps> = ({ onForestSelect, onRegionSearch, 
             </div>
           )}
 
-          {loading && (
-            <div className="p-4 text-on-surface-variant text-xs flex items-center gap-2">
-              <Navigation className="w-3.5 h-3.5 animate-spin text-primary" />
-              Scanning biodatabase...
+          {loading ? (
+            <div className="p-6 text-center text-xs text-on-surface-variant flex items-center justify-center gap-2">
+              <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+              <span>Searching forests, zoos, regions & species...</span>
             </div>
-          )}
-
-          {suggestions.length > 0 ? (
-            <div className="p-2">
-              <div className="px-3 py-1.5 text-[10px] font-bold text-primary tracking-wider uppercase border-b border-white/5 mb-1 font-label-sm">
-                Found Locations
-              </div>
-              {suggestions.map((forest) => {
-                const isForestMatch = forest.name.toLowerCase().includes(query.toLowerCase());
-                const isStateMatch = forest.state.toLowerCase().includes(query.toLowerCase());
-                
-                return (
-                  <button
-                    key={forest.id}
-                    type="button"
-                    onClick={() => handleSelectForest(forest)}
-                    className="w-full flex items-start gap-3 px-3 py-2.5 rounded-lg hover:bg-primary/10 hover:text-primary text-on-surface-variant transition-all text-left cursor-pointer group"
-                  >
-                    {isForestMatch ? (
-                      <MapPin className="w-5 h-5 text-primary mt-0.5 group-hover:scale-105 transition-transform" />
-                    ) : (
-                      <Map className="w-5 h-5 text-secondary mt-0.5 group-hover:scale-105 transition-transform" />
-                    )}
-                    <div>
-                      <div className="font-semibold text-sm text-on-surface group-hover:text-primary">
-                        {forest.name}
+          ) : hasResults ? (
+            <div className="p-2 divide-y divide-white/5 space-y-2">
+              
+              {/* Forests */}
+              {results.forests.length > 0 && (
+                <div className="pt-1">
+                  <div className="px-3 py-1 text-[10px] font-bold text-[#a5d0b9] tracking-wider uppercase flex items-center gap-1.5 font-label-sm">
+                    <span>🌳 Forests ({results.forests.length})</span>
+                  </div>
+                  {results.forests.map((forest) => (
+                    <button
+                      key={forest.id}
+                      type="button"
+                      onClick={() => handleSelectPlace(forest)}
+                      className="w-full flex items-center justify-between px-3 py-2 rounded-lg hover:bg-[#1b4332]/40 text-on-surface text-left transition-colors cursor-pointer group"
+                    >
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <MapPin className="w-4 h-4 text-[#10b981] group-hover:scale-110 transition-transform shrink-0" />
+                        <div className="min-w-0">
+                          <span className="font-bold text-xs text-on-surface block truncate font-headline-md">
+                            {forest.name}
+                          </span>
+                          <span className="text-[10px] text-[#8ba394] truncate block">
+                            {forest.state ? forest.state + ', ' : ''}{forest.country}
+                          </span>
+                        </div>
                       </div>
-                      <div className="text-[11px] text-on-surface-variant font-body-md">
-                        {forest.state}, {forest.country}
-                        {isStateMatch && <span className="ml-2 text-[10px] text-secondary font-medium font-label-sm">(State Match)</span>}
-                        {!isForestMatch && !isStateMatch && <span className="ml-2 text-[10px] text-secondary font-medium font-label-sm">(Country Match)</span>}
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          ) : (
-            query.trim().length >= 2 && !loading && (
-              <div className="p-2">
-                <div className="p-4 text-on-surface-variant text-xs text-center border-b border-outline-variant/30">
-                  No forests, states, or countries found.
+                      <span className="text-[9px] font-mono text-[#a5d0b9] bg-[#1b4332] px-2 py-0.5 rounded shrink-0">
+                        Forest
+                      </span>
+                    </button>
+                  ))}
                 </div>
-                {loadingAiIntent ? (
-                  <div className="p-4 text-on-surface-variant text-[11px] flex items-center justify-center gap-2">
-                    <Navigation className="w-3 animate-spin text-primary" />
-                    Consulting AI Search Assistant...
+              )}
+
+              {/* Zoos */}
+              {results.zoos.length > 0 && (
+                <div className="pt-2">
+                  <div className="px-3 py-1 text-[10px] font-bold text-[#fde68a] tracking-wider uppercase flex items-center gap-1.5 font-label-sm">
+                    <span>🦁 Zoos & Wildlife Parks ({results.zoos.length})</span>
                   </div>
-                ) : aiSuggestions.length > 0 ? (
-                  <div className="p-3 text-left">
-                    <div className="text-[10px] font-bold text-primary tracking-wider uppercase flex items-center gap-1 font-label-sm mb-1.5">
-                      <Sparkles className="w-3.5 h-3.5 text-primary animate-pulse" />
-                      AI Search Assistant Suggestions
-                    </div>
-                    <p className="text-[10px] text-on-surface-variant mb-3 leading-normal font-body-md">
-                      Gemini matched your search intent to these species. Click one to consult the AI Guide:
-                    </p>
-                    <div className="space-y-1">
-                      {aiSuggestions.map((spec, sIdx) => (
-                        <a
-                          key={sIdx}
-                          href="/chat"
-                          onClick={() => {
-                            localStorage.setItem('wildatlas_pending_prompt', `Tell me about ${spec}`);
-                          }}
-                          className="w-full flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container hover:bg-primary/15 hover:text-primary text-xs font-semibold text-on-surface-variant transition-all font-label-sm"
-                        >
-                          🦁 {spec}
-                        </a>
-                      ))}
-                    </div>
+                  {results.zoos.map((zoo) => (
+                    <button
+                      key={zoo.id}
+                      type="button"
+                      onClick={() => handleSelectPlace(zoo)}
+                      className="w-full flex items-center justify-between px-3 py-2 rounded-lg hover:bg-[#78350f]/40 text-on-surface text-left transition-colors cursor-pointer group"
+                    >
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <MapPin className="w-4 h-4 text-[#f59e0b] group-hover:scale-110 transition-transform shrink-0" />
+                        <div className="min-w-0">
+                          <span className="font-bold text-xs text-on-surface block truncate font-headline-md">
+                            {zoo.name}
+                          </span>
+                          <span className="text-[10px] text-[#fbbf24]/80 truncate block">
+                            {zoo.city ? zoo.city + ', ' : ''}{zoo.country}
+                          </span>
+                        </div>
+                      </div>
+                      <span className="text-[9px] font-mono text-[#fde68a] bg-[#78350f] px-2 py-0.5 rounded shrink-0">
+                        Zoo
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* Species */}
+              {results.species.length > 0 && (
+                <div className="pt-2">
+                  <div className="px-3 py-1 text-[10px] font-bold text-primary tracking-wider uppercase flex items-center gap-1.5 font-label-sm">
+                    <span>🐾 Verified Wildlife Species ({results.species.length})</span>
                   </div>
-                ) : null}
-              </div>
-            )
-          )}
+                  {results.species.map((sp) => (
+                    <button
+                      key={sp.id}
+                      type="button"
+                      onClick={() => handleSelectSpecies(sp)}
+                      className="w-full flex items-center justify-between px-3 py-2 rounded-lg hover:bg-primary/10 text-on-surface text-left transition-colors cursor-pointer group"
+                    >
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        {sp.imageUrl ? (
+                          <img src={sp.imageUrl} alt={sp.name} className="w-7 h-7 rounded-md object-cover shrink-0" />
+                        ) : (
+                          <Eye className="w-4 h-4 text-primary shrink-0" />
+                        )}
+                        <div className="min-w-0">
+                          <span className="font-bold text-xs text-on-surface block truncate font-headline-md group-hover:text-primary">
+                            {sp.name}
+                          </span>
+                          <span className="text-[10px] text-on-surface-variant italic truncate block">
+                            {sp.scientificName}
+                          </span>
+                        </div>
+                      </div>
+                      <span className="text-[9px] font-mono text-primary bg-primary/20 px-2 py-0.5 rounded shrink-0">
+                        {sp.speciesGroup || 'Species'}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              )}
+
+            </div>
+          ) : query.trim().length >= 2 ? (
+            <div className="p-6 text-center text-xs text-on-surface-variant">
+              No matching forests, zoos, or species found for "{query}".
+            </div>
+          ) : null}
         </div>
       )}
     </div>
